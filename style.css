@@ -76,7 +76,7 @@ body {
 footer {
   max-width: 500px;
   text-align: left;
-  margin: 2ox;
+  padding: 2px;
   padding-bottom: 10px;
 }
 footer p {
