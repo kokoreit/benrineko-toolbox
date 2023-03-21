@@ -8,14 +8,14 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   overflow-x: hidden;
-  
 }
 @media (max-width: 1200px) {
   body {
-    max-width: 300px;
+    min-width: 300px;
   }
 }
 
