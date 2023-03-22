@@ -15,7 +15,7 @@ body {
 }
 @media (max-width: 1200px) {
   body {
-    max-width: 300px;
+    max-width: 500px;
   }
 }
 
@@ -76,8 +76,7 @@ body {
 footer {
   max-width: 500px;
   text-align: left;
-  padding: 2px;
-  padding-bottom: 10px;
+  padding: 10px;
 }
 footer p {
   margin-bottom: 1em;
