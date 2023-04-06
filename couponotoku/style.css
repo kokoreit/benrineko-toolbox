@@ -99,9 +99,6 @@ body {
   width: 200px;
   margin: 0 auto;
 }
-.input-space input::placeholder {
-  font-size: 18pt;
-}
 .input-space p {
   font-size: 11pt;
 }
