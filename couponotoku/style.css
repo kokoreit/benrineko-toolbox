@@ -101,7 +101,6 @@ body {
 }
 .input-space input::placeholder {
   font-size: 18pt;
-  opacity: 0.5;
 }
 .input-space p {
   font-size: 11pt;
