@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja" >
+    <head>
+      <meta charset="UTF-8">
+      <title>西暦から令和（平成から昭和へ）年号変換</title>
+      <meta name="description" content="「クーポンお得計算機」は、クーポンで一番お得に買い物ができる購入金額（代金）を算出するための無料のオンラインツールです。クーポンの割引率や値引き上限額を入力すると、最もお得になる購入金額が計算されます。このツールを使えば、いくらまでの買い物ならクーポンを使って最大割引を受けてお得に買い物ができるか簡単に調べることができます。">
+      <meta name="keywords" content="クーポン, お得, 計算, 計算機, 購入金額, 値引き, 割引, 上限額,  最大割引, 最もお得, いくらまで">
+      <meta name="author" content="benrineko.com">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="./favicon.ico">
+        <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="./android-chrome-192x192.png">
+      <link rel="stylesheet" href="./style.css">
+    </head>
+<body>
+  
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+
+  <div class="title-space">
+    <h1>クーポンお得計算機</h1>
+    <div class="ad-space1"></div>
+    <h2>クーポンで一番お得に買い物ができる購入金額（代金）は何円（いくら）の商品なのかを算出します。</h2>
+  </div>
+  <div class="input-space">
+    <div class="coupon-input-container calc-container"> 
+      <label for="coupon-input">クーポン：</label>
+      <input type="number" id="coupon-input" name="coupon" required max="100" min="1" placeholder="（例）70">
+      <select id="select">
+        <option selected value="percent">
+          % OFF
+        </option>
+        <option value="discount">
+          割 引
+        </option>
+      </select>
+      <p>※%OFFは0〜100まで、割引は1~10までの半角英数字を入力してください。</p>
+    </div> 
+    <div class="discount-limit-input-container calc-container"> 
+      <label for="discount-limit-input">値引き上限額：</label>
+      <input type="number" id="discount-limit-input" name="discount-limit" required max="999999" placeholder="（例）2000"> <label for="discount-limit-input">円</label>
+      <p>※上限額は1〜999999までの半角数字で入力してください。</p>
+    </div>
+    <div class="calculate-button-container calc-container"> 
+      <button class="calculate-button" type="button" onclick="calculateDiscount()">計算</button>
+    </div>
+  </div>
+  <div class="result-announce-space">
+    <p>結果</p>
+  </div>
+  <div class="result-space">
+    <p class="yen">0 円</p>
+    <p>以上のお会計に</p>
+    <p class="coupon">0%OFF</p>
+    <p>のクーポンを使えば値引き上限額</p>
+    <p class="discount-limit">0 円</p>
+    <p>の値引きを受けることができます。</p>
+
+    <p class="note">※計算結果は小数点以下を切り捨てて表示をします。</p>
+  </div>
+  <div class="ad-space2"></div>
+  <footer>
+		<p>&copy; 2023 benrineko.com</p><br>
+		<p class="privacy-policy">プライバシーポリシー</p>
+		<p>当サイトではGoogle AdSenseを使用して広告を表示します。ユーザーの興味に基づいて表示されたり、Cookieやウェブビーコンが使用されることがあります。詳細は<a href="https://policies.google.com/technologies/partner-sites">こちら</a>でご確認ください。</p><br>
+		<p class="disclaimer">免責事項</p>
+		<p>当サイトに掲載されている情報は正確性と安全性に努めておりますが、それらを保証するものではありません。当サイトを利用したことによる損害について、当サイトは一切責任を負いません。当サイトを利用する際には、ご自身の責任においてご利用ください。</p>
+	</footer>
+
+</div>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
