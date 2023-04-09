@@ -1,0 +1,94 @@
+body {
+  padding: 20px;
+  font-family: "Helvetica Neue", sans-serif;
+  color: #444;
+  background-color: #fff;
+}
+
+.title-section h1 {
+  margin-bottom: 20px;
+}
+.title-section p {
+  font-size: 14pt;
+  line-height: 1.4;
+}
+.title-section .howto {
+  font-size: 14pt;
+}
+.title-section .decorated {
+  font-weight: bold;
+}
+.title-section .decorated.border {
+  color: #b71c1c;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.title-section .decorated.ampersand {
+  font-size: 21pt;
+  color: #b71c1c;
+}
+.title-section .decorated.copy-paste {
+  font-size: 21pt;
+  text-decoration: underline;
+  text-decoration-color: #007bff;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 4px;
+}
+.title-section .decorated.extract {
+  padding: 0 4px;
+  color: #fff;
+  background-color: #007bff;
+  font-size: 14pt;
+}
+
+.ad-section {
+  margin: 10px 0;
+  padding-left: 10px;
+  height: 130px;
+}
+.ad-section p {
+  margin-bottom: 0;
+}
+
+.main-section {
+  min-height: 400px;
+}
+.main-section input {
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 14pt;
+  border: 1px solid #b71c1c;
+}
+.main-section #extractButton {
+  color: #fff;
+  background-color: #b71c1c;
+}
+.main-section #message {
+  color: #b71c1c;
+  height: 30px;
+}
+
+.fotter-section {
+  background-color: #444;
+}
+.fotter-section a {
+  color: #fff;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  font-size: 14pt;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0056b3;
+}
+button:active {
+  background-color: #b71c1c;
+}
+button #buttonContainer {
+  margin-top: 20px;
+}
