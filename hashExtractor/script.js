@@ -104,6 +104,8 @@ const resultText = document.querySelector('.result-text');
 const textSizeDecreaseBtn = document.querySelector('#text-size-decrese-btn');
 const textSizeIncreaseBtn = document.querySelector('#text-size-increase-btn');
 const resultSection = document.querySelector('.s-result-section');
+const maxSize = parseInt(textSizeSlider.max);
+
 // 初期値の設定
 resultSection.style.backgroundColor = backgroundColorInput.value;
 resultText.style.color = textColorInput.value;
@@ -145,18 +147,31 @@ textSizeInput.addEventListener('input', (event) => {
   // 入力値が数字のみか数字 + "px" の形式であるかを検証
   if (!/^\d+$|^\d+px$/.test(inputValue)) {
     // エラー処理など適切な処理を追加
+    textSizeInput.style.backgroundColor = '#ffdddd';
     console.error('無効なサイズの入力値です');
     return;
   }
-  //スライダーの値を設定
-  textSizeSlider.value = parseInt(inputValue); 
-  //インプットの値を再設定
+  // 数値のみの場合にはpxを付加して再設定
   if (!inputValue.endsWith('px')) {
     inputValue += 'px';
   }
-  //結果テキストに反映
-  resultText.style.fontSize = inputValue;
+  // 数値部分を抜き出して数値に変換
+  const sizeValue = parseInt(inputValue);
+  // サイズが制限を超えた場合にエラー
+  if (sizeValue <= 0 || sizeValue > maxSize) {
+    // エラー処理など適切な処理を追加
+    textSizeInput.style.backgroundColor = '#ffdddd';
+    console.error('無効なサイズの入力値です');
+    return;
+  } else {
+    textSizeInput.style.backgroundColor = '#fff';
+  }
+  // スライダーの値を設定
+  textSizeSlider.value = sizeValue;//int
+  // 結果テキストに反映
+  resultText.style.fontSize = inputValue;//str+px
 });
+
 
 // スライダーの値が変更されたときの処理
 textSizeSlider.addEventListener('input', (event) => {
@@ -164,6 +179,7 @@ textSizeSlider.addEventListener('input', (event) => {
   const newValue = event.target.value + 'px';
   textSizeInput.value = newValue;//イベントは発生しない
   resultText.style.fontSize = newValue;
+  textSizeInput.style.backgroundColor = '#fff';
 });
 
 // テキストの入力値が変更されたときの処理
@@ -174,7 +190,6 @@ textInput.addEventListener('input', (event) => {
 /*========= 増減ボタン ===============*/
 function changeTextSize(direction) {
   const currentSize = parseInt(textSizeInput.value);
-  const maxSize = parseInt(textSizeSlider.max);
   const delta = (direction === 1) ? 1 : -1;
   const newSize = currentSize + delta;
 
