@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja" >
+    <head>
+      <meta charset="UTF-8">
+      <title>カラーコード抽出機 - テキストからカラーコードを抽出して簡単コピペ</title>
+      <meta name="description" content="テキストからhexaのカラーコード一覧を抽出し、コピーボタンとして色を再現します。AIからの配色提案（ヘキサコード）を確認してコピペ（コピー＆ペースト）するのにピッタリです。シミュレーション機能（文字色・背景色・サイズに対応）もあります。">
+      <meta name="keywords" content="カラーコード抽出機, カラーコード, 抽出, コピー, 配色, 文字色, 背景色, 確認, シミュレーション, テキスト, 色, コピペ,カラー,コード,ヘキサ,hexa,一覧">
+      <meta name="author" content="benrineko.com">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="./favicon.ico">
+        <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="./android-chrome-192x192.png">
+      <link rel="stylesheet" href="./style.css">
+    </head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+
+  <div class="ad1-section">
+    <p class="center">ad</p>
+    <p>
+      <!--     ここにad300を挿入 -->
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=monthlydealevent&banner=140Z9CGTRPHE20SMKXR2&f=ifr&linkID=772cdcd8b2e102d5ff6526c2cb13d0ea&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+    </p>
+  </div>
+
+  <div class="main-container">
+    <div class="m-title-section">
+      <h1 class="m-title">カラーコード抽出機</h1>
+      <p class="m-description">テキストから20個までのカラーコードを抽出し、<br>コピーボタンとして色を再現します。<br>
+        （コピーボタンで簡単にカラーコードをクリップボードにコピーできます。）
+      </p>
+      <p>
+        活用例：<br>
+        「AIからの配色提案の一覧」を貼り付け・抽出。<br>
+        カラーコードをコピー＆ペーストする。
+      </p>
+    </div>
+    <div class="m-main-section">
+      <textarea id="input-text" placeholder="入力例：#FF0000は赤色、#FFA500はオレンジ色、#FFFF00は黄色、#008000はダークグリーン、#0000FFは青色、#800080は紫色、#FFC0CBはピンク色、そして#000000は黒色を表します。"></textarea>
+      <button id="generate-btn">▲ カラーコードを抽出 ▼</button>
+      <div id="color-buttons"></div>
+      <div id="announcement">抽出で生成されたカラーボタンを押すとカラーコードをコピーできます。</div>
+    </div>
+    <p class="next">次のコーナー「文字色・背景色の確認」も是非ご活用ください。</p>
+  </div>
+
+  <div class="simulation-container">
+
+    <div class="s-title-section">
+      <h1 class="simulation-title">文字色・背景色の確認<br>（オマケ）</h1>
+      <p class="simulation-description">
+        テキストに背景色・文字色・文字サイズを当てはめて簡単なシミュレーションができます。</p>
+    </div>
+
+    <div class="s-inputs-section">
+      <p class="text">テキストの内容：
+        <input type="text" class="text-input"  value="これは確認用のテキストです。" placeholder="テキスト">
+      </p>
+
+      <p class="background-color">背景色：
+        <input type="text" class="background-color-input" value="#ccc" placeholder="#ccc">
+      </p>
+
+      <p class="text-color">テキストの色：
+        <input type="text" class="text-color-input" value="#000" placeholder="#000">
+      </p>
+    </div>
+
+    <div class="s-input-size-section">
+      <p class="text-size">テキストのサイズ（px）：
+        <br>
+        <button class="text-size-button" id="text-size-decrese-btn">小</button>
+        <input type="text" class="text-size-input" value="30px" placeholder="30px">
+        <button class="text-size-button" id="text-size-increase-btn">大</button>
+        <br>
+        <input type="range" class="text-size-slider" min="0" max="200" step="1">
+      </p>
+    </div>
+
+    <div class="s-result-section">
+      <p class="result-text">これは確認用のテキストです。</p>
+    </div>
+
+  </div>
+
+  <div class="ad2-section">
+    <p class="center">ad</p>
+    <p>
+      <!--     ここにad300を挿入 -->
+<iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=amazonbusiness&banner=0421ZB0Z601CQ8P3WXR2&f=ifr&linkID=64d9ca7c4836c943d4121af0ef4fe884&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+    </p>
+  </div>
+
+  <footer class="fotter-container">
+    <a href="../copyright/index.html">コピーライト・プライバシーポリシー・免責事項</a>
+  </footer>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

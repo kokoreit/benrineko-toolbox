@@ -1,0 +1,272 @@
+@charset "UTF-8";
+/*========= 枠組み・枠組みのポジション） ===============*/
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  margin: 14px;
+  width: 100%;
+}
+@media (min-width: 1200px) {
+  .container {
+    display: grid;
+    grid-template-areas: "main simulation ad1" "main simulation ad2" "main simulation footer";
+    grid-template-columns: 1fr 1fr 300px;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+}
+@media (max-width: 1200px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.container p {
+  line-height: 1.8;
+}
+
+.ad1-container {
+  grid-area: ad1;
+  min-width: 300px;
+  height: 300px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+}
+.ad1-container p {
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+.ad2-container {
+  grid-area: ad2;
+  min-width: 300px;
+  height: 300px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+}
+.ad2-container p {
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+.main-container {
+  grid-area: main;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 2px solid #0d47a1;
+  /* 目立つボーダーを追加 */
+}
+
+.simulation-container {
+  grid-area: simulation;
+}
+
+.footer-container {
+  grid-area: footer;
+}
+
+/*========= main ===============*/
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  text-align: center;
+}
+
+.m-main-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.m-main-section textarea {
+  display: block;
+  margin-bottom: 10px;
+  width: 96%;
+  height: 200px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 2px solid #337ab7;
+  border-radius: 3px;
+  resize: vertical;
+  overflow-wrap: break-word;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+.m-main-section textarea:focus {
+  border: 2px solid #1f4165;
+}
+.m-main-section button {
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+}
+.m-main-section button:hover {
+  background-color: #0069d9;
+}
+.m-main-section #generate-btn {
+  background-color: #337ab7;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 5px 0 0 #1f4165, -5px 0 0 #1f4165;
+  transition: box-shadow 0.2s ease-in-out;
+}
+.m-main-section .color-btn {
+  position: relative;
+  display: inline-flex;
+  /* displayプロパティを変更 */
+  justify-content: center;
+  /* 水平方向の中央揃え */
+  align-items: baseline;
+  /* 垂直方向の中央揃え */
+  width: 100px;
+  height: 50px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 50px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.m-main-section .color-btn:after {
+  content: "▼copied!!";
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: red;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.m-main-section .color-btn:before {
+  content: "";
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  /* 半透明の白色 */
+  width: 80%;
+  height: 50%;
+  padding: 0;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.m-main-section .color-btn:focus:after, .m-main-section .color-btn:focus:before {
+  opacity: 1;
+}
+
+.next {
+  font-size: 14pt;
+  color: #007bff;
+}
+
+/*========= simulation ===============*/
+.simulation-container {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  text-align: center;
+}
+.simulation-container input {
+  width: 120px;
+  font-size: 16pt;
+}
+
+.s-title-section {
+  text-align: center;
+}
+.s-title-section h1 {
+  color: #007bff;
+}
+.s-title-section p {
+  text-align-last: left;
+}
+
+.s-inputs-section {
+  text-align: right;
+}
+
+.s-input-size-section {
+  text-align: center;
+}
+.s-input-size-section .text-size-slider {
+  margin: 10px auto 4px auto;
+  width: 100%;
+  height: 50px;
+}
+.s-input-size-section .text-size-button {
+  height: 40px;
+  width: 80px;
+  color: #fff;
+  background-color: #007bff;
+  font-size: 20px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+}
+.s-input-size-section .text-size-button:hover {
+  background-color: #004a99;
+}
+.s-input-size-section .text-size-button#text-size-decrese-btn::before {
+  content: "◀";
+  margin-right: 4px;
+}
+.s-input-size-section .text-size-button#text-size-increase-btn::after {
+  content: "▶";
+  margin-left: 4px;
+}
+
+.s-result-section {
+  width: 100%;
+  min-height: 300px;
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.s-result-section p {
+  margin: 0;
+  padding: 0;
+}
+
+/*========= 個別 ===============*/
+.center {
+  text-align: center;
+}
