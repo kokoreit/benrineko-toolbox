@@ -1,14 +1,17 @@
-// ボタンがクリックされた時のメソッド（ソートなし）
+const btnContainer = document.getElementById('buttonContainer');
+// 抽出ボタンがクリックされた時のメソッド
 document.getElementById('extractButton').addEventListener('click', function() {
+
+  clearButtons();
+
   const inputBox = document.getElementById('inputBox');
   const inputValue = inputBox.value.trim();
   if (inputValue !== '') {
     const constants = extractConstants(inputValue);
-    const buttonContainer = document.getElementById('buttonContainer');
-    buttonContainer.innerHTML = '';
+    btnContainer.innerHTML = '';
     constants.forEach(function(constant) {
       const button = document.createElement('button');
-      button.textContent = constant;
+      button.textContent = constant;//既に抽出された定数の値であり、エスケープ処理は不要
       button.className = 'constantButton';
       buttonContainer.appendChild(button);
     });
@@ -16,13 +19,29 @@ document.getElementById('extractButton').addEventListener('click', function() {
     showMessage('定数を抜き出しました');
   }
 });
+//ボタン群のクリア
+function clearButtons() {
+  /*
+    document.addEventListener()を使っている今回は、
+    ボタンが生成されたら自動的に登録されて、
+    ボタンが削除されたら自動的に削除される
+    ＝イベントリスナーの削除は必要ない。
+  */
 
+  // ボタンの削除
+  btnContainer.innerHTML = '';
+}
 
 // ボタンがクリックされた時（nullもあるから分岐で）
 document.addEventListener('click', function(event) {
   if (event.target.className === 'constantButton') {
     copyToClipboard(event.target.textContent);
     showMessage(`「${event.target.textContent}」をコピーしました`);
+    /*
+      このコードにおいては、
+      クリップボードにコピーする際には単にテキストを設定しているだけであり、
+      特殊文字やHTMLタグのエスケープ処理は不要です。
+    */
   }
 });
 
@@ -52,48 +71,3 @@ function showMessage(message) {
     document.getElementById('message').textContent = '';
   }, 2000);
 }
-
-
-// document.getElementById('extractButton').addEventListener('click', function() {
-//   const inputBox = document.getElementById('inputBox');
-//   const inputValue = inputBox.value.trim();
-//   if (inputValue !== '') {
-//     const constants = inputValue.split(' ');
-//     const buttonContainer = document.getElementById('buttonContainer');
-//     buttonContainer.innerHTML = '';
-//     constants.forEach(function(constant) {
-//       const button = document.createElement('button');
-//       button.textContent = constant;
-//       button.className = 'constantButton';
-//       buttonContainer.appendChild(button);
-//     });
-//     inputBox.value = '';
-//     showMessage('定数を抜き出しました');
-//   }
-// });
-
-// document.addEventListener('click', function(event) {
-//   if (event.target.className === 'constantButton') {
-//     copyToClipboard(event.target.textContent);
-//     showMessage(`「${event.target.textContent}」をコピーしました`);
-//   }
-// });
-
-// function copyToClipboard(text) {
-//   const textarea = document.createElement('textarea');
-//   textarea.value = text;
-//   document.body.appendChild(textarea);
-//   textarea.select();
-//   document.execCommand('copy');
-//   document.body.removeChild(textarea);
-// }
-
-// function showMessage(message) {
-//   const messageElement = document.createElement('div');
-//   messageElement.textContent = message;
-//   messageElement.className = 'message';
-//   document.body.appendChild(messageElement);
-//   setTimeout(function() {
-//     document.body.removeChild(messageElement);
-//   }, 2000);
-// }
