@@ -175,8 +175,9 @@ textSizeInput.addEventListener('input', (event) => {
 
 // スライダーの値が変更されたときの処理
 textSizeSlider.addEventListener('input', (event) => {
-  const inputValue = textSizeInput.value;
+  //現在の値を取得
   const newValue = event.target.value + 'px';
+  //反映
   textSizeInput.value = newValue;//イベントは発生しない
   resultText.style.fontSize = newValue;
   textSizeInput.style.backgroundColor = '#fff';
@@ -189,7 +190,16 @@ textInput.addEventListener('input', (event) => {
 
 /*========= 増減ボタン ===============*/
 function changeTextSize(direction) {
-  const currentSize = parseInt(textSizeInput.value);
+  //現在値の取得
+  const currentSize = 
+        parseInt(textSizeInput.value) ||
+        parseInt(getComputedStyle(resultText).fontSize);
+  /*
+    null、undefined、NaN、空文字列などの場合には || の後ろの式が評価される
+    maxSizeを超えた値を取得してしまったら、後の構文ではねられる。
+  */
+
+  //現在値を増減させる
   const delta = (direction === 1) ? 1 : -1;
   const newSize = currentSize + delta;
 
@@ -198,6 +208,7 @@ function changeTextSize(direction) {
     textSizeInput.value = newSize + 'px';
     resultText.style.fontSize = newSize + 'px';
     textSizeSlider.value = newSize;
+    textSizeInput.style.backgroundColor = '#fff';
   }
 }
 
