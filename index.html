@@ -1,46 +1,76 @@
 <!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="sample.comは便利ツールの提供を目的としています。ツール一覧：年号変換ツール" />
-    <title>benrineko.com - 便利ツールの提供</title>
-    <link rel="stylesheet" href="style.css" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1312992679303448" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <header>
-      <div class="logo">
-          <p>benrineko.com</p>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="nengouhenkan/index.html">年号変換ツール</a></li>
-<!--           <li><a href="#">ツール２</a></li>
-          <li><a href="#">ツール３</a></li> -->
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="intro">
-        <h1>benrineko.com</h1><br>
-        <p>当サイトの目的は【便利ツール】を提供する事です。</p>
-      </section>
-      <section class="tools">
-        <h2>ツール一覧</h2>
-        <ul>
-          <li><a href="nengouhenkan/index.html"  target="_blank">【年号変換】<br>西暦・令和・平成・昭和の年号を相互変換します。</a></li>
-<!--           <li><a href="#">ツール２</a></li>
-          <li><a href="#">ツール３</a></li> -->
-        </ul>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2023 benrineko.com</p>
-    </footer>
-  </body>
-</html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - benriHome</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+
+
+
+  <header class="header-section">
+    <a href="index.html" class="logo">
+      <p>benrineko.com</p>
+    </a>
+    <nav>
+      <button onclick="scrollToSection('life')">生活</button>
+      <button onclick="scrollToSection('develop')">開発</button>
+    </nav>
+
+  </header>
+
+  <div class="main-section">
+    <div class="title-content">
+      <div class="logo-1-3-img" alt="logo"></div>
+      <p>ベンリネココムでは便利ツールを公開しています。</p>
+    </div>
+
+    <div class="app-content" id="life">
+      <h2>生活</h2>
+      <!--       クーポンお得計算機 -->
+      <a href="/couponotoku/index.html" class="app-card-link app-card">
+        <div class="app-img couponotoku-img" alt="icon"></div>
+        <h3 class="app-title">クーポンお得計算機</h3>
+        <p class="app-description">割引率と最大割引額を入力すると、最適な購入金額がわかります。<br>例えば【70％のクーポン（割引上限額2000円）】なら2857円の購入で2000円の割引が受けられる事がわかります。</p>
+      </a>
+      <!--       年号変換 -->
+      <a href="/nengouhenkan/index.html" class="app-card-link app-card">
+        <div class="app-img nengouhenkan-img" alt="icon"></div>
+        <h3 class="app-title">年号変換</h3>
+        <p class="app-description">和暦と西暦の相互変換ツールです。<br>令和、平成、昭和の年号から西暦、または西暦から和暦の年号が何年なのかを簡単に計算できます。</p>
+      </a>
+    </div>
+
+    <div class="app-content" id="develop">
+      <h2>開発</h2>
+      <!--       カラーコード抽出機 -->
+      <a href="/hashExtractor/index.html" class="app-card-link app-card">
+        <div class="app-img hashExtractor-img" alt="icon"></div>
+        <h3 class="app-title">カラーコード抽出機</h3>
+        <p class="app-description">テキストからカラーコードを抽出・コピーボタンとして色を再現します。<br>配色提案の文章などをそのまま貼り付けて抽出、色を確認しながらコピーして活用するのにピッタリです。</p>
+      </a>
+      <!--       $定数コピペツール -->
+      <a href="/dollarExtractor/index.html" class="app-card-link app-card">
+        <div class="app-img dollarExtractor-img" alt="icon"></div>
+        <h3 class="app-title"> $定数コピペツール</h3>
+        <p class="app-description">Webコーディング補助ツールです。$定数一覧を丸ごと貼り付けると「$」から続く文字列を抽出し、コピーボタンが作成されます。<br>予測変換の機能がない環境でのコーディング作業に最適です。</p>
+      </a>
+    </div>
+  </div>
+
+  <footer class="footer-section">
+    <a href="../copyright/index.html">コピーライト・プライバシーポリシー・免責事項</a>
+  </footer>
+
+
+
+</div>
 <!-- partial -->
-  
+  <script  src="./script.js"></script>
+
 </body>
 </html>
