@@ -1,43 +1,38 @@
+@charset "UTF-8";
+/*========= 全体 ===============*/
 body {
   display: flex;
-  flex-flow: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  align-content: space-between;
+  flex-direction: column;
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 .container {
   max-width: 1200px;
-  color: #333333;
   display: flex;
-  flex-flow: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  align-content: space-between;
+  flex-direction: column;
+  color: #444;
 }
 
-.ad-space1 {
-  display: block;
+.ad-space1 .ad-space2 {
+  min-width: 300px;
+  height: 300px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+}
+.ad-space1 .ad-space2 p {
   margin: 0 auto;
-  background: none;
-}
-@media screen and (max-width: ) {
-  .ad-space1 {
-    width: 100%;
-    max-width: 728px;
-    min-height: 50px;
-    padding: 10px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .ad-space1 {
-    width: 100%;
-    max-width: 320px;
-    min-height: 50px;
-    padding: 10px;
-  }
+  padding: 0 auto;
 }
 
+/*========= メイン ===============*/
 .title-space {
   display: flex;
   flex-flow: column;
@@ -135,10 +130,11 @@ body {
 }
 
 .result-space {
-  max-width: 700px;
+  width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  align-content: space-around;
   align-items: baseline;
   gap: 10px;
 }
@@ -146,7 +142,7 @@ body {
   margin: 5px 0;
   font-size: 14pt;
   font-family: "Helvetica Neue", sans-serif;
-  color: #333333;
+  color: #444;
 }
 .result-space p.yen {
   font-size: 21pt;
@@ -165,9 +161,7 @@ body {
   color: #b71c1c;
 }
 
-.ad-space2 {
-  display: block;
+/*========= 個別 ===============*/
+.center {
   text-align: center;
-  margin: 10px auto;
-  background: none;
 }

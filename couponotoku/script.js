@@ -6,6 +6,19 @@ const yen = document.querySelector(".yen");
 const coupon = document.querySelector(".coupon");
 const discountLimitElement = document.querySelector(".discount-limit");
 
+// 変数宣言
+let timer;//複数のタイマーIDを格納することがあるからクリアが必要
+
+// 入力欄が変更されたときにクーポン計算を行う関数
+function calculateDiscountOnInput() {
+  clearTimeout(timer); // タイマーをクリアする
+  timer = setTimeout(function() {
+    if (couponInput.value && discountLimitInput.value) {
+      calculateDiscount();
+    }
+  }, 500); // 500ミリ秒の遅延を設定する
+}
+
 // クーポン計算を行う関数
 function calculateDiscount() {
   const discountRate = couponInput.value.replace(/[０-９]/g, function(s) {
@@ -26,13 +39,6 @@ function calculateDiscount() {
   yen.textContent = Math.abs(Math.floor(discountLimit / rate)) + " 円";
   coupon.textContent = `${discountRate}${selectValue === "percent" ? "%OFF" : "割引"}`;
   discountLimitElement.textContent = discountLimit + " 円";
-}
-
-// 入力欄が変更されたときにクーポン計算を行う関数
-function calculateDiscountOnInput() {
-  if (couponInput.value && discountLimitInput.value) {
-    calculateDiscount();
-  }
 }
 
 // セレクトボックスの値が変更されたときに呼び出される関数
