@@ -6,20 +6,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #eee;
+  background-color: #fff;
   color: #333;
   padding: 5px 0;
 }
 
+/*
+  他にaタグを追加する可能性があるので
+  必ずlogo-imgクラスを使う
+*/
 .logo-img {
   margin: 0 5px;
   width: 132px;
   height: 44px;
-  border-radius: 40px 10px 10px 40px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 132px 44px;
   background-image: url("https://benrineko.com/logo_100_300.png");
+  /*「インデックスに戻る」を示唆*/
+  border-radius: 40px 10px 10px 40px;
+  border: 2px solid #333;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   .logo-img {
@@ -38,7 +44,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #eee;
+  background-color: #fff;
   color: #333;
 }
 .footer a {
@@ -47,5 +53,22 @@
   color: #333;
 }
 
-/*========= （デモ用）===============*/
+/*========= （調整のHTML用）===============*/
 /*コンパイル時はコメントアウトしてください*/
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contaner {
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main {
+  height: 200px;
+}
