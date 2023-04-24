@@ -55,20 +55,3 @@
 
 /*========= （調整のHTML用）===============*/
 /*コンパイル時はコメントアウトしてください*/
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.contaner {
-  width: 1200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.main {
-  height: 200px;
-}
