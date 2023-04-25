@@ -35,6 +35,7 @@ function calculate() {
   });
   // 数字以外 → 警告文を表示して終了
   if (!/^\d+$/.test(inputNumber)) {
+    /*あらかじめプログラム内で用意したテキストなので、エスケープ処理は不要*/
     resultTexts.announce.innerHTML = `<span style="color:${redCor};font-weight:bold;font-size:24px;">【数字】を入力してください。</span> `;
     resultTexts.seireki.innerHTML = ``;
     resultTexts.reiwa.innerHTML = '';
@@ -59,17 +60,28 @@ function calculate() {
   const reiwaYear = calculateEraYear(year, 2018);
   const heiseiYear = calculateEraYear(year, 1988);
   const showaYear = calculateEraYear(year, 1925);
- // 結果表示
-resultTexts.announce.innerHTML = `<span>■■■■■入力値：${select.value} ${inputNumber}年■■■■■</span> `;
-resultTexts.seireki.innerHTML = `<span style="color:${redCor};font-weight:bold;">西暦${year}年</span> `;
-resultTexts.reiwa.innerHTML = reiwaYear > 0 ? `<span style="color:${redCor};font-weight:bold;">令和${reiwaYear}年</span> ` : `令和${reiwaYear}年 （実在しません）`;
-resultTexts.heisei.innerHTML = heiseiYear > 0 && heiseiYear <= 31 ? `<span style="color:${redCor};font-weight:bold;">平成${heiseiYear}年</span> ` : `平成${heiseiYear}年 （実在しません）`;
-resultTexts.showa.innerHTML = showaYear > 0 && showaYear <= 64 ? `<span style="color:${redCor};font-weight:bold;">昭和${showaYear}年</span> ` : `昭和${showaYear}年 （実在しません）`;
-
+  // 結果表示
+  resultTexts.announce.innerHTML = `<span>■■■■■入力値：${select.value} ${inputNumber}年■■■■■</span> `;
+  resultTexts.seireki.innerHTML = `<span style="color:${redCor};font-weight:bold;">西暦${year}年</span> `;
+  resultTexts.reiwa.innerHTML = reiwaYear > 0 ? `<span style="color:${redCor};font-weight:bold;">令和${reiwaYear}年</span> ` : `令和${reiwaYear}年 （実在しません）`;
+  resultTexts.heisei.innerHTML = heiseiYear > 0 && heiseiYear <= 31 ? `<span style="color:${redCor};font-weight:bold;">平成${heiseiYear}年</span> ` : `平成${heiseiYear}年 （実在しません）`;
+  resultTexts.showa.innerHTML = showaYear > 0 && showaYear <= 64 ? `<span style="color:${redCor};font-weight:bold;">昭和${showaYear}年</span> ` : `昭和${showaYear}年 （実在しません）`;
 };
 function calculateEraYear(year, baseYear) {
   //【0から-に入る】使用はこっち
   return year - baseYear;
   //いきなり【-1】にする場合はこっち
   // return year - baseYear <= 0 ? year - baseYear - 1 : year - baseYear;
+}
+
+/*========= エスケープ処理 ===============*/
+// XSS対策: ユーザーの入力をエスケープして、安全にHTMLに反映する
+function escapeHtml(text) {
+  /*
+    直接ユーザーからの入力をHTMLに反映する場合、
+    この処理を通してください。
+  */
+  const div = document.createElement('div');
+  div.textContent = text; // textをエスケープしてテキストノードとして反映する
+  return div.innerHTML; // エスケープされたHTMLを文字列として返す
 }
