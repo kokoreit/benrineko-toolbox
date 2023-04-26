@@ -1,8 +1,29 @@
+@charset "UTF-8";
+/*========= 構成 ===============*/
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
   padding: 20px;
   font-family: "Helvetica Neue", sans-serif;
   color: #444;
   background-color: #fff;
+}
+
+.footer-org {
+  /*
+  このページは左詰なので
+  外部デザインではなく
+  このページ独自のデザインを採用します。
+  */
+  display: flex;
+  justify-content: start;
+}
+.footer-org a {
+  text-decoration: none;
 }
 
 .title-section h1 {
@@ -47,7 +68,8 @@ body {
   height: 130px;
 }
 .ad-section p {
-  margin-bottom: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .main-section {
@@ -66,13 +88,6 @@ body {
 .main-section #message {
   color: #b71c1c;
   height: 30px;
-}
-
-.fotter-section {
-  background-color: #444;
-}
-.fotter-section a {
-  color: #fff;
 }
 
 button {
