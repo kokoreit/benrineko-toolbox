@@ -19,15 +19,14 @@ body {
   gap: 10px;
 }
 
-.header-menu {
-  padding: 0 10px;
+.header-menu nav {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
   justify-content: flex-end;
 }
-.header-menu button {
+.header-menu nav button {
   height: 40px;
   width: 80px;
   font-size: 13pt;
@@ -37,7 +36,7 @@ body {
   color: #343a40;
 }
 @media screen and (min-width: 1200px) {
-  .header-menu button {
+  .header-menu nav button {
     display: none;
     /*
     PCではコンテンツが増えて
@@ -45,30 +44,16 @@ body {
     */
   }
 }
-.header-menu button:hover {
+.header-menu nav button:hover {
   cursor: pointer;
 }
 
 .main-section {
-  grid-area: main;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 10px;
-}
-
-.footer-section {
-  grid-area: footer;
-  text-align: center;
-  padding: 2px;
-  width: 100%;
-  background-color: #8B81C3;
-}
-.footer-section a {
-  text-decoration: none;
-  font-size: 11pt;
-  color: #fff;
 }
 
 /*========= main ===============*/
