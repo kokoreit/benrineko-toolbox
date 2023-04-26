@@ -10,24 +10,22 @@
         <link rel="shortcut icon" href="./favicon.ico">
         <link rel="apple-touch-icon" href="./apple-touch-icon.png">
         <link rel="icon" type="image/png" href="./android-chrome-192x192.png">
+      <link rel="stylesheet" href="./headerFooter/style.css">
       <link rel="stylesheet" href="./style.css">
     </head>
 <body>
 <!-- partial:index.partial.html -->
+
 <div class="container">
-
-
-
-  <header class="header-section">
-    <a href="index.html" class="logo">
-      <p>benrineko.com</p>
-    </a>
-    <nav>
+  <header class="header">
+    <a href="./index.html" class="logo-img"></a>
+    <div class="header-menu">
       <button onclick="scrollToSection('life')">生活</button>
       <button onclick="scrollToSection('develop')">開発</button>
-    </nav>
-
+    </div>
   </header>
+
+
 
   <div class="main-section">
     <div class="title-content">
@@ -38,13 +36,13 @@
     <div class="app-content" id="life">
       <h2>生活</h2>
       <!--       クーポンお得計算機 -->
-      <a href="/couponotoku/index.html" class="app-card-link app-card">
+      <a href="./couponotoku/index.html" class="app-card-link app-card">
         <div class="app-img couponotoku-img" alt="icon"></div>
         <h3 class="app-title">クーポンお得計算機</h3>
         <p class="app-description">割引率と最大割引額を入力すると、最適な購入金額がわかります。<br>例えば【70％のクーポン（割引上限額2000円）】なら2857円の購入で2000円の割引が受けられる事がわかります。</p>
       </a>
       <!--       年号変換 -->
-      <a href="/nengouhenkan/index.html" class="app-card-link app-card">
+      <a href="./nengouhenkan/index.html" class="app-card-link app-card">
         <div class="app-img nengouhenkan-img" alt="icon"></div>
         <h3 class="app-title">年号変換</h3>
         <p class="app-description">和暦と西暦の相互変換ツールです。<br>令和、平成、昭和の年号から西暦、または西暦から和暦の年号が何年なのかを簡単に計算できます。</p>
@@ -54,13 +52,13 @@
     <div class="app-content" id="develop">
       <h2>開発</h2>
       <!--       カラーコード抽出機 -->
-      <a href="/hashExtractor/index.html" class="app-card-link app-card">
+      <a href="./hashExtractor/index.html" class="app-card-link app-card">
         <div class="app-img hashExtractor-img" alt="icon"></div>
         <h3 class="app-title">カラーコード抽出機</h3>
         <p class="app-description">テキストからカラーコードを抽出・コピーボタンとして色を再現します。<br>配色提案の文章などをそのまま貼り付けて抽出、色を確認しながらコピーして活用するのにピッタリです。</p>
       </a>
       <!--       $定数コピペツール -->
-      <a href="/dollarExtractor/index.html" class="app-card-link app-card">
+      <a href="./dollarExtractor/index.html" class="app-card-link app-card">
         <div class="app-img dollarExtractor-img" alt="icon"></div>
         <h3 class="app-title"> $定数コピペツール</h3>
         <p class="app-description">Webコーディング補助ツールです。$定数一覧を丸ごと貼り付けると「$」から続く文字列を抽出し、コピーボタンが作成されます。<br>予測変換の機能がない環境でのコーディング作業に最適です。</p>
@@ -68,12 +66,11 @@
     </div>
   </div>
 
-  <footer class="footer-section">
-    <a href="../copyright/index.html">コピーライト・プライバシーポリシー・免責事項</a>
+
+
+  <footer class="footer">
+    <a href="./copyright/index.html">コピーライト・プライバシーポリシー・免責事項</a>
   </footer>
-
-
-
 </div>
 <!-- partial -->
   <script  src="./script.js"></script>
