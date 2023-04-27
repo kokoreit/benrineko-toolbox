@@ -1,48 +1,72 @@
-/* タイトルセクションのスタイル */
+@charset "UTF-8";
+/*========= 全体 ===============*/
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  color: #333;
+}
+
+/*========= 中身 ===============*/
 .title-section {
-  background-color: #f2f2f2;
-  padding: 20px;
-  text-align: center;
-
-  h1 {
-    font-size: 16px;
-    margin: 0;
-  }
-}
-
-/* メインセクションのスタイル */
-.main-section {
-  padding: 20px;
-
-  h2 {
-    font-size: 18px;
-    margin-top: 0;
-  }
-
-  p {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-
-  a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: #0056b3;
-    }
-  }
-}
-
-/* フッターセクションのスタイル */
-.footer-section {
-  background-color: #f8f9fa;
   padding: 10px;
+  width: 100%;
+  background-color: #f8f9fa;
   text-align: center;
+}
 
-  p {
-    font-size: 12px;
-    margin: 0;
-  }
+.main-section {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: start;
+}
+
+.footer-section {
+  padding: 10px;
+  width: 100%;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+.footer-section a {
+  color: #333;
+  /*
+  コピーライトの表示がメインなので
+  リンクであっても標準色で上書きしました。
+  */
+}
+
+/*========= 個別 ===============*/
+h1 {
+  font-size: 25px;
+  line-height: 1.8;
+}
+
+h2 {
+  font-size: 21px;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
 }
