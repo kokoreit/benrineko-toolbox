@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja" >
+    <head>
+      <meta charset="UTF-8">
+      <title> フォントサイズ単位一括相互変換ツール - pt, px, pc, mm, cm, inのテキストを指定の単位に変換</title>
+      <meta name="description" content="フォントサイズ単位（pt, px, pc, mm, cm, in）を含むテキストを指定の単位に一括変換するツールです。サイズ単位がバラバラでも変換可能で、変換後の桁数も指定できます。">
+      <meta name="keywords" content="フォントサイズ単位, 一括相互変換, ツール, pt, px, pc, mm, cm, in, 変換, テキスト, 指定, 単位, フォント, サイズ">
+      <meta name="author" content="benrineko.com">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="./favicon.ico">
+        <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="./android-chrome-192x192.png">
+      <link rel="stylesheet" href="../headerFooter/style.css">
+      <link rel="stylesheet" href="./style.css">
+    </head>
+<body>
+<!-- partial:index.partial.html -->
+
+<div class="container">
+  <header class="header">
+    <a href="../index.html" class="logo-img"></a>
+    <div class="header-menu">
+
+    </div>
+  </header>
+
+  <div class="main-section">
+    <div class="title-space">
+      <h1>フォントサイズ単位<br>一括相互変換ツール</h1>
+      <p class="description">
+        サイズ単位（pt, px, pc, mm, cm, in）を含むテキストを、指定の単位に変換します。<br>サイズ単位がバラバラでも変換することができます。
+      </p>
+      <p class="example">
+        使用例：<br>フォント文字のサイズを間違えた単位で記述してしまったため、その文章を丸ごと貼り付けて一括で修正。
+      </p>
+      <p class="howto">
+        使用方法：<br>サイズ単位（pt, px, pc, mm, cm, in）を含むテキストを入力後、変換後の単位を選択・変換ボタンを押してください。
+      </p>
+    </div>
+    <div class="input-space">
+      <label for="input-box">テキストを入力してください</label>
+      <textarea id="input-box" rows="7" placeholder=
+                "normal: 14pt, big: 21pt, mini: 11pt;"></textarea>
+    </div>
+    <div class="menu-space">
+      <div class="unit-contents">
+        <label for="unit-selector">変換先単位</label>
+        <select id="unit-selector">
+          <option value="pt">pt</option>
+          <option value="px">px</option>
+          <option value="pc">pc</option>
+          <option value="mm">mm</option>
+          <option value="cm">cm</option>
+          <option value="in">in</option>
+        </select>
+      </div>
+      <div class="precision-contents">
+        <label for="precision-selector">結果の桁数</label>
+        <select id="precision-selector">
+          <option value="0">なし</option>
+          <option value="1">下1桁</option>
+          <option value="2">下2桁</option>
+          <option value="3">下3桁</option>
+          <option value="4">下4桁</option>
+          <option value="5">下5桁</option>
+          <option value="6">下6桁</option>
+          <option value="7">下7桁</option>
+          <option value="8">下8桁</option>
+          <option value="9">下9桁</option>
+          <option value="10">下10桁</option>
+        </select>
+      </div>
+      <div class="convert-contents">
+        <button id="convert-button">変換</button>
+      </div>
+
+    </div>
+    <div class="output-space">
+      <p class="announce">変換後のテキストが下記に表示されます</p>
+      <p id="output-text"></p>
+      <p class="note">注意：<br>計算結果の正確性はPCのスクリーンで目視で確認しております。<br>この値を活用する場合は（特に印刷物について）実際に目で見て確かめるまたは必要に応じた適切な検証方法を使用することをお勧めします。</p>
+      <p class="calculation-method">
+        計算結果は、ptレートをpt(1), px(1.33333), pc(0.0833333), mm(0.352778), cm(0.0352778), in(0.0138889)として、一旦ptに変換したものをご指定の単位に再度変換して、ご指定の表示桁数に合わせる為に四捨五入したものです。
+      </p>
+    </div>
+  </div>
+ <div class="ad-section">
+    <p><small>ad</small></p>
+    <p>
+<!--       ここに広告を挿入 -->
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=amazonbusiness&banner=0421ZB0Z601CQ8P3WXR2&f=ifr&linkID=64d9ca7c4836c943d4121af0ef4fe884&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+    </p>
+  </div>
+  <footer class="footer">
+     <a href="../copyright/index.html">コピーライト・プライバシーポリシー・免責事項</a>
+  </footer>
+</div>
+
+<!-- "section" 要素は、ドキュメント内のコンテンツのセクションを示すために使用されるものです。通常、ページの主要なセクションや章立てなど、重要なコンテンツの分割を示すために使用されます。---場合はセクションタグを使用する必要はありません。 -->
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
