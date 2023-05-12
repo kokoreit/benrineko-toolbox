@@ -250,3 +250,18 @@ a.app-card {
     background-image: url("https://benrineko.com/fontsizeConverter/apple-touch-icon.png");
   }
 }
+
+.natureSounds-img {
+  width: 48px;
+  height: 48px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 48px 48px;
+  border-radius: 10px;
+  background-image: url("https://benrineko.com/natureSounds/favicon.ico");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  .natureSounds-img {
+    background-image: url("https://benrineko.com/natureSounds/apple-touch-icon.png");
+  }
+}
