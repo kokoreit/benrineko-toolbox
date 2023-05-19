@@ -1,40 +1,122 @@
 @charset "UTF-8";
 /*========= header ===============*/
 .header {
-  height: 100%;
+  padding: 10px 0;
+  height: 44px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0;
+  justify-content: space-around;
   background-color: #fff;
-  color: #333;
-  padding: 5px 0;
+  color: #444;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: normal;
 }
 
-/*
-  他にaタグを追加する可能性があるので
-  必ずlogo-imgクラスを使う
-*/
 .logo-img {
   margin: 0 5px;
-  width: 132px;
   height: 44px;
+  width: 132px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 132px 44px;
-  background-image: url("https://benrineko.com/logo_100_300.png");
+  background-image: url(https://benrineko.com/logo_100_300.png);
   /*「インデックスに戻る」を示唆*/
   border-radius: 40px 10px 10px 40px;
-  border: 2px solid #333;
+  border: 1px solid #fff;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   .logo-img {
-    background-image: url("https://benrineko.com/logo_100_300@2x.png");
+    background-image: url(https://benrineko.com/logo_100_300@2x.png);
   }
+}
+.logo-img:hover {
+  border-color: #444;
 }
 
 .header-menu {
   flex-grow: 2;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-end;
+}
+.header-menu #menu-button {
+  margin: 0;
+  padding: 0;
+  height: 44px;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  letter-spacing: normal;
+  background-color: #fff;
+  color: #444;
+  border: none;
+  border-radius: 0px;
+  border: 1px solid #fff;
+}
+.header-menu #menu-button:hover {
+  border-color: #444;
+}
+.header-menu #menu-button::after {
+  content: "▲";
+  color: #444;
+  display: inline-block;
+  content: "▼";
+}
+.header-menu #menu-button.opened::after {
+  content: "▲";
+  color: #777777;
+  display: inline-block;
+}
+.header-menu #menu-contents {
+  display: none;
+  position: relative;
+  top: 0;
+  left: auto;
+  bottom: auto;
+  right: 0;
+  background-color: #fff;
+  color: #444;
+}
+.header-menu #menu-contents p {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+}
+.header-menu #menu-contents a {
+  display: block;
+  width: 100%;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  background-color: #fff;
+  color: #444;
+  text-decoration: none;
+}
+.header-menu #menu-contents a:hover {
+  text-decoration: underline;
+}
+.header-menu #menu-contents.show {
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-direction: column;
+  border: 1px solid #000;
 }
 
 /*========= footer ===============*/
@@ -44,13 +126,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0;
   background-color: #fff;
-  color: #333;
+  color: #444;
 }
 .footer a {
   text-decoration: none;
-  font-size: 11pt;
-  color: #333;
+  font-size: 0.875rem;
+  color: #444;
 }
 
 /*========= （調整のHTML用）===============*/
