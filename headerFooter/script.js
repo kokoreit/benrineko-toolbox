@@ -1,18 +1,23 @@
-const menuButton = document.querySelector('#menu-button');
-const menuContents = document.querySelector('#menu-contents');
+const headerMenuButton = document.querySelector("#header-menu-button");
+const headerMenuContents = document.querySelector("#header-menu-contents");
+const overlay = document.querySelector(".overlay");
 
-menuButton.addEventListener('click', function() {
-  menuContents.classList.toggle('show');
-  menuButton.classList.toggle('opened');
+headerMenuButton.addEventListener("click", function () {
+  headerMenuContents.classList.toggle("show");
+  updateMenuState();
 });
 
-document.addEventListener('click', function(event) {
-  if (!menuButton.contains(event.target) && !menuContents.contains(event.target)) {
-    menuContents.classList.remove('show');
-    menuButton.classList.remove('opened');
+overlay.addEventListener("click", function () {
+  headerMenuContents.classList.remove("show");
+  updateMenuState();
+});
+
+function updateMenuState() {
+  if (headerMenuContents.classList.contains("show")) {
+    headerMenuButton.classList.add("header-menu-showed");
+    overlay.style.display = "block";
+  } else {
+    headerMenuButton.classList.remove("header-menu-showed");
+    overlay.style.display = "none";
   }
-});
-
-/*
-メモリリークok
-*/
+}
