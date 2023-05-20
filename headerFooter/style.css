@@ -73,9 +73,14 @@
   display: inline-block;
   content: "▼";
 }
+.header-menu #header-menu-button.header-menu-showed {
+  background-color: #444;
+  color: #fff;
+  border-color: #444;
+}
 .header-menu #header-menu-button.header-menu-showed::after {
   content: "▲";
-  color: #777777;
+  color: #fff;
   display: inline-block;
 }
 .header-menu #header-menu-contents {
