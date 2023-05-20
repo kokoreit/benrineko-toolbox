@@ -5,13 +5,6 @@ body {
   justify-content: center;
   align-items: center;
   gap: 0px;
-  text-align: center;
-  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  letter-spacing: normal;
-  color: #444;
-  background-color: #fff;
 }
 
 .container {
@@ -21,6 +14,13 @@ body {
   align-items: center;
   gap: 10px;
   flex-direction: column;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  text-align: center;
+  background-color: #fff;
+  color: #444;
 }
 
 .header-menu nav {
@@ -39,8 +39,8 @@ body {
   font-size: 1rem;
   line-height: 1.8;
   letter-spacing: normal;
-  color: #444;
   background-color: #fff;
+  color: #444;
 }
 @media screen and (min-width: 1200px) {
   .header-menu nav button {
@@ -49,6 +49,8 @@ body {
 }
 .header-menu nav button:hover {
   cursor: pointer;
+  background-color: #444;
+  color: #fff;
 }
 
 .main-section {
@@ -121,147 +123,151 @@ a.app-card {
   width: 48%;
   border: none;
   border-radius: 10px;
-  background-color: #fff;
   display: grid;
   grid-template: "img title" 30px "description description" auto/auto 1fr;
   gap: 10px;
+  text-align: left;
+  background-color: #fff;
+  color: #444;
 }
 @media screen and (max-width: 1200px) {
   a.app-card {
     width: 100%;
   }
 }
+a.app-card:hover {
+  background-color: #444;
+  color: #fff;
+  /*
+  この設定が反映される様に、
+  カード内部の色は個別に指定しないでください。
+  */
+}
 
-/*========= カードグリッドの中身 ===============*/
+/*========= app-card個別設定 ===============*/
 .app-title {
   grid-area: title;
   margin: auto 4px;
-  text-align: left;
   font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
   font-size: 1.5rem;
   line-height: 1.8;
   letter-spacing: normal;
-  color: #444;
 }
 
 .app-img {
   grid-area: img;
-  text-align: right;
 }
 
 .app-description {
   grid-area: description;
-  text-align-last: left;
   font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   letter-spacing: normal;
-  color: #444;
 }
 
 /*========= ロゴ ===============*/
 .logo-1-3-img {
-  width: 300px;
   height: 100px;
+  width: 300px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 300px 100px;
-  border-radius: 0;
-  background-image: url("https://benrineko.com/logo_100_300.png");
+  background-image: url(https://benrineko.com/logo_100_300.png);
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   .logo-1-3-img {
-    background-image: url("https://benrineko.com/logo_100_300@2x.png");
+    background-image: url(https://benrineko.com/logo_100_300@2x.png);
   }
 }
 
 /*========= アイコン ===============*/
 .couponotoku-img {
-  width: 48px;
+  border-radius: 10px;
   height: 48px;
+  width: 48px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 48px 48px;
-  border-radius: 10px;
-  background-image: url("https://benrineko.com/couponotoku/favicon.ico");
+  background-image: url(https://benrineko.com/couponotoku/favicon.ico);
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   .couponotoku-img {
-    background-image: url("https://benrineko.com/couponotoku/apple-touch-icon.png");
+    background-image: url(https://benrineko.com/couponotoku/apple-touch-icon.png);
   }
 }
 
 .nengouhenkan-img {
-  width: 48px;
+  border-radius: 10px;
   height: 48px;
+  width: 48px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 48px 48px;
-  border-radius: 10px;
-  background-image: url("https://benrineko.com/nengouhenkan/favicon.ico");
+  background-image: url(https://benrineko.com/nengouhenkan/favicon.ico);
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   .nengouhenkan-img {
-    background-image: url("https://benrineko.com/nengouhenkan/apple-touch-icon.png");
+    background-image: url(https://benrineko.com/nengouhenkan/apple-touch-icon.png);
   }
 }
 
 .hashExtractor-img {
-  width: 48px;
+  border-radius: 10px;
   height: 48px;
+  width: 48px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 48px 48px;
-  border-radius: 10px;
-  background-image: url("https://benrineko.com/hashExtractor/favicon.ico");
+  background-image: url(https://benrineko.com/hashExtractor/favicon.ico);
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   .hashExtractor-img {
-    background-image: url("https://benrineko.com/hashExtractor/apple-touch-icon.png");
+    background-image: url(https://benrineko.com/hashExtractor/apple-touch-icon.png);
   }
 }
 
 .dollarExtractor-img {
-  width: 48px;
+  border-radius: 10px;
   height: 48px;
+  width: 48px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 48px 48px;
-  border-radius: 10px;
-  background-image: url("https://benrineko.com/dollarExtractor/favicon.ico");
+  background-image: url(https://benrineko.com/dollarExtractor/favicon.ico);
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   .dollarExtractor-img {
-    background-image: url("https://benrineko.com/dollarExtractor/apple-touch-icon.png");
+    background-image: url(https://benrineko.com/dollarExtractor/apple-touch-icon.png);
   }
 }
 
 .fontsizeConverter-img {
-  width: 48px;
+  border-radius: 10px;
   height: 48px;
+  width: 48px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 48px 48px;
-  border-radius: 10px;
-  background-image: url("https://benrineko.com/fontsizeConverter/favicon.ico");
+  background-image: url(https://benrineko.com/fontsizeConverter/favicon.ico);
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   .fontsizeConverter-img {
-    background-image: url("https://benrineko.com/fontsizeConverter/apple-touch-icon.png");
+    background-image: url(https://benrineko.com/fontsizeConverter/apple-touch-icon.png);
   }
 }
 
 .natureSounds-img {
-  width: 48px;
+  border-radius: 10px;
   height: 48px;
+  width: 48px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 48px 48px;
-  border-radius: 10px;
-  background-image: url("https://benrineko.com/natureSounds/favicon.ico");
+  background-image: url(https://benrineko.com/natureSounds/favicon.ico);
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   .natureSounds-img {
-    background-image: url("https://benrineko.com/natureSounds/apple-touch-icon.png");
+    background-image: url(https://benrineko.com/natureSounds/apple-touch-icon.png);
   }
 }
