@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html lang="ja" >
-    <head>
-      <meta charset="UTF-8">
-      <title> フォントサイズ単位一括相互変換ツール - pt, px, pc, mm, cm, inのテキストを指定の単位に変換</title>
-      <meta name="description" content="フォントサイズ単位（pt, px, pc, mm, cm, in）を含むテキストを指定の単位に一括変換するツールです。サイズ単位がバラバラでも変換可能で、変換後の桁数も指定できます。">
-      <meta name="keywords" content="フォントサイズ単位, 一括相互変換, ツール, pt, px, pc, mm, cm, in, 変換, テキスト, 指定, 単位, フォント, サイズ">
-      <meta name="author" content="benrineko.com">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="./favicon.ico">
-        <link rel="apple-touch-icon" href="./apple-touch-icon.png">
-        <link rel="icon" type="image/png" href="./android-chrome-192x192.png">
-      <link rel="stylesheet" href="../headerFooter/style.css">
-      <link rel="stylesheet" href="./style.css">
-    </head>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - wa_fsz_henkan</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
 <body>
 <!-- partial:index.partial.html -->
+<link rel="stylesheet" href="https://benrineko.com/headerFooter/style.css">
 
 <div class="container">
   <header class="header">
     <a href="../index.html" class="logo-img"></a>
     <div class="header-menu">
-
+      <button id="header-menu-button">他のツール</button>
+      <div id="header-menu-contents">
+        <p>生活</p>
+        <a href="./couponotoku/index.html">クーポンお得計算機</a>
+        <a href="./natureSounds/index.html">自然音（環境音）</a>
+        <a href="./nengouhenkan/index.html">年号変換</a>
+        <p>開発</p>
+        <a href="./dollarExtractor/index.html">$変数コピペツール</a>
+        <a href="./hashExtractor/index.html">カラーコード抽出機</a>
+        <a href="./fontsizeConverter/index.html">fontsize単位変換機</a>
+      </div>
+      <div class="overlay"></div>
     </div>
   </header>
 
@@ -95,6 +100,7 @@
      <a href="../copyright/index.html">コピーライト・プライバシーポリシー・免責事項</a>
   </footer>
 </div>
+  <script src="https://benrineko.com/headerFooter/script.js"></script>
 
 <!-- "section" 要素は、ドキュメント内のコンテンツのセクションを示すために使用されるものです。通常、ページの主要なセクションや章立てなど、重要なコンテンツの分割を示すために使用されます。---場合はセクションタグを使用する必要はありません。 -->
 <!-- partial -->
