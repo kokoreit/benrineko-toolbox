@@ -4,8 +4,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0;
   flex-direction: column;
-  font-family: "Helvetica Neue", sans-serif;
 }
 
 .container {
@@ -13,120 +13,129 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0;
   flex-direction: column;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  background-color: #fff;
   color: #444;
 }
 
-.ad-space1 .ad-space2 {
+.ad1-section, .ad2-section {
   min-width: 300px;
   height: 300px;
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0;
   flex-direction: column;
-  border: 1px solid black;
 }
-.ad-space1 .ad-space2 p {
+.ad1-section p, .ad2-section p {
   margin: 0 auto;
   padding: 0 auto;
+  text-align: center;
 }
 
 /*========= メイン ===============*/
 .title-space {
   display: flex;
-  flex-flow: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  align-content: space-between;
+  gap: 0px;
+  flex-direction: column;
 }
 .title-space h2 {
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  letter-spacing: normal;
   color: #0d47a1;
 }
 
 .input-space {
   padding: 20px;
   display: flex;
-  flex-wrap: wrap;
-  align-content: space-around;
+  justify-content: center;
   align-items: center;
   gap: 30px;
+  flex-wrap: wrap;
   background-color: #ffe6cc;
 }
 .input-space.calc-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 0px;
+  flex-direction: column;
 }
 .input-space #select {
-  font-size: 20px;
   margin: 2px;
   padding: 11px;
-  border-radius: 4px;
   border: none;
-  background-color: #b71c1c;
+  border-radius: 4px;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  letter-spacing: normal;
   color: #fff;
+  background-color: #b71c1c;
   cursor: pointer;
 }
 .input-space .calculate-button {
-  height: 60px;
-  font-size: 20px;
   margin: 5px;
   padding: 20px;
+  width: 100%;
+  height: 100%;
   border: none;
-  background-color: #0d47a1;
-  color: #fff;
   border-radius: 2px;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #fff;
+  background-color: #0d47a1;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .input-space label {
-  font-size: 21pt;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 2rem;
+  line-height: 1.8;
+  letter-spacing: normal;
 }
 .input-space input {
-  font-size: 21pt;
+  margin: 0 auto;
   height: 30px;
   width: 200px;
-  margin: 0 auto;
+  font-size: 2rem;
 }
 .input-space p {
-  font-size: 11pt;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  letter-spacing: normal;
 }
 
 .result-announce-space {
-  font-size: 21pt;
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 2rem;
+  line-height: 1.8;
+  letter-spacing: normal;
   color: #0d47a1;
 }
-.result-announce-space p {
-  position: relative;
-}
 .result-announce-space p::before {
-  content: "";
+  content: "▲";
+  color: #0d47a1;
   display: inline-block;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 20px;
-  border-color: transparent;
-  position: relative;
-  top: -20px;
-  border-top-color: #0d47a1;
+  content: "▼";
 }
 .result-announce-space p::after {
-  content: "";
+  content: "▲";
+  color: #0d47a1;
   display: inline-block;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 20px;
-  border-color: transparent;
-  position: relative;
-  top: -20px;
-  border-top-color: #0d47a1;
+  content: "▼";
 }
 
 .result-space {
@@ -134,34 +143,30 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 10px;
 }
 .result-space p {
   margin: 5px 0;
-  font-size: 14pt;
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: normal;
   color: #444;
 }
 .result-space p.yen {
-  font-size: 21pt;
+  padding: 0 10px;
+  font-size: 2rem;
   color: #b71c1c;
   font-weight: bold;
-  text-decoration: none;
   border-bottom: 5px solid #0d47a1;
   display: inline-block;
-  padding: 0 10px;
 }
 .result-space p.coupon, .result-space p.discount-limit {
   color: #b71c1c;
 }
 .result-space p.note {
-  font-size: 11pt;
+  font-size: 0.9rem;
   color: #b71c1c;
-}
-
-/*========= 個別 ===============*/
-.center {
-  text-align: center;
 }
