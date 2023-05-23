@@ -87,7 +87,6 @@ body {
   font-size: 1rem;
   line-height: 1.8;
   letter-spacing: normal;
-  width: 100%;
   color: #71a436;
 }
 
@@ -108,7 +107,6 @@ body {
   font-size: 1rem;
   line-height: 1.8;
   letter-spacing: normal;
-  width: 100%;
   color: #60546c;
 }
 
@@ -149,7 +147,7 @@ a.app-card:hover {
   grid-area: title;
   margin: auto 4px;
   font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1.8;
   letter-spacing: normal;
 }
@@ -184,6 +182,8 @@ a.app-card:hover {
 /*========= アイコン ===============*/
 .couponotoku-img {
   border-radius: 10px;
+  border: 2px solid #fff;
+  background-color: #fff;
   height: 48px;
   width: 48px;
   background-repeat: no-repeat;
@@ -199,6 +199,8 @@ a.app-card:hover {
 
 .nengouhenkan-img {
   border-radius: 10px;
+  border: 2px solid #fff;
+  background-color: #fff;
   height: 48px;
   width: 48px;
   background-repeat: no-repeat;
@@ -214,6 +216,8 @@ a.app-card:hover {
 
 .hashExtractor-img {
   border-radius: 10px;
+  border: 2px solid #fff;
+  background-color: #fff;
   height: 48px;
   width: 48px;
   background-repeat: no-repeat;
@@ -229,6 +233,8 @@ a.app-card:hover {
 
 .dollarExtractor-img {
   border-radius: 10px;
+  border: 2px solid #fff;
+  background-color: #fff;
   height: 48px;
   width: 48px;
   background-repeat: no-repeat;
@@ -244,6 +250,8 @@ a.app-card:hover {
 
 .fontsizeConverter-img {
   border-radius: 10px;
+  border: 2px solid #fff;
+  background-color: #fff;
   height: 48px;
   width: 48px;
   background-repeat: no-repeat;
@@ -259,6 +267,8 @@ a.app-card:hover {
 
 .natureSounds-img {
   border-radius: 10px;
+  border: 2px solid #fff;
+  background-color: #fff;
   height: 48px;
   width: 48px;
   background-repeat: no-repeat;
