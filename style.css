@@ -146,8 +146,9 @@ a.app-card:hover {
 .app-title {
   grid-area: title;
   margin: auto 4px;
+  padding: auto;
   font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 1.8;
   letter-spacing: normal;
 }
