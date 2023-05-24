@@ -60,7 +60,7 @@ body {
 }
 .title-space h1 {
   font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1.6;
   letter-spacing: 0.03em;
   text-align: center;
@@ -183,7 +183,7 @@ body {
 }
 .output-space p.announce {
   font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   line-height: 1.6;
   letter-spacing: normal;
   color: #0d47a1;
@@ -203,7 +203,7 @@ body {
 }
 .output-space #output-text {
   font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1.8;
   letter-spacing: normal;
   text-align: left;

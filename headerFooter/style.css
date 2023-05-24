@@ -88,9 +88,9 @@
   display: none;
   position: relative;
   top: 0;
-  left: auto;
-  bottom: auto;
   right: 0;
+  bottom: auto;
+  left: auto;
   background-color: #fff;
   color: #444;
 }
@@ -158,6 +158,3 @@
   font-size: 0.875rem;
   color: #444;
 }
-
-/*========= （調整のHTML用）===============*/
-/*コンパイル時はコメントアウトしてください*/
