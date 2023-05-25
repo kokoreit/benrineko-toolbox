@@ -16,19 +16,23 @@
 <body>
 <!-- partial:index.partial.html -->
 
+
 <div class="container">
   <header class="header">
     <a href="../index.html" class="logo-img"></a>
     <div class="header-menu">
-
+      <button id="header-menu-button">他のツール</button>
+      <div id="header-menu-contents">
+        <!--         JSでコンテンツ一覧を追加します。 -->
+      </div>
+      <div class="overlay"></div>
     </div>
   </header>
 
-
-  <div class="ad1-section">
-    <p class="center">ad</p>
+  <div class="ad1-space">
+    <p><small>ad</small></p>
     <p>
-      <!--     ここにad300を挿入 -->
+      <!--     ここ広告300を挿入 -->
       <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=monthlydealevent&banner=140Z9CGTRPHE20SMKXR2&f=ifr&linkID=772cdcd8b2e102d5ff6526c2cb13d0ea&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
     </p>
   </div>
@@ -47,8 +51,11 @@
     </div>
     <div class="m-main-section">
       <textarea id="input-text" placeholder="入力例：#FF0000は赤色、#FFA500はオレンジ色、#FFFF00は黄色、#008000はダークグリーン、#0000FFは青色、#800080は紫色、#FFC0CBはピンク色、そして#000000は黒色を表します。"></textarea>
-      <button id="generate-btn">▲ カラーコードを抽出 ▼</button>
-      <div id="color-buttons"></div>
+      <button id="generate-btn">カラーコードを抽出</button>
+      <div id="color-buttons">
+<!--         <button class="color-btn">#tst001</button>
+        <button class="color-btn">#tst002</button>  -->
+      </div>
       <div id="announcement">抽出で生成されたカラーボタンを押すとカラーコードをコピーできます。</div>
     </div>
     <p class="next">次のコーナー「文字色・背景色の確認」も是非ご活用ください。</p>
@@ -93,10 +100,10 @@
 
   </div>
 
-  <div class="ad2-section">
-    <p class="center">ad</p>
+  <div class="ad2-space">
+    <p><small>ad</small></p>
     <p>
-      <!--     ここにad300を挿入 -->
+      <!--     ここ広告300を挿入 -->
       <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=amazonbusiness&banner=0421ZB0Z601CQ8P3WXR2&f=ifr&linkID=64d9ca7c4836c943d4121af0ef4fe884&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
     </p>
   </div>
@@ -104,6 +111,7 @@
   <footer class="footer">
     <a href="../copyright/index.html">コピーライト・プライバシーポリシー・免責事項</a>
   </footer>
+  <script src="https://benrineko.com/headerFooter/script.js"></script>
 </div>
 <!-- partial -->
   <script  src="./script.js"></script>

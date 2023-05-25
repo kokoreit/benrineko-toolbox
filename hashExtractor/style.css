@@ -1,9 +1,27 @@
 @charset "UTF-8";
+/* used by template ver.4 */
 /*========= 枠組み・枠組みのポジション） ===============*/
 body {
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  /*bodyに設定すると便利です。*/
+}
+body button,
+body a,
+body [role=button],
+body [role=link],
+body [role=tab],
+body [role=menuitem],
+body [contenteditable=true],
+body [draggable=true] {
+  cursor: pointer;
 }
 
 .container {
@@ -13,9 +31,7 @@ body {
 @media (min-width: 1200px) {
   .container {
     display: grid;
-    grid-template-areas: "main simulation header" "main simulation ad1" "main simulation ad2" "main simulation footer";
-    grid-template-columns: 1fr 1fr 300px;
-    grid-template-rows: 50px 1fr 1fr 50px;
+    grid-template: "main simulation header" 50px "main simulation ad1" auto "main simulation ad2" auto "main simulation footer" 1fr/1fr 1fr auto;
     gap: 10px;
   }
 }
@@ -24,55 +40,57 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 0;
     flex-direction: column;
   }
-}
-.container p {
-  line-height: 1.8;
 }
 
 .header {
   grid-area: header;
 }
 
-.ad1-container {
+.ad1-space {
   grid-area: ad1;
-  min-width: 300px;
+  margin: 0;
+  padding: 0;
   height: 300px;
-  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0;
   flex-direction: column;
-  border: 1px solid black;
 }
-.ad1-container p {
+.ad1-space else {
+  width: 300px;
+}
+.ad1-space p {
   margin: 0 auto;
   padding: 0 auto;
+  text-align: center;
 }
 
-.ad2-container {
+.ad2-space {
   grid-area: ad2;
-  min-width: 300px;
+  margin: 0;
+  padding: 0;
   height: 300px;
-  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0;
   flex-direction: column;
-  border: 1px solid black;
 }
-.ad2-container p {
+.ad2-space else {
+  width: 300px;
+}
+.ad2-space p {
   margin: 0 auto;
   padding: 0 auto;
+  text-align: center;
 }
 
 .main-container {
   grid-area: main;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  border: 2px solid #0d47a1;
 }
 
 .simulation-container {
@@ -85,111 +103,154 @@ body {
 
 /*========= main ===============*/
 .main-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0;
   flex-direction: column;
   justify-content: start;
   text-align: center;
+  border: 2px solid #0d47a1;
 }
 
 .m-main-section {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   flex-direction: column;
 }
 .m-main-section textarea {
   display: block;
   margin-bottom: 10px;
-  width: 96%;
-  height: 200px;
   padding: 5px;
-  font-size: 16px;
-  line-height: 1.5;
-  border: 2px solid #337ab7;
-  border-radius: 3px;
+  height: 200px;
+  width: 96%;
   resize: vertical;
   overflow-wrap: break-word;
   overflow-y: auto;
-  box-sizing: border-box;
+  border-radius: 3px;
+  border: 2px solid #337ab7;
+}
+.m-main-section textarea else {
+  width: 200px;
 }
 .m-main-section textarea:focus {
-  border: 2px solid #1f4165;
-}
-.m-main-section button {
-  padding: 10px 20px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  outline: none;
-}
-.m-main-section button:hover {
-  background-color: #0069d9;
+  border-color: #1f4165;
 }
 .m-main-section #generate-btn {
-  background-color: #337ab7;
-  color: #fff;
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  margin-bottom: 10px;
+  padding: 10px 30px;
   border: none;
   border-radius: 10px;
   box-shadow: 5px 0 0 #1f4165, -5px 0 0 #1f4165;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  font-weight: bold;
+  color: #fff;
+  background-color: #337ab7;
   transition: box-shadow 0.2s ease-in-out;
+  position: relative;
+}
+.m-main-section #generate-btn:hover {
+  background-color: black;
+}
+.m-main-section #generate-btn::before {
+  display: inline-block;
+  content: "▲";
+  color: #fff;
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: 2%;
+}
+.m-main-section #generate-btn::after {
+  display: inline-block;
+  content: "▲";
+  content: "▼";
+  color: #fff;
+  position: absolute;
+  top: auto;
+  right: 2%;
+  bottom: auto;
+  left: auto;
+}
+.m-main-section #color-buttons {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 .m-main-section .color-btn {
   position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: baseline;
-  width: 100px;
+  padding-bottom: 0;
   height: 50px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  text-align: center;
-  font-size: 16px;
-  line-height: 50px;
-  color: #fff;
-  background-color: #007bff;
+  width: 100px;
   border: none;
-  border-radius: 3px;
-  cursor: pointer;
+  border-radius: 4px;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  justify-content: center;
+  text-align: center;
+  line-height: 64px;
+  color: #fff;
+  background-color: #0d47a1;
+}
+.m-main-section .color-btn else {
+  width: 50px;
+}
+.m-main-section .color-btn:hover, .m-main-section .color-btn:focus {
+  font-weight: bold;
 }
 .m-main-section .color-btn:after {
   content: "▼copied!!";
-  position: absolute;
-  top: -20%;
-  left: 50%;
-  transform: translateX(-50%);
   color: red;
+  position: absolute;
+  top: -38%;
+  right: 10px;
+  bottom: auto;
+  left: auto;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+  /*
+  ここでは背景をセットしません。
+  （高さが広がりすぎるため）
+  */
 }
 .m-main-section .color-btn:before {
   content: "";
-  position: absolute;
-  top: 4%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: white;
-  width: 80%;
-  height: 50%;
+  background-color: #fff;
+  margin: 0;
   padding: 0;
+  height: 40%;
+  width: 90%;
   border-radius: 3px;
+  position: absolute;
+  top: 3px;
+  right: auto;
+  bottom: auto;
+  left: 5px;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+  /*ここでは、微調整した「▼copied!!」の背景を表示します。*/
+}
+.m-main-section .color-btn:before else {
+  width: 40%;
 }
 .m-main-section .color-btn:focus:after, .m-main-section .color-btn:focus:before {
   opacity: 1;
 }
 
 .next {
-  font-size: 14pt;
   color: #007bff;
 }
 
@@ -199,13 +260,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0;
   flex-direction: column;
   justify-content: start;
   text-align: center;
 }
 .simulation-container input {
   width: 120px;
-  font-size: 16pt;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: normal;
 }
 
 .s-title-section {
@@ -227,45 +292,65 @@ body {
 }
 .s-input-size-section .text-size-slider {
   margin: 10px auto 4px auto;
-  width: 100%;
   height: 50px;
+  width: 100%;
+}
+.s-input-size-section .text-size-slider else {
+  width: 50px;
 }
 .s-input-size-section .text-size-button {
-  height: 40px;
-  width: 80px;
-  color: #fff;
-  background-color: #007bff;
-  font-size: 20px;
-  padding: 8px 16px;
+  padding: 20px 40px;
   border: none;
-  cursor: pointer;
+  border-radius: 10px;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 2rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  background-color: #fff;
+  color: #444;
+  position: relative;
 }
-.s-input-size-section .text-size-button:hover {
-  background-color: #004a99;
+.s-input-size-section .text-size-button#text-size-decrese-btn:hover {
+  color: #b71c1c;
 }
 .s-input-size-section .text-size-button#text-size-decrese-btn::before {
-  content: "◀";
-  margin-right: 4px;
+  display: inline-block;
+  content: "▲";
+  content: "▲";
+  transform: rotate(270deg);
+  padding-top: 0.08rem;
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: 0;
+}
+.s-input-size-section .text-size-button#text-size-increase-btn:hover {
+  color: #b71c1c;
 }
 .s-input-size-section .text-size-button#text-size-increase-btn::after {
-  content: "▶";
-  margin-left: 4px;
+  display: inline-block;
+  content: "▲";
+  content: "▼";
+  transform: rotate(270deg);
+  padding-top: 0.08rem;
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: auto;
+  left: auto;
 }
 
 .s-result-section {
+  margin: 0 5px;
   width: 100%;
   min-height: 300px;
-  margin: 0 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0;
 }
 .s-result-section p {
   margin: 0;
   padding: 0;
-}
-
-/*========= 個別 ===============*/
-.center {
-  text-align: center;
 }
