@@ -129,6 +129,10 @@ body [draggable=true] {
   padding: 5px;
   height: 200px;
   width: 96%;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: normal;
   resize: vertical;
   overflow-wrap: break-word;
   overflow-y: auto;
@@ -299,11 +303,11 @@ body [draggable=true] {
   width: 50px;
 }
 .s-input-size-section .text-size-button {
-  padding: 20px 40px;
+  padding: 20px 30px;
   border: none;
   border-radius: 10px;
   font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
-  font-size: 2rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   letter-spacing: normal;
   background-color: #fff;
