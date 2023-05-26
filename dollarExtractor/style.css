@@ -1,40 +1,45 @@
 @charset "UTF-8";
+/* used by benri-template ver.4.1 */
 /*========= 構成 ===============*/
 body {
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+}
+body button,
+body a,
+body [role=button],
+body [role=link],
+body [role=tab],
+body [role=menuitem],
+body [contenteditable=true],
+body [draggable=true] {
+  cursor: pointer;
 }
 
 .container {
-  padding: 20px;
-  font-family: "Helvetica Neue", sans-serif;
-  color: #444;
-  background-color: #fff;
-}
-
-.footer-org {
-  /*
-  このページは左詰なので
-  外部デザインではなく
-  このページ独自のデザインを採用します。
-  */
   display: flex;
-  justify-content: start;
-}
-.footer-org a {
-  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  align-items: start;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  background-color: #fff;
+  color: #444;
 }
 
 .title-section h1 {
   margin-bottom: 20px;
-}
-.title-section p {
-  font-size: 14pt;
-  line-height: 1.4;
-}
-.title-section .howto {
-  font-size: 14pt;
 }
 .title-section .decorated {
   font-weight: bold;
@@ -45,28 +50,22 @@ body {
   text-underline-offset: 4px;
 }
 .title-section .decorated.ampersand {
-  font-size: 21pt;
+  font-size: 2rem;
   color: #b71c1c;
 }
 .title-section .decorated.copy-paste {
-  font-size: 21pt;
+  font-size: 2rem;
   text-decoration: underline;
-  text-decoration-color: #007bff;
+  text-decoration-color: #0d47a1;
   text-decoration-thickness: 4px;
   text-underline-offset: 4px;
 }
 .title-section .decorated.extract {
   padding: 0 4px;
   color: #fff;
-  background-color: #007bff;
-  font-size: 14pt;
+  background-color: #0d47a1;
 }
 
-.ad-section {
-  margin: 10px 0;
-  padding-left: 10px;
-  height: 130px;
-}
 .ad-section p {
   margin: 0;
   padding: 0;
@@ -75,35 +74,75 @@ body {
 .main-section {
   min-height: 400px;
 }
-.main-section input {
+
+.footer {
+  /*このページは左詰なので上書きをします。*/
+  justify-content: start !important;
+}
+
+/*========= main-section ===============*/
+.input-contents {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  justify-content: start;
+  align-items: baseline;
+}
+.input-contents input {
   margin-bottom: 10px;
   padding: 5px;
-  font-size: 14pt;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: normal;
   border: 1px solid #b71c1c;
 }
-.main-section #extractButton {
+.input-contents #extractButton {
+  padding: 10px;
+  border: none;
+  border-radius: 0px;
   color: #fff;
   background-color: #b71c1c;
 }
-.main-section #message {
+.input-contents #message {
   color: #b71c1c;
   height: 30px;
 }
 
-button {
+.output-contents {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+}
+.output-contents button {
   padding: 10px;
-  background-color: #007bff;
-  font-size: 14pt;
-  color: #fff;
   border: none;
-  cursor: pointer;
+  border-radius: 2px;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #fff;
 }
-button:hover {
-  background-color: #0056b3;
+.output-contents button.constantButton {
+  background-color: #0d47a1;
 }
-button:active {
+.output-contents button.constantButton:hover, .output-contents button.constantButton:focus {
+  background-color: #2674ee;
+}
+.output-contents button.constantButton:active {
   background-color: #b71c1c;
 }
-button #buttonContainer {
-  margin-top: 20px;
+.output-contents button.commentButton {
+  border: none;
+  border-radius: 0px;
+  background-color: #b71c1c;
+  cursor: default;
 }

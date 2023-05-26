@@ -12,7 +12,12 @@ document.getElementById('extractButton').addEventListener('click', function() {
     constants.forEach(function(constant) {
       const button = document.createElement('button');
       button.textContent = constant;//既に抽出された定数の値であり、エスケープ処理は不要
-      button.className = 'constantButton';
+
+      if (constant.startsWith('/')) {
+        button.classList.add('commentButton');
+      } else {
+        button.classList.add('constantButton');
+      }
       buttonContainer.appendChild(button);
     });
     inputBox.value = '';
