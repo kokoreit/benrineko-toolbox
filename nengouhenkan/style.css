@@ -109,6 +109,7 @@ body [draggable=true] {
   align-items: center;
   gap: 0px;
   flex-direction: column;
+  text-align: center;
 }
 
 .input-contents {
