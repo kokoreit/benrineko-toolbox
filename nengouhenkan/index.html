@@ -16,81 +16,80 @@
 <body>
 <!-- partial:index.partial.html -->
 
+
 <div class="container">
   <header class="header">
     <a href="../index.html" class="logo-img"></a>
     <div class="header-menu">
-
+      <button id="header-menu-button">他のツール</button>
+      <div id="header-menu-contents">
+        <!--         JSでコンテンツ一覧を追加します。 -->
+      </div>
+      <div class="overlay"></div>
     </div>
   </header>
-
-  
-  
-  <div class="top-container">
-     <div class="ad1-section">
-    <p class="center">ad</p>
+  <div class="ad1-space">
+    <p><small>ad</small></p>
     <p>
-<!--       ここに広告を挿入 -->
+      <!--     ここ広告を挿入 -->
       <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=monthlydealevent&banner=140Z9CGTRPHE20SMKXR2&f=ifr&linkID=772cdcd8b2e102d5ff6526c2cb13d0ea&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+
     </p>
   </div>
-    
-    <div class="main-space">
-      <!-- ここにメインスペースの内容を記述 -->
-      <div class="title-content">
-        <h1>西暦から和暦年号変換</h1>
-        <h2>（和暦→西暦この年は何年？）</h2>
-      </div>
-      <div class="calc-content">
-        <div class="calc-input-space">
-          <select id="select">
-            <option selected value="seireki">
-              西暦
-            </option>
-            <option value="reiwa">
-              令和
-            </option>
-            <option value="heisei">
-              平成
-            </option>
-            <option value="showa">
-              昭和
-            </option>
-          </select> <input id="input" placeholder="例: 2023" type="text"> <button id="calculate">計算する</button>
-        </div>
-        <div class="calc-output-space">
-          <p id="result-announce">年号を入力して「計算する」を押してください。</p>
-          <p id="result-seireki"></p>
-          <p id="result-reiwa"></p>
-          <p id="result-heisei"></p>
-          <p id="result-showa"></p>
-        </div>
-        <div class="calc-supplement-space">
-          <pre>
+
+  <div class="main-space">
+    <div class="title-content">
+      <h1>西暦から和暦年号変換</h1>
+      <h2>（この年は何年？）</h2>
+      <p class="howto">「変換前の年（西暦・令和。平成・昭和）」を選択して「その数値」を入力してください。「計算する」ボタンを押すとそれぞれの年に換算された結果が表示されます。</p>
+    </div>
+    <div class="input-contents">
+      <select id="select">
+        <option selected value="seireki">
+          西暦
+        </option>
+        <option value="reiwa">
+          令和
+        </option>
+        <option value="heisei">
+          平成
+        </option>
+        <option value="showa">
+          昭和
+        </option>
+      </select>
+      <input id="input" placeholder="例: 2023" type="text"> 
+      <button id="calculate">計算する</button>
+    </div>
+    <div class="output-contents">
+      <p id="result-announce">年号を入力して「計算する」を押してください。</p>
+      <p id="result-seireki"></p>
+      <p id="result-reiwa"></p>
+      <p id="result-heisei"></p>
+      <p id="result-showa"></p>
+    </div>
+    <div class="supplement-contents">
+      <pre>
 令和：2019年5月1日〜
 平成：1989年1月8日〜2019年(H'31)4月30日
 昭和：1926年12月25日〜1989年(S'64)1月7日
   </pre>
-        </div>
-      </div>
     </div>
-    
-     <div class="ad2-section">
-    <p class="center">ad</p>
+  </div>
+
+  <div class="ad2-space">
+    <p><small>ad</small></p>
     <p>
-<!--       ここに広告を挿入 -->
+      <!--     ここ広告を挿入 -->
       <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=musicunlimited&banner=0RHX67K5Y1EYTCET8K82&f=ifr&linkID=1ca531af07ae56cede0d999ef250e529&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
     </p>
   </div>
-  </div>
-
-
-  <div class="bottom-container">
-    <footer class="footer">
-      <a href="../copyright/index.html">コピーライト・プライバシーポリシー・免責事項</a>
-    </footer>
-  </div>
+  <footer class="footer">
+    <a href="../copyright/index.html">コピーライト・プライバシーポリシー・免責事項</a>
+  </footer>
 </div>
+
+<script src="https://benrineko.com/headerFooter/script.js"></script>
 <!-- partial -->
   <script  src="./script.js"></script>
 
