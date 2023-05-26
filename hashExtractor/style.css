@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* used by template ver.4 */
+/* used by benri-template ver.4.1 */
 /*========= 枠組み・枠組みのポジション） ===============*/
 body {
   box-sizing: border-box;
@@ -11,7 +11,6 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   letter-spacing: normal;
-  /*bodyに設定すると便利です。*/
 }
 body button,
 body a,
@@ -142,7 +141,7 @@ body [draggable=true] {
 .m-main-section textarea else {
   width: 200px;
 }
-.m-main-section textarea:focus {
+.m-main-section textarea:hover, .m-main-section textarea:active, .m-main-section textarea:focus {
   border-color: #1f4165;
 }
 .m-main-section #generate-btn {
@@ -160,7 +159,7 @@ body [draggable=true] {
   transition: box-shadow 0.2s ease-in-out;
   position: relative;
 }
-.m-main-section #generate-btn:hover {
+.m-main-section #generate-btn:hover, .m-main-section #generate-btn:active, .m-main-section #generate-btn:focus {
   background-color: black;
 }
 .m-main-section #generate-btn::before {
@@ -212,7 +211,7 @@ body [draggable=true] {
 .m-main-section .color-btn else {
   width: 50px;
 }
-.m-main-section .color-btn:hover, .m-main-section .color-btn:focus {
+.m-main-section .color-btn:hover, .m-main-section .color-btn:active, .m-main-section .color-btn:focus {
   font-weight: bold;
 }
 .m-main-section .color-btn:after {
@@ -314,7 +313,7 @@ body [draggable=true] {
   color: #444;
   position: relative;
 }
-.s-input-size-section .text-size-button#text-size-decrese-btn:hover {
+.s-input-size-section .text-size-button#text-size-decrese-btn:hover, .s-input-size-section .text-size-button#text-size-decrese-btn:active, .s-input-size-section .text-size-button#text-size-decrese-btn:focus {
   color: #b71c1c;
 }
 .s-input-size-section .text-size-button#text-size-decrese-btn::before {
@@ -329,7 +328,7 @@ body [draggable=true] {
   bottom: auto;
   left: 0;
 }
-.s-input-size-section .text-size-button#text-size-increase-btn:hover {
+.s-input-size-section .text-size-button#text-size-increase-btn:hover, .s-input-size-section .text-size-button#text-size-increase-btn:active, .s-input-size-section .text-size-button#text-size-increase-btn:focus {
   color: #b71c1c;
 }
 .s-input-size-section .text-size-button#text-size-increase-btn::after {
