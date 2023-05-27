@@ -1,10 +1,26 @@
 @charset "UTF-8";
+/* used by benri-template ver.4.1 */
 /*========= 構成 ===============*/
 body {
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0px;
+  gap: 0;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+}
+body button,
+body a,
+body [role=button],
+body [role=link],
+body [role=tab],
+body [role=menuitem],
+body [contenteditable=true],
+body [draggable=true] {
+  cursor: pointer;
 }
 
 .container {
@@ -23,6 +39,7 @@ body {
   color: #444;
 }
 
+/*========= .container  ===============*/
 .header-menu nav {
   display: flex;
   justify-content: center;
@@ -42,13 +59,15 @@ body {
   background-color: #fff;
   color: #444;
 }
+.header-menu nav button else {
+  width: 40px;
+}
 @media screen and (min-width: 1200px) {
   .header-menu nav button {
     display: none;
   }
 }
-.header-menu nav button:hover {
-  cursor: pointer;
+.header-menu nav button:hover, .header-menu nav button:active, .header-menu nav button:focus {
   background-color: #444;
   color: #fff;
 }
@@ -61,7 +80,7 @@ body {
   flex-direction: column;
 }
 
-/*========= main ===============*/
+/*========= .main-section ===============*/
 .title-content {
   display: flex;
   justify-content: center;
@@ -70,7 +89,7 @@ body {
   flex-direction: column;
 }
 
-#life {
+#life-content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,7 +99,7 @@ body {
   border: 2px solid #8bc34a;
   background-color: #f3f9ed;
 }
-#life h2 {
+#life-content h2 {
   width: 100%;
   margin: 2px auto 0;
   font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
@@ -90,7 +109,7 @@ body {
   color: #71a436;
 }
 
-#develop {
+#develop-content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,7 +119,7 @@ body {
   border: 2px solid #7a6a89;
   background-color: #f2f0f3;
 }
-#develop h2 {
+#develop-content h2 {
   width: 100%;
   margin: 2px auto 0;
   font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
@@ -133,7 +152,7 @@ a.app-card {
     width: 100%;
   }
 }
-a.app-card:hover {
+a.app-card:hover, a.app-card:active, a.app-card:focus {
   background-color: #444;
   color: #fff;
   /*
@@ -148,7 +167,7 @@ a.app-card:hover {
   margin: auto 4px;
   padding: auto;
   font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
-  font-size: 1.8rem;
+  font-size: 2rem;
   line-height: 1.8;
   letter-spacing: normal;
 }
