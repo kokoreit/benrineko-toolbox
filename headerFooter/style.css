@@ -81,7 +81,6 @@
 .header-menu #header-menu-button::after {
   display: inline-block;
   content: "▲";
-  content: "▼";
   color: #444;
 }
 .header-menu #header-menu-button.header-menu-showed {
@@ -92,6 +91,7 @@
 .header-menu #header-menu-button.header-menu-showed::after {
   display: inline-block;
   content: "▲";
+  content: "▼";
   color: #fff;
 }
 @keyframes menu-open-animation {
