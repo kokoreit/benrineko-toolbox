@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* used by benri-template ver.4.1 */
+/* used by benri-template ver.5 */
 /*========= 構成 ===============*/
 body {
   box-sizing: border-box;
@@ -30,10 +30,6 @@ body [draggable=true] {
   align-items: center;
   gap: 10px;
   flex-direction: column;
-  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  letter-spacing: normal;
   text-align: center;
   background-color: #fff;
   color: #444;
@@ -142,7 +138,7 @@ a.app-card {
   border-radius: 10px;
   display: grid;
   grid-template: "img title" 30px "description description" auto/auto 1fr;
-  gap: 10px;
+  gap: 2px;
   text-align: left;
   background-color: #fff;
   color: #444;
@@ -167,8 +163,8 @@ a.app-card:hover, a.app-card:active, a.app-card:focus {
   margin: auto 4px;
   padding: auto;
   font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
-  font-size: 1.8rem;
-  line-height: 1.8;
+  font-size: 1.6rem;
+  line-height: 1.7;
   letter-spacing: normal;
 }
 
@@ -204,11 +200,11 @@ a.app-card:hover, a.app-card:active, a.app-card:focus {
   border-radius: 10px;
   border: 2px solid #fff;
   background-color: #fff;
-  height: 48px;
-  width: 48px;
+  height: 42px;
+  width: 42px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 48px 48px;
+  background-size: 42px 42px;
   background-image: url(https://benrineko.com/couponotoku/favicon.ico);
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
@@ -221,11 +217,11 @@ a.app-card:hover, a.app-card:active, a.app-card:focus {
   border-radius: 10px;
   border: 2px solid #fff;
   background-color: #fff;
-  height: 48px;
-  width: 48px;
+  height: 42px;
+  width: 42px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 48px 48px;
+  background-size: 42px 42px;
   background-image: url(https://benrineko.com/nengouhenkan/favicon.ico);
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
@@ -238,11 +234,11 @@ a.app-card:hover, a.app-card:active, a.app-card:focus {
   border-radius: 10px;
   border: 2px solid #fff;
   background-color: #fff;
-  height: 48px;
-  width: 48px;
+  height: 42px;
+  width: 42px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 48px 48px;
+  background-size: 42px 42px;
   background-image: url(https://benrineko.com/hashExtractor/favicon.ico);
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
@@ -255,11 +251,11 @@ a.app-card:hover, a.app-card:active, a.app-card:focus {
   border-radius: 10px;
   border: 2px solid #fff;
   background-color: #fff;
-  height: 48px;
-  width: 48px;
+  height: 42px;
+  width: 42px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 48px 48px;
+  background-size: 42px 42px;
   background-image: url(https://benrineko.com/dollarExtractor/favicon.ico);
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
@@ -272,11 +268,11 @@ a.app-card:hover, a.app-card:active, a.app-card:focus {
   border-radius: 10px;
   border: 2px solid #fff;
   background-color: #fff;
-  height: 48px;
-  width: 48px;
+  height: 42px;
+  width: 42px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 48px 48px;
+  background-size: 42px 42px;
   background-image: url(https://benrineko.com/fontsizeConverter/favicon.ico);
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
@@ -289,11 +285,11 @@ a.app-card:hover, a.app-card:active, a.app-card:focus {
   border-radius: 10px;
   border: 2px solid #fff;
   background-color: #fff;
-  height: 48px;
-  width: 48px;
+  height: 42px;
+  width: 42px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 48px 48px;
+  background-size: 42px 42px;
   background-image: url(https://benrineko.com/natureSounds/favicon.ico);
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
