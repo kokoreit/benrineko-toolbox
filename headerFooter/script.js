@@ -23,21 +23,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /*========= ヘッダーの動作（HTMLに記述してある要素を使う） ===============*/
 headerMenuButton.addEventListener("click", function () {
-  headerMenuContents.classList.toggle("show");
+  headerMenuContents.classList.toggle("open");
   updateMenuState();
 });
 
 overlay.addEventListener("click", function () {
-  headerMenuContents.classList.remove("show");
+  headerMenuContents.classList.remove("open");
   updateMenuState();
 });
 
 function updateMenuState() {
-  if (headerMenuContents.classList.contains("show")) {
+  if (headerMenuContents.classList.contains("open")) {
+    headerMenuContents.classList.remove("close");
     headerMenuButton.classList.add("header-menu-showed");
     overlay.style.display = "block";
   } else {
+    headerMenuContents.classList.add("close");
     headerMenuButton.classList.remove("header-menu-showed");
     overlay.style.display = "none";
   }
+  /*
+  【このタイミングでクローズを付与する理由】
+  トグルだと反対処理にならない為。
+  （ロード後にクローズを付与するとアニメーションがつくから却下。）
+  */
 }
