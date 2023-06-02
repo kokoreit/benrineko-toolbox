@@ -27,15 +27,37 @@ document.querySelectorAll(".input-before-contents, .input-after-contents, .outpu
     removeCalcedClass();
   });
 });
-//時間の入力
+// 入力が始まったら内容を選択状態にする処理
+function handleInputFocus(event) {
+  var input = event.target;
+  input.select();
+}
+// 入力が確定したタイミングで0を挿入する処理
+function handleInputBlur(event) {
+  var input = event.target;
+  if (input.value === "") {
+    input.value = "0";
+  }
+}
+// 時間の入力を処理する共通関数
 function handleTimeInputEvent(event) {
-  var input = event.target.value;
-  var numbersOnly = input.replace(/[^0-9]/g, "");
-  event.target.value = numbersOnly; // エスケープ処理
+  var input = event.target;
+  var numbersOnly = input.value.replace(/[^0-9]/g, "");
+  input.value = numbersOnly; // エスケープ処理
   removeCalcedClass(); // .calced を削除する
 }
-document.getElementById("before-time-minutes").addEventListener("input", handleTimeInputEvent);
-document.getElementById("before-time-seconds").addEventListener("input", handleTimeInputEvent);
+
+const minutesInput = document.getElementById("before-time-minutes");
+const secondsInput = document.getElementById("before-time-seconds");
+
+minutesInput.addEventListener("input", handleTimeInputEvent);
+minutesInput.addEventListener("focus", handleInputFocus);
+minutesInput.addEventListener("blur", handleInputBlur);
+
+secondsInput.addEventListener("input", handleTimeInputEvent);
+secondsInput.addEventListener("focus", handleInputFocus);
+secondsInput.addEventListener("blur", handleInputBlur);
+
 
 /*========= クラスの付与と削除 ===============*/
 function addCalcedClass(){
