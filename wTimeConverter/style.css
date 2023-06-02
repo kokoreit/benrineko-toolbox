@@ -1,0 +1,278 @@
+@charset "UTF-8";
+/* used by benri-template ver.5.1 */
+/*========= 構成 ===============*/
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+}
+body button,
+body a,
+body [role=button],
+body [role=link],
+body [role=tab],
+body [role=menuitem],
+body [contenteditable=true],
+body [draggable=true] {
+  cursor: pointer;
+}
+
+.container {
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: px;
+  flex-direction: column;
+}
+@media (min-width: 1200px) {
+  .container {
+    display: grid;
+    grid-template: "main header" 50px "main ad1" auto "main ad2" auto "main footer" 1fr/1fr auto;
+    gap: 10px;
+  }
+}
+.container .header {
+  grid-area: header;
+}
+.container .ad1-space {
+  grid-area: ad1;
+  margin: 0;
+  padding: 0;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-direction: column;
+}
+.container .ad1-space else {
+  width: 300px;
+}
+.container .ad1-space p {
+  margin: 0 auto;
+  padding: 0 auto;
+  text-align: center;
+}
+.container .main-space {
+  grid-area: main;
+}
+.container .ad2-space {
+  grid-area: ad2;
+  margin: 0;
+  padding: 0;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-direction: column;
+}
+.container .ad2-space else {
+  width: 300px;
+}
+.container .ad2-space p {
+  margin: 0 auto;
+  padding: 0 auto;
+  text-align: center;
+}
+.container .footer {
+  grid-area: footer;
+}
+
+/*========= main-space ===============*/
+.main-space {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  text-align: center;
+}
+.main-space p {
+  text-align-last: left;
+}
+
+/*========= .input-section ===============*/
+.input-section {
+  min-height: 100px;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  align-items: start;
+}
+.input-section .input-before-contents {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  justify-content: start;
+  flex-wrap: wrap;
+  border: none;
+  border-radius: 10px;
+  background-color: #b4cff9;
+  font-weight: bold;
+}
+.input-section .input-before-contents select {
+  border: none;
+  border-radius: 2px;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  background-color: #444;
+  color: #fff;
+}
+.input-section .input-before-contents select:hover, .input-section .input-before-contents select:active, .input-section .input-before-contents select:focus {
+  background-color: #0d47a1;
+}
+.input-section .input-before-contents input {
+  width: 50px;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  letter-spacing: 2;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+}
+.input-section .input-before-contents input:hover, .input-section .input-before-contents input:active, .input-section .input-before-contents input:focus {
+  background-color: #0d47a1;
+}
+.input-section .input-after-contents {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  justify-content: start;
+  flex-wrap: wrap;
+  border: none;
+  border-radius: 10px;
+  background-color: #f9d9d9;
+  font-weight: bold;
+}
+.input-section .input-after-contents select {
+  border: none;
+  border-radius: 2px;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  background-color: #444;
+  color: #fff;
+}
+.input-section .input-after-contents select:hover, .input-section .input-after-contents select:active, .input-section .input-after-contents select:focus {
+  background-color: #b71c1c;
+}
+.input-section .input-after-contents input {
+  width: 50px;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  letter-spacing: 2;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+}
+.input-section .input-after-contents input:hover, .input-section .input-after-contents input:active, .input-section .input-after-contents input:focus {
+  background-color: #b71c1c;
+}
+.input-section .calculate-contents {
+  margin: 25px 0;
+  width: 100%;
+}
+.input-section .calculate-contents #calculate-button {
+  width: 100%;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+}
+
+/*========= .output-section ===============*/
+.output-section {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.8;
+  letter-spacing: normal;
+}
+.output-section .output-before-contents {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-direction: column;
+  border: none;
+  border-radius: 10px;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1.8rem;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #fff;
+}
+.output-section .output-before-contents else {
+  background-color: #fff;
+}
+.output-section .output-before-contents.calced {
+  color: #0d47a1;
+  background-color: #b4cff9;
+}
+.output-section .output-before-contents.calced else {
+  background-color: #0d47a1;
+}
+.output-section .output-after-contents {
+  flex: 2;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-direction: column;
+  border: none;
+  border-radius: 10px;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1.8rem;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #fff;
+}
+.output-section .output-after-contents else {
+  background-color: #fff;
+}
+.output-section .output-after-contents.calced {
+  color: #b71c1c;
+  background-color: #f9d9d9;
+}
+.output-section .output-after-contents.calced else {
+  background-color: #b71c1c;
+}
+
+.note {
+  color: #b71c1c;
+}

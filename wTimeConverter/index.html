@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja" >
+    <head>
+      <meta charset="UTF-8">
+      <title>電子レンジの温め時間計算ツール | ワットW時間変換 | W時間計算機</title>
+      <meta name="description" content="電子レンジの温め時間を指定のワットWとして再計算するツールです。買ってきた食品の温め時間とご家庭の電子レンジのワット数が異なる場合や、ネットのレンチンのレシピ仕様をご家庭のWに変更したい時などに活躍します。元々の温めの電力（W）を選んで時間（分・秒）を指定し、お使いの電子レンジの温めの電力（W）を選択して「計算」ボタンを押してください。このタイム計算ツールは単純な計算によるものなので、異常を感じた場合は即座に電子レンジを停止してください。">
+      <meta name="keywords" content="電子レンジ, 温め時間計算, ワット, W時間, 変換ツール, 時間変換, 時間計算, 再計算, チン, レンチン, W, 変換, 温め時間, 計算, 変更, 分, タイム計算, 計算ツール, レンジ, 計算機">
+      <meta name="author" content="benrineko.com">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="./favicon.ico">
+        <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="./android-chrome-192x192.png">
+      <link rel="stylesheet" href="../headerFooter/style.css">
+      <link rel="stylesheet" href="./style.css">
+    </head>
+<body>
+<!-- partial:index.partial.html -->
+
+<div class="container">
+  <header class="header">
+    <a href="../index.html" class="logo-img"></a>
+    <div class="header-menu">
+      <button id="header-menu-button">他のツール</button>
+      <div id="header-menu-contents">
+        <!--         JSでコンテンツ一覧を追加します。 -->
+      </div>
+      <div class="overlay"></div>
+    </div>
+  </header>
+  <div class="ad1-space">
+    <p><small>ad</small></p>
+    <p>
+      <!--     ここ広告を挿入 -->
+<iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=monthlydealevent&banner=0NXQES4A9F7PTXNS6QG2&f=ifr&linkID=488a74ac6722e65cf25e2fc9d43b2ce7&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+    </p>
+  </div>
+  <div class="main-space">
+    <div class="title-section">
+      <h1>電子レンジの温め時間計算<br>ワットW時間変換ツール</h1>
+      <p class="description">
+        電子レンジの温め時間を指定のワット（W)に直して計算し直します。
+      </p>
+      <p class="howto">
+        元々の温めの電力（W）を選んで時間（分・秒）をご指定ください。次に、お使いの電子レンジの温めの電力（W）をご指定のうえ、「計算」を押してください。
+      </p>
+    </div>
+    <div class="input-section">
+      <div class="input-before-contents">
+        <label for="before-power">計算前の出力</label><br>
+        <div class="w-m-s">
+        <select id="before-power">
+          <option value="400">400 W</option>
+          <option value="500">500 W</option>
+          <option value="600" selected>600 W</option>
+          <option value="700">700 W</option>
+          <option value="800">800 W</option>
+          <option value="900">900 W</option>
+          <option value="1000">1000 W</option>
+          <option value="1200">1200 W</option>
+          <option value="1500">1500 W</option>
+        </select>
+          <input type="number" id="before-time-minutes" min="0" max="59" step="1" value="0">
+          <label for="before-time-minutes">分</label>
+          <input type="number" id="before-time-seconds" min="0" max="59" step="10" value="0">
+          <label for="before-time-seconds">秒</label>
+        </div>
+      </div>
+      <div class="input-after-contents">
+        <label for="after-power">計算後の出力</label>
+        <select id="after-power">
+          <option value="400">400 W</option>
+          <option value="500">500 W</option>
+          <option value="600">600 W</option>
+          <option value="700">700 W</option>
+          <option value="800">800 W</option>
+          <option value="900" selected>900 W</option>
+          <option value="1000">1000 W</option>
+          <option value="1200">1200 W</option>
+          <option value="1500">1500 W</option>
+        </select>
+      </div>
+      <div class="calculate-contents">
+        <button id="calculate-button">計算</button>
+      </div>
+    </div>
+    <div class="output-section">
+      <div class="output-before-contents">
+        <p class="output-before-title">計算前</p>
+        <div class="w-time">
+          <p class="output-before-w"></p>
+          <p class="output-before-time">元の時間</p>
+        </div>
+      </div>
+      <div class="output-after-contents">
+        <p class="output-after-title">計算後</p>
+        <div class="w-time">
+          <p class="output-after-w">計算結果</p>
+          <p class="output-after-time"></p>
+        </div>
+      </div>
+    </div>
+    <p class="note">
+      ※<br>結果は単純計算によるものなので、それぞれの調理器と素材や気候に適切だとは限りません。<br>異常を感じたらすぐに電子レンジを停止してください。
+    </p>
+
+
+  </div>
+  <div class="ad2-space">
+    <p><small>ad</small></p>
+    <p>
+      <!--     ここ広告を挿入 -->
+<iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=musicunlimited&banner=0RHX67K5Y1EYTCET8K82&f=ifr&linkID=1ca531af07ae56cede0d999ef250e529&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+    </p>
+  </div>
+  <footer class="footer">
+    <a href="../copyright/index.html">コピーライト・プライバシーポリシー・免責事項</a>
+  </footer>
+</div>
+
+<script src="../headerFooter/script.js"></script>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
