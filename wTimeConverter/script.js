@@ -30,7 +30,7 @@ document.querySelectorAll(".input-before-contents, .input-after-contents, .outpu
 // 入力が始まったら内容を選択状態にする処理
 function handleInputFocus(event) {
   var input = event.target;
-  input.select();
+  input.value = ""; // テキストをクリア
 }
 // 入力が確定したタイミングで0を挿入する処理
 function handleInputBlur(event) {
@@ -45,6 +45,7 @@ function handleTimeInputEvent(event) {
   var numbersOnly = input.value.replace(/[^0-9]/g, "");
   input.value = numbersOnly; // エスケープ処理
   removeCalcedClass(); // .calced を削除する
+  
 }
 
 const minutesInput = document.getElementById("before-time-minutes");
