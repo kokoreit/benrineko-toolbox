@@ -5,6 +5,7 @@ const overlay = document.querySelector(".overlay");
 /*========= ヘッダー用のメニューをコードから追加===============*/
 var headerMenuTemplate = `
         <p>生活</p>
+        <a href="../wTimeConverter/index.html">電子レンジw時間変換</a>
         <a href="../couponotoku/index.html">クーポンお得計算機</a>
         <a href="../natureSounds/index.html">自然音（環境音）</a>
         <a href="../nengouhenkan/index.html">年号変換</a>

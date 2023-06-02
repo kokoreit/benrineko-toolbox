@@ -164,7 +164,7 @@ a.app-card:hover, a.app-card:active, a.app-card:focus {
   padding: auto;
   font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
   font-size: 1.6rem;
-  line-height: 1.7;
+  line-height: 1.75;
   letter-spacing: normal;
 }
 
@@ -196,6 +196,23 @@ a.app-card:hover, a.app-card:active, a.app-card:focus {
 }
 
 /*========= アイコン ===============*/
+.wTimeConverter-img {
+  border-radius: 10px;
+  border: 2px solid #fff;
+  background-color: #fff;
+  height: 42px;
+  width: 42px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 42px 42px;
+  background-image: url(https://benrineko.com/wTimeConverter/favicon.ico);
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  .wTimeConverter-img {
+    background-image: url(https://benrineko.com/wTimeConverter/apple-touch-icon.png);
+  }
+}
+
 .couponotoku-img {
   border-radius: 10px;
   border: 2px solid #fff;
