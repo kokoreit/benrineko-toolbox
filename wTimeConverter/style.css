@@ -262,6 +262,8 @@ body [draggable=true] {
   font-size: 1.8rem;
   line-height: 1.8;
   letter-spacing: normal;
+  font-weight: bold;
+  text-align: center;
 }
 .output-section .output-before-contents {
   padding: 10px;
