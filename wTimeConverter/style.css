@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* used by benri-template ver.5.1 */
+/* uses benri-template ver.5.2 */
 /*========= 構成 ===============*/
 body {
   display: flex;
@@ -129,6 +129,10 @@ body [draggable=true] {
   font-weight: bold;
 }
 .input-section .input-before-contents select {
+  display: none;
+}
+.input-section .input-before-contents select.loaded {
+  display: inline;
   border: none;
   border-radius: 2px;
   font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
@@ -138,21 +142,25 @@ body [draggable=true] {
   background-color: #444;
   color: #fff;
 }
-.input-section .input-before-contents select:hover, .input-section .input-before-contents select:active, .input-section .input-before-contents select:focus {
+.input-section .input-before-contents select.loaded:hover, .input-section .input-before-contents select.loaded:active, .input-section .input-before-contents select.loaded:focus {
   background-color: #0d47a1;
 }
 .input-section .input-before-contents input {
+  display: none;
+}
+.input-section .input-before-contents input.loaded {
+  display: inline;
   width: 50px;
+  border: none;
+  border-radius: 2px;
   font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
   font-size: 1.3rem;
   line-height: 1.6;
-  letter-spacing: 2;
+  letter-spacing: normal;
   background-color: #444;
   color: #fff;
-  border: none;
-  border-radius: 2px;
 }
-.input-section .input-before-contents input:hover, .input-section .input-before-contents input:active, .input-section .input-before-contents input:focus {
+.input-section .input-before-contents input.loaded:hover, .input-section .input-before-contents input.loaded:active, .input-section .input-before-contents input.loaded:focus {
   background-color: #0d47a1;
 }
 .input-section .input-after-contents {
@@ -171,6 +179,10 @@ body [draggable=true] {
   font-weight: bold;
 }
 .input-section .input-after-contents select {
+  display: none;
+}
+.input-section .input-after-contents select.loaded {
+  display: inline;
   border: none;
   border-radius: 2px;
   font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
@@ -180,33 +192,63 @@ body [draggable=true] {
   background-color: #444;
   color: #fff;
 }
-.input-section .input-after-contents select:hover, .input-section .input-after-contents select:active, .input-section .input-after-contents select:focus {
+.input-section .input-after-contents select.loaded:hover, .input-section .input-after-contents select.loaded:active, .input-section .input-after-contents select.loaded:focus {
   background-color: #b71c1c;
 }
 .input-section .input-after-contents input {
+  display: none;
+}
+.input-section .input-after-contents input.loaded {
+  display: inline;
   width: 50px;
+  border: none;
+  border-radius: 2px;
   font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
   font-size: 1.3rem;
   line-height: 1.6;
-  letter-spacing: 2;
+  letter-spacing: normal;
   background-color: #444;
   color: #fff;
-  border: none;
-  border-radius: 2px;
 }
-.input-section .input-after-contents input:hover, .input-section .input-after-contents input:active, .input-section .input-after-contents input:focus {
+.input-section .input-after-contents input.loaded:hover, .input-section .input-after-contents input.loaded:active, .input-section .input-after-contents input.loaded:focus {
   background-color: #b71c1c;
 }
 .input-section .calculate-contents {
   margin: 25px 0;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  flex-direction: column;
 }
 .input-section .calculate-contents #calculate-button {
+  display: none;
+}
+.input-section .calculate-contents #calculate-button.loaded {
+  display: block;
+  padding: 10px 0;
   width: 100%;
+  border: none;
+  border-radius: 20px;
   font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
   font-size: 1.3rem;
   line-height: 1.6;
   letter-spacing: normal;
+  background-color: #444;
+  color: #fff;
+}
+.input-section .calculate-contents #calculate-button.loaded:hover, .input-section .calculate-contents #calculate-button.loaded:active, .input-section .calculate-contents #calculate-button.loaded:focus {
+  background-color: #b71c1c;
+}
+.input-section .calculate-contents #calculate-button.loaded::before {
+  display: inline-block;
+  content: "▲";
+}
+.input-section .calculate-contents #calculate-button.loaded::after {
+  display: inline-block;
+  content: "▲";
+  content: "▼";
 }
 
 /*========= .output-section ===============*/
