@@ -10,7 +10,8 @@ function selectRadioButton(selectedButton) {
   selectedLabel.classList.add('selected');
 
   // 選択されたラジオボタンに応じた背景画像を設定する処理
-  const container = document.querySelector('.container');
+  // const container = document.querySelector('.container');
+  const container = document.querySelector('.bkImg');
   container.classList.remove('forestBkImg', 'riverBkImg', 'tomtitBkImg');
   container.classList.add(`${id}BkImg`);
 
@@ -58,8 +59,27 @@ window.addEventListener('load', function() {
 });
 
 /*
-【記憶再生は無駄】
+【ローカルストレージ却下の理由】
 ほとんどのブラウザはオーディオの自動再生を無効に設定されているため、
-ユーザーが明示的にアクション（ボタンをクリック）をする必要がある。
-（ロードイベントやスクロールアクションも無効。）
+ユーザーが明示的にアクション（ボタンをクリック）をする必要があります。
+（ロードイベントやスクロールアクションも同様に無効です。）
 */
+
+
+let bkImg = document.querySelector('.bkImg');
+let initialOffset = bkImg.offsetTop;
+let initialPosition = bkImg.style.position;
+let initialTop = bkImg.style.top;
+
+function updatePosition() {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  bkImg.style.top = (initialOffset - scrollTop * 0.2) + 'px';
+}
+function resetPosition() {
+  bkImg.style.position = initialPosition;
+  bkImg.style.top = initialTop;
+  initialOffset = bkImg.offsetTop;
+  updatePosition();
+}
+window.addEventListener('scroll', updatePosition);
+window.addEventListener('resize', resetPosition);//windowサイズが変化した時
