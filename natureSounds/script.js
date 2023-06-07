@@ -1,3 +1,4 @@
+/*========= ラジオボタンの処理 ===============*/
 function selectRadioButton(selectedButton) {
   const id = selectedButton.getAttribute('id');
 
@@ -38,8 +39,6 @@ function selectRadioButton(selectedButton) {
     */
   }
 }
-
-
 // ラジオボタンが選択されたときに、ラジオボタンとそのラベルのスタイルを変更する
 const radioButtons = document.querySelectorAll('input[type="radio"]');
 radioButtons.forEach(button => {
@@ -47,7 +46,6 @@ radioButtons.forEach(button => {
     selectRadioButton(button);
   });
 });
-
 // 初期読み込み時に、ラジオボタンとそのラベルのスタイルを設定する
 window.addEventListener('load', function() {
   const labels = document.querySelectorAll('label');
@@ -57,7 +55,6 @@ window.addEventListener('load', function() {
   const noneRadioButton = document.getElementById('none');
   selectRadioButton(noneRadioButton);
 });
-
 /*
 【ローカルストレージ却下の理由】
 ほとんどのブラウザはオーディオの自動再生を無効に設定されているため、
@@ -65,21 +62,35 @@ window.addEventListener('load', function() {
 （ロードイベントやスクロールアクションも同様に無効です。）
 */
 
-
-let bkImg = document.querySelector('.bkImg');
-let initialOffset = bkImg.offsetTop;
-let initialPosition = bkImg.style.position;
-let initialTop = bkImg.style.top;
+/*========= 背景イメージの処理 ===============*/
+const bkImg = document.querySelector('.bkImg');
+const initialOffset = bkImg.offsetTop;
+const initialPosition = bkImg.style.position;
+const initialTop = bkImg.style.top;
 
 function updatePosition() {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  bkImg.style.top = (initialOffset - scrollTop * 0.2) + 'px';
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  bkImg.style.transform = `translateY(${initialOffset - scrollTop * 0.3}px)`;
 }
 function resetPosition() {
   bkImg.style.position = initialPosition;
-  bkImg.style.top = initialTop;
-  initialOffset = bkImg.offsetTop;
+  bkImg.style.transform = 'none'; // transformを初期状態に戻す
   updatePosition();
 }
+
 window.addEventListener('scroll', updatePosition);
 window.addEventListener('resize', resetPosition);//windowサイズが変化した時
+
+/*
+topプロパティではなくtransformプロパティを使用すると、アニメーションがスムーズになる主な理由は以下の通りです。
+
+    GPU アクセラレーションの活用: transform プロパティを使用することで、ブラウザはGPUを使用してアニメーションを処理します。GPUは通常、ハードウェアアクセラレーションをサポートしており、より効率的にアニメーションを描画することができます。その結果、スムーズな動きが実現されます。
+
+    合成レイヤーの使用: transform プロパティを使用すると、ブラウザは要素を独立した合成レイヤーに配置します。合成レイヤーはハードウェアアクセラレーションによって処理され、他の要素との重なりやアニメーションの描画を最適化します。これにより、背景画像の移動がスムーズになります。
+
+一方で、top プロパティを使用すると、ブラウザは要素の位置を変更するためにレイアウト計算を行います。レイアウト計算は相対的にコストが高く、ブラウザのパフォーマンスに影響を与える可能性があります。そのため、アニメーションがスムーズになりにくい場合があります。
+
+加えて、transform プロパティを使用する場合は、translateY() 関数を使用して垂直方向の移動を行っています。translateY() 関数はハードウェアアクセラレーションによる最適化を受けやすく、高速でスムーズなアニメーションを実現できます。
+
+したがって、transform プロパティを使用することで、GPU アクセラレーションや合成レイヤーの活用により、スムーズなアニメーションが得られるのです。
+*/

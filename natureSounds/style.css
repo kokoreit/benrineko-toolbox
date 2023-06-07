@@ -30,7 +30,6 @@
 }
 /*========= 構成 ===============*/
 body {
-  z-index: -2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,6 +40,7 @@ body {
   letter-spacing: normal;
   background-color: #444;
   color: #fff;
+  z-index: -2;
 }
 body button,
 body a,
@@ -54,7 +54,7 @@ body [draggable=true] {
 }
 
 .container {
-  padding: 10px;
+  padding: 5px;
   width: 700px;
   display: flex;
   justify-content: center;
@@ -66,21 +66,21 @@ body [draggable=true] {
   line-height: 1.8;
   letter-spacing: 0.2rem;
   text-align: center;
+  overflow: hidden;
+  position: relative;
+  /*absoluteの対象*/
 }
-
-.bkImg {
-  z-index: -1;
-  position: fixed;
+.container .bkImg {
+  position: absolute;
   top: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-  margin: 0;
-  padding: 0;
-  height: 200%;
-  width: 702px;
+  left: 0;
+  padding: 5px;
+  height: 120%;
+  width: 700px;
+  z-index: -1;
 }
-.bkImg else {
-  width: 200%;
+.container .bkImg else {
+  width: 120%;
 }
 
 .main-space {
