@@ -133,12 +133,17 @@ function cleanup() {
   window.removeEventListener('resize', resetPosition);
   window.removeEventListener('beforeunload', cleanup);
 }
-// スクロールイベントのリスナーを追加する
-window.addEventListener('scroll', handleScroll);
-window.addEventListener('resize', resetPosition);
-window.addEventListener('beforeunload', cleanup);
-// 初期状態でアニメーションを開始する
-startAnimation();
+// スペックが悪い端末ではイベントリスナーを登録しない
+const deviceMemory = navigator.deviceMemory;
+const cpuClass = navigator.cpuClass;
+const MIN_DEVICE_MEMORY = 4;
+const MIN_CPU_CLASS = 500;
+if (deviceMemory >= MIN_DEVICE_MEMORY && cpuClass >= MIN_CPU_CLASS) {
+  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('resize', resetPosition);
+  window.addEventListener('beforeunload', cleanup);
+  startAnimation();
+}
 
 /*========= メモ ===============*/
 /*
