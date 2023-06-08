@@ -67,30 +67,80 @@ const bkImg = document.querySelector('.bkImg');
 const initialOffset = bkImg.offsetTop;
 const initialPosition = bkImg.style.position;
 const initialTop = bkImg.style.top;
+let animationId; // アニメーションのIDを保持する変数
+let isScrolling = false; // スクロール中かどうかを示すフラグ
+let scrollTimeout; // スクロール停止のタイムアウトIDを保持する変数
 
+// 背景位置の更新
 function updatePosition() {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   bkImg.style.transform = `translateY(${initialOffset - scrollTop * 0.3}px)`;
+  /*
+  【topよりtransform】
+  ・GPUを使用するので、より効率的にアニメーションを描画・スムーズな動きが実現されます。
+  ・要素を独立した合成レイヤーに配置、最適化、背景画像の移動がスムーズになります。
+  ・top（レイアウト計算）：相対的にコストが高く、アニメーションがスムーズになりにくい。
+  ・translateY() 関数はハードウェアアクセラレーションによる最適化を受けやすく、高速でスムーズなアニメーションを実現できます。
+  */
 }
+// アニメーションループ
+function animate() {
+  updatePosition();
+  animationId = requestAnimationFrame(animate);//予約
+  /*
+  【requestAnimationFrameがパフォーマンスが良い理由】
+  ブラウザは最適なタイミングでアニメーションを実行します。
+  ブラウザやタブが非表示の時、アニメーションは一時停止されます。
+ */
+}
+// アニメーションの開始
+function startAnimation() {
+  if (!animationId && isScrolling) {
+    animationId = requestAnimationFrame(animate);//予約
+  }
+}
+// アニメーションの停止
+function stopAnimation() {
+  if (animationId) {
+    cancelAnimationFrame(animationId);
+    animationId = undefined;
+  }
+}
+// スクロールイベントを処理する
+function handleScroll() {
+  //アニメーションループスタート
+  isScrolling = true;
+  startAnimation();
+  //時間が経ったらアニメーションループを停止する
+  clearTimeout(scrollTimeout);　// タイマーの削除
+  scrollTimeout = setTimeout(function() {
+    isScrolling = false;
+    stopAnimation();
+  }, 200);
+}
+// 背景位置のリセット
 function resetPosition() {
   bkImg.style.position = initialPosition;
-  bkImg.style.transform = 'none'; // transformを初期状態に戻す
+  bkImg.style.transform = 'none';
   updatePosition();
 }
+// クリーンアップ
+function cleanup() {
+  stopAnimation();
+  clearTimeout(scrollTimeout); // タイマーの削除
+  window.removeEventListener('scroll', handleScroll);
+  window.removeEventListener('resize', resetPosition);
+  window.removeEventListener('beforeunload', cleanup);
+}
+// スクロールイベントのリスナーを追加する
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('resize', resetPosition);
+window.addEventListener('beforeunload', cleanup);
+// 初期状態でアニメーションを開始する
+startAnimation();
 
-window.addEventListener('scroll', updatePosition);
-window.addEventListener('resize', resetPosition);//windowサイズが変化した時
-
+/*========= メモ ===============*/
 /*
-topプロパティではなくtransformプロパティを使用すると、アニメーションがスムーズになる主な理由は以下の通りです。
-
-    GPU アクセラレーションの活用: transform プロパティを使用することで、ブラウザはGPUを使用してアニメーションを処理します。GPUは通常、ハードウェアアクセラレーションをサポートしており、より効率的にアニメーションを描画することができます。その結果、スムーズな動きが実現されます。
-
-    合成レイヤーの使用: transform プロパティを使用すると、ブラウザは要素を独立した合成レイヤーに配置します。合成レイヤーはハードウェアアクセラレーションによって処理され、他の要素との重なりやアニメーションの描画を最適化します。これにより、背景画像の移動がスムーズになります。
-
-一方で、top プロパティを使用すると、ブラウザは要素の位置を変更するためにレイアウト計算を行います。レイアウト計算は相対的にコストが高く、ブラウザのパフォーマンスに影響を与える可能性があります。そのため、アニメーションがスムーズになりにくい場合があります。
-
-加えて、transform プロパティを使用する場合は、translateY() 関数を使用して垂直方向の移動を行っています。translateY() 関数はハードウェアアクセラレーションによる最適化を受けやすく、高速でスムーズなアニメーションを実現できます。
-
-したがって、transform プロパティを使用することで、GPU アクセラレーションや合成レイヤーの活用により、スムーズなアニメーションが得られるのです。
+【AI判定】
+メモリリークOK
 */
