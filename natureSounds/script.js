@@ -75,7 +75,7 @@ let scrollTimeout; // スクロール停止のタイムアウトIDを保持す�
 function updatePosition() {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   // bkImg.style.transform = `translateY(${initialOffset - scrollTop * 0.3}px)`;
-  bkImg.style.transform = `translate3d(0, ${initialOffset - scrollTop * 0.3}px, 0)`;
+  bkImg.style.transform = `translate3d(0, ${initialOffset - scrollTop * 0.1}px, 0)`;
   /*
   【topよりtransform】
   ・GPUを使用するので、より効率的にアニメーションを描画・スムーズな動きが実現されます。
