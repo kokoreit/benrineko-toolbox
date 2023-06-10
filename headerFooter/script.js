@@ -12,12 +12,13 @@ var headerMenuTemplate = `
         <p>開発</p>
         <a href="../dollarExtractor/index.html">$変数コピペツール</a>
         <a href="../hashExtractor/index.html">カラーコード抽出機</a>
-        <a href="../fontsizeConverter/index.html">フォントサイズ単位変換</a>
-`;
+        <a href="../fontsizeConverter/index.html">フォントサイズ単位変換</a>`;
+
 document.addEventListener('DOMContentLoaded', function() {
   headerMenuContents.innerHTML = headerMenuTemplate;
+  headerMenuButton.innerText = "便利ツール";
   /* 
-  ここでは可変コンテンツを追加します。
+  ここではテキストを追加・変更します。
   外部入力を受け取らないため、エスケープ処理は不要です。
   */
 });
