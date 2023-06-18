@@ -1,4 +1,4 @@
-/* uses benri-template ver.9.0 */
+/* uses benri-template ver.10.0: add 1.@content 2.lessThan, greaterThan */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -39,58 +39,53 @@ $desktop-max-width: 1024px;
 $large-desktop-max-width: 1200px;
 
 /*=========  ===============*/
-@mixin device($condition, $device) {
-  $message1: "Invalid condition provided. Please use 'lessThan' or 'greaterThan'.";
-
+@mixin lessThan($device) {
   @if $device == phone {
-    @if $condition == lessThan {
-      @media (max-width: $phone-max-width) { @content; }
-    } @else if $condition == greaterThan {
-      @media (min-width: 0 + 1px) { @content; }
-    } @else {@error $message1;}
-
+    @media (max-width: $phone-max-width) { @content; }
   } @else if $device == tablet {
-    @if $condition == lessThan {
-      @media (max-width: $tablet-max-width) { @content; }
-    } @else if $condition == greaterThan {
-      @media (min-width: $phone-max-width + 1px) { @content; }
-    } @else {@error $message1;}
-
+    @media (max-width: $tablet-max-width) { @content; }
   } @else if $device == desktop {
-    @if $condition == lessThan {
-      @media (max-width: $desktop-max-width) { @content; }
-    } @else if $condition == greaterThan {
-      @media (min-width: $tablet-max-width + 1px) { @content; }
-    } @else {@error $message1;}
-
+    @media (max-width: $desktop-max-width) { @content; }
   } @else if $device == ldesktop {
-    @if $condition == lessThan {
-      @media (max-width: $ldesktop-max-width) { @content; }
-    } @else if $condition == greaterThan {
-      @media (min-width: $desktop-max-width + 1px) { @content; }
-    } @else {@error $message1;}
-
+    @media (max-width: $ldesktop-max-width) { @content; }
   } @else {
-    @error "Invalid device provided. Please use 'phone', 'tablet', or 'desktop'.";
+    @error "Invalid device provided. Please use 'phone', 'tablet', 'desktop', or 'ldesktop'.";
+  }
+}
+@mixin greaterThan($device) {
+  @if $device == phone {
+    @media (min-width: 0 + 1px) { @content; }
+  } @else if $device == tablet {
+    @media (min-width: $phone-max-width + 1px) { @content; }
+  } @else if $device == desktop {
+    @media (min-width: $tablet-max-width + 1px) { @content; }
+  } @else if $device == ldesktop {
+    @media (min-width: $desktop-max-width + 1px) { @content; }
+  } @else {
+    @error "Invalid device provided. Please use 'phone', 'tablet', 'desktop', or 'ldesktop'.";
   }
 }
 @mixin visible-element($height: 100%) {
   height: $height;
   opacity: 1;
   overflow: visible;
+  @content
 }
 @mixin hidden-element {
   height: 0; //widthはアニメで型崩れ
   opacity: 0; //display: none;以外ならキーボード操作に対応できる
   overflow: hidden;
+  @content
 }
 @mixin zero-bezel {
   margin: 0;
   padding: 0;
+  @content
 }
 @mixin full-size {
   width: 100%;
   height: 100%;
+  @content
 }
 @mixin custom-size($height, $width: null) {
   height: $height;
@@ -100,6 +95,7 @@ $large-desktop-max-width: 1200px;
   else {
     width: $height; //->正方形
   }
+  @content
 }
 @mixin position($top: null, $right: null, $bottom: null, $left: null) {
   @if $top { top: $top;}
@@ -127,6 +123,7 @@ $large-desktop-max-width: 1200px;
   @if $direction == column {
     flex-direction: column;
   }
+  @content
 }
 @mixin flex-align($align: null) {
   display: flex;
@@ -147,6 +144,7 @@ $large-desktop-max-width: 1200px;
   @if $direction == column {
     flex-direction: column;
   }
+  @content
 }
 @mixin flex-around($direction: row, $align: null) {
   @include flex-align($align);
@@ -154,6 +152,7 @@ $large-desktop-max-width: 1200px;
   @if $direction == column {
     flex-direction: column;
   }
+  @content
 }
 @mixin ad($width: 300px) {
   @include zero-bezel;
@@ -164,10 +163,12 @@ $large-desktop-max-width: 1200px;
     padding: 0 auto;
     text-align: center;
   }
+  @content
 }
 @mixin flat-radius($border-radius: 4px) {
   border: none;
   border-radius: $border-radius;
+  @content
 }
 @mixin img($height, $width, $image-url, $retina-url: false) {
   height: $height;
@@ -181,6 +182,7 @@ $large-desktop-max-width: 1200px;
       background-image: url(#{$retina-url});
     }
   }
+  @content
 }
 @mixin sankaku($direction: up, $color: null) {
   display: inline-block; //横向きに必要
@@ -199,6 +201,7 @@ $large-desktop-max-width: 1200px;
   @if $color != null {
     color: $color;
   }
+  @content
 }
 @mixin font($family, $size, $line: normal, $spacing: normal) {
   font-family: $family;
@@ -233,4 +236,5 @@ $large-desktop-max-width: 1200px;
   [draggable="true"] {
     cursor: pointer;
   }
+  @content
 }
