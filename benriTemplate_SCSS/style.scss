@@ -1,4 +1,4 @@
-/* uses benri-template ver.10.2: add position @content */
+/* uses benri-template ver.11.0: add zero-size */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -80,6 +80,11 @@ $large-desktop-max-width: 1200px;
 @mixin zero-bezel {
   margin: 0;
   padding: 0;
+  @content
+}
+@mixin zero-size {
+  width: 0;
+  height: 0;
   @content
 }
 @mixin full-size {
