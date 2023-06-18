@@ -1,4 +1,4 @@
-/* uses benri-template ver.10.0: add 1.@content 2.lessThan, greaterThan */
+/* uses benri-template ver.10.1: add more @content */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -208,6 +208,7 @@ $large-desktop-max-width: 1200px;
   font-size: $size;
   line-height: $line;
   letter-spacing: $spacing;
+  @content
 }
 @mixin standard-text-bg-colors($opt: no_reverse) {
   $bg-color: $standard-bg-color;
@@ -218,11 +219,13 @@ $large-desktop-max-width: 1200px;
   }
   background-color: $bg-color;
   color: $text-color;
+  @content
 }
 @mixin custom-text-bg-colors($text-color, $bg-color: null) {
   color: $text-color;
   @if $bg-color {background-color: $bg-color;}
   else {background-color: $text-color;}
+  @content
 }
 @mixin clickable {
   //bodyに設定すると便利です。
