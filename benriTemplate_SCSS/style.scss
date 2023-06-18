@@ -1,4 +1,4 @@
-/* uses benri-template ver.10.1: add more @content */
+/* uses benri-template ver.10.2: add position @content */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -106,14 +106,17 @@ $large-desktop-max-width: 1200px;
 @mixin fixed($top: null, $right: null, $bottom: null, $left: null) {
   position: fixed; //固定位置
   @include position($top, $right, $bottom, $left);
+  @content
 }
 @mixin relative($top: null, $right: null, $bottom: null, $left: null) {
   position: relative; //相対位置（本来の位置を視点にします。）
   @include position($top, $right, $bottom, $left);
+  @content
 }
 @mixin absolute($top: null, $right: null, $bottom: null, $left: null) {
   position: absolute; //絶対位置（親の位置を視点にします。擬似要素などで活躍。）
   @include position($top, $right, $bottom, $left);
+  @content
 }
 @mixin flex-center($direction: row, $gap: 0) {
   display: flex;
