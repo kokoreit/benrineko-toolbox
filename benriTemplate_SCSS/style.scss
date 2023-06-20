@@ -1,4 +1,4 @@
-/* uses benri-template ver.11.0: add zero-size */
+/* uses benri-template v12.0: changed ad */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -162,10 +162,13 @@ $large-desktop-max-width: 1200px;
   }
   @content
 }
-@mixin ad($width: 300px) {
+@mixin ad($width: 300px, $height: null) {
   @include zero-bezel;
-  @include custom-size($width);
-  @include flex-center(column);
+  @include custom-size($width, $height);
+  @include flex-center(column){
+    justify-content: start;
+  }
+  @include standard-text-bg-colors;
   p {
     margin: 0 auto;
     padding: 0 auto;
