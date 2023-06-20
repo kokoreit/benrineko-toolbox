@@ -1,0 +1,179 @@
+/* uses benri-template v12.0 */
+//sideでmainが狭くなる分のアソビを持たせます
+$tablet-max-width: $tablet-max-width + $side-width;
+$desktop-max-width: $desktop-max-width + $side-width;
+$large-desktop-max-width: $large-desktop-max-width + $side-width;
+/*========= .header ===============*/
+.header{
+  @include zero-bezel;
+  @include custom-size($header-height, 100%);
+  @include flex-center(row);
+  /* タブレット以下の場合 */
+  @include lessThan(tablet) {
+    @include flex-between(row);
+  }
+  .logo{
+    display: block;
+    $height: $header-height - 2px;  $width: $height * 3;
+    @include img(
+      $height, $width,
+      '#{$domain-url}/logo_100_300.png',
+      '#{$domain-url}/logo_100_300@2x.png');
+    &:hover, &:active, &:focus{
+      border: 1px solid $standard-color;
+    }
+  }
+}
+
+/*========= not .side-menu-on （z-index: 10000~10002）===============*/
+#side-menu-clip-container{
+  //タブレット以下の場合
+  @include lessThan(tablet) {
+    @include relative(0, 0, null ,null);
+  }
+}
+
+#overlay{ z-index: 10000;
+  // タブレット以下の場合
+  @include lessThan(tablet) {
+    @include fixed(0, 0, null ,null);
+    @include zero-bezel;
+    @include zero-size;
+    background-color: black;
+    opacity: 0.2;
+  }}
+
+#side-menu-contents{ z-index: 10001;
+  @include zero-bezel;
+  width: $side-width;
+  @include flex-center(column, 10px){
+    justify-content: start;
+  }
+  p{
+    width: 90%;
+    @include standard-text-bg-colors(reverse);
+    text-align: center;
+  }
+  a{
+    display: block;
+    @include standard-text-bg-colors;
+    text-decoration: none;
+    &:hover, &:active, &:focus{ text-decoration: underline;}
+  }
+  //タブレット以下の場合
+  @include lessThan(tablet) {
+    @include fixed(0, -$side-width, null ,null);
+  }}
+
+#side-menu-button{ z-index: 10002;
+  padding: 0 10px;
+  height: $header-height;
+  @include flex-center(column, 0px);//擬似要素を含めて整列します
+  @include font($font-family, $font-size-normal);
+  @include standard-text-bg-colors(reverse);
+  @include flat-radius(0px);
+  &::before{
+    @include relative(8px, null, null ,null);
+    content: "他のツール";
+  }
+  &::after{
+    @include relative(null, null, 8px ,null);
+    @include font($font-family, $font-size-large);
+    content: "☰";
+  }
+  //ディスクトップ以上は非表示
+  @include greaterThan(desktop) {display: none;}
+}
+
+
+/*========= for .side-menu-on ===============*/
+.side-menu-on{
+
+  #side-menu-clip-container{
+    @include fixed{
+      top: $container-margin;
+      right: $side-width + $container-margin;
+    }
+    transition: right $side-anime-time ease;
+  }
+
+  #overlay{
+    @include fixed(0, $side-width, null ,null);
+    @include full-size;//none->blockはアニメがつかないため
+    transition: right $side-anime-time ease;
+  }
+
+  #side-menu-contents{
+    @include fixed(0, 0, null ,null);
+    transition: right $side-anime-time ease;
+  }
+
+  #side-menu-button{
+    display: block;
+    &::before{ display: none;}
+    &::after{
+      bottom: 0;
+      content: "×";
+    }
+  }
+
+}
+
+
+/*========= 構成 ===============*/
+body{
+  @include flex-center;
+  @include font($font-family, $font-size-normal, 1.6);
+  @include clickable;
+}
+.container{
+  max-width: $large-desktop-max-width;
+  display: grid;//auto：余白が自動
+  grid-template:
+    "header main ad1" $header-height
+    "side main ad1" auto
+    "side main ad2" auto
+    "side footer ad2" 1fr
+    / auto 1fr 300px;
+  gap: 10px;
+  /* デスクトップ以下の場合 */
+  @include lessThan(desktop) {
+    grid-template:
+      "header ad1" auto
+      "side ad1" auto
+      "side main" auto
+      "ad2 main" 1fr
+      "ad2 footer" auto
+      / 300px auto;
+  }
+  /* タブレット以下の場合 */
+  @include lessThan(tablet) {
+    // @include flex-center(column, 10px);
+    @include zero-bezel;
+    @include full-size;
+    display: grid;//auto：余白が自動
+    grid-template:
+      "header" auto
+      "ad1" auto
+      "main" auto
+      "ad2" auto
+      "footer" auto
+      / auto;
+    gap: 10px;
+  }
+}
+.main{ grid-area: main;}
+.header{ grid-area: header;}
+#side-menu-contents{ grid-area: side;}
+.footer{ grid-area: footer;
+  @include flex-center;
+  a{
+    @include standard-text-bg-colors;
+    @include font($font-gothic-family, $font-size-small, 1.6);
+    text-align: center;
+    text-decoration: none;
+    &:hover, &:active, &:focus{ text-decoration: underline;}
+  }
+}
+.ad1{ grid-area: ad1; @include ad(300px);}
+.ad2{ grid-area: ad2; @include ad(300px);}
