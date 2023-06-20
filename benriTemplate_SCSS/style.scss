@@ -1,4 +1,4 @@
-/* uses benri-template v12.0: changed ad */
+/* uses benri-template v12.1: revoved $side-slide-px */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -11,8 +11,7 @@ $logo-height: $header-height;
 $logo-width: $logo-height * 3;
 //side
 $side-width: 300px;
-$side-slide-px: $side-width + $container-margin;
-$side-anime-time: 0.3s;
+$side-anime-time: 0.2s;
 //フォント
 $font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho",
   "Meiryo", serif;
