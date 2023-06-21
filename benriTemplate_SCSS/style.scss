@@ -1,4 +1,4 @@
-/* uses benri-template v13.0: fixed @else */
+/* uses benri-template v14.0: add block-line */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -232,6 +232,16 @@ $large-desktop-max-width: 1200px;
   background-color: $bg-color;
   color: $text-color;
   @content
+}
+@mixin block-line($option: width, $value: 100%, $wait: 2px){
+  display: block;
+  content: "";
+  @if $option == height{
+    @include custom-size($value, $wait);
+  } @else {
+    @include custom-size($wait, $value);
+  }
+  @content;
 }
 @mixin clickable {
   //bodyに設定すると便利です。
