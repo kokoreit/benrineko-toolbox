@@ -1,4 +1,4 @@
-/* uses benri-template v12.1: revoved $side-slide-px */
+/* uses benri-template v13.0: fixed @else */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -92,13 +92,9 @@ $large-desktop-max-width: 1200px;
   @content
 }
 @mixin custom-size($height, $width: null) {
+  @if $width == null{ $width: $height;}
   height: $height;
-  @if $width != null {
-    width: $width;
-  }
-  else {
-    width: $height; //->正方形
-  }
+  width: $width;
   @content
 }
 @mixin position($top: null, $right: null, $bottom: null, $left: null) {
@@ -232,9 +228,9 @@ $large-desktop-max-width: 1200px;
   @content
 }
 @mixin custom-text-bg-colors($text-color, $bg-color: null) {
+  @if $bg-color == null{ $bg-color: $text-color;}
+  background-color: $bg-color;
   color: $text-color;
-  @if $bg-color {background-color: $bg-color;}
-  else {background-color: $text-color;}
   @content
 }
 @mixin clickable {
