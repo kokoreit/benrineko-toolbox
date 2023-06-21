@@ -12,9 +12,9 @@ function selectRadioButton(selectedButton) {
 
   // 選択されたラジオボタンに応じた背景画像を設定する処理
   // const container = document.querySelector('.container');
-  const container = document.querySelector('.bkImg');
-  container.classList.remove('forestBkImg', 'riverBkImg', 'tomtitBkImg');
-  container.classList.add(`${id}BkImg`);
+  const bkImg = document.querySelector('#bkImg');
+  bkImg.classList.remove('forestBkImg', 'riverBkImg', 'tomtitBkImg');
+  bkImg.classList.add(`${id}BkImg`);
 
   // 選択されたラジオボタンに応じてオーディオを再生する処理
   const audio = document.getElementById(`${id}Sound`);
