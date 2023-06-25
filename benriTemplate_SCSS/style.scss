@@ -1,4 +1,4 @@
-/* uses benri-template v16.0: add circle and changed burger */
+/* uses benri-template v16.1: add circle and changed burger */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -317,5 +317,5 @@ $large-desktop-max-width: 1200px;
   [draggable="true"] {
     cursor: pointer;
   }
-  @content
-    }
+  @content;
+}
