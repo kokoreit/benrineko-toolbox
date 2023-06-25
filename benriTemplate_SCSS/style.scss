@@ -1,4 +1,4 @@
-/* uses benri-template v15.0: add 4 mixin for burger */
+/* uses benri-template v16.0: add circle and changed burger */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -242,6 +242,12 @@ $large-desktop-max-width: 1200px;
   }
   @content;
 }
+@mixin circle($size, $color) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-color: $color;
+}
 @mixin block-line($option: width, $value: 100%, $wait: 2px){
   display: block;
   content: "";
@@ -261,40 +267,43 @@ $large-desktop-max-width: 1200px;
   @include flex-center;//内容を中央表示にします
   @content;
 }
-@mixin burger-3span-design($line-color, $burger-size, $interactive-border-weight: null) {
-  //デザインセット
-  @include design-button-setting($burger-size);
-  //ボーダー
-  @if $interactive-border-weight {
-    @include interactive-border(
-      $interactive-border-weight, $line-color, rgba(black, 0)
-      );}
-  //内容
-  span{
-    background-color: $line-color;
-    $margin: 24%;
-    @include block-line(width, 82%, 4px);
-    &:nth-child(1){@include absolute($margin, null, null, null);}
-    &:nth-child(2){@include absolute(null, null, null, null);}
-    &:nth-child(3){@include absolute(null, null, $margin, null);}
+@mixin button-container-3spans($size, $color, $alignment: y, $shape: line) {
+  $weit: 4px * ($size / 50px);//span3~4個を想定
+  @include design-button-setting($size);
+  @if $alignment == y {
+    //y軸並び：横シマ（ハンバーガーボタン）
+    .span-container{
+      @include custom-size(60%, 70%);
+      @include flex-center(column, 20%);
+      span{
+        display: block;
+        @include custom-size($weit, 100%);
+        background-color: $color;
+      }
+    }
+  } @else {
+    //x軸並び：縦シマ
+    .span-container{
+      @include custom-size(50%, 70%);
+      @include flex-center(row, 20%);
+      span{
+        display: block;
+        @include custom-size(100%, $weit);
+        background-color: $color;
+      }
+    }
   }
-  @content
-}
-@mixin title-burger3span-design($title-space-is, $line-color, $burger-size, $interactive-border-weight: null) {
-  //構成
-  @include design-button-setting($burger-size);
-  color: $line-color;
-  //インタラクティブ
-  @include interactive-border($interactive-border-weight, $line-color, rgba(black, 0));
-  //コンテンツの位置
-  @if $title-space-is == "top"{
-    .title{@include absolute(-24% null, null, null);}
-    .berger{@include burger-3span-design($line-color, $burger-size){top: 14%;}}
-  } @else {//botom
-    .title{@include absolute(40%, null, null, null);}
-    .berger{@include burger-3span-design($line-color, $burger-size){top: -14%;}}
+  //ドットに変更
+  @if $shape == dot{
+    .span-container{
+      @include custom-size(70%);
+      span{
+        @include full-size;
+        @include circle(7px * ($size / 50px), $color);
+      }
+    }
   }
-  @content;/* フォント（種類・サイズ・行間）を設定して、文字の位置を微調整します */
+  @content;
 }
 @mixin clickable {
   //bodyに設定すると便利です。
