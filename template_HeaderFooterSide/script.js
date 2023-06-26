@@ -47,3 +47,12 @@ sideMenuButton.addEventListener("click", function () {
 forSideMenuOverlay.addEventListener("click", function () {
   document.body.classList.toggle(forSideMenuAddClassName);
 });
+
+/*========= onclic ===============*/
+function focusAndBlur(button) {
+  clearTimeout(button.timerId);//存在しなくてもOKです
+  button.focus();
+  button.timerId = setTimeout(function() {
+    button.blur();
+  }, 100);
+}
