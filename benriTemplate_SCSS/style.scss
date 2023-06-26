@@ -1,4 +1,4 @@
-/* uses benri-template v17.0: add title-burger */
+/* uses benri-template v17.1: add title-burger */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -309,6 +309,8 @@ $large-desktop-max-width: 1200px;
   @include design-button-setting($size);
   overflow: hidden;//飛び出たabsolute内装を隠します
   .title{
+    width: 100%;//中央配置のため
+    text-align: center;//中央配置のため
     color: $color;
     @if $titlePosition == up{
       @include absolute(-36%, null, null, null);
