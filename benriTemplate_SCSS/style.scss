@@ -1,4 +1,4 @@
-/* uses benri-template v16.1: add circle and changed burger */
+/* uses benri-template v17.0: add title-burger */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -304,6 +304,45 @@ $large-desktop-max-width: 1200px;
     }
   }
   @content;
+}
+@mixin title-burger($size, $color, $titlePosition: up) {
+  @include design-button-setting($size);
+  overflow: hidden;//飛び出たabsolute内装を隠します
+  .title{
+    color: $color;
+    @if $titlePosition == up{
+      @include absolute(-36%, null, null, null);
+    } @else{
+      @include absolute(null, null, -36%, null);
+    }
+  }
+  .burger{
+    @if $titlePosition == up{
+      @include absolute(16%, null, null, null);
+    } @else{
+      @include absolute(null, null, 16%, null);
+    }
+    @include button-container-3spans($size, $color, y, line);
+    //このデザイン比率をキープさせるためにabsoluteを採用します
+  }
+  @content;
+  /*
+  【.titleの位置調整】
+  ご指定のフォントサイズ等で位置が変わるため、
+  フォントの行間設定を使って文字位置の微調整を行なってください。
+
+  【これらのコードは以下のHTML構造を想定しています】
+  <button>
+  <p class="title">TITLE</p>
+  <div class="burger">
+  <div class="span-container">
+  <span class="s1"></span>
+  <span class="s2"></span>
+  <span class="s3"></span>
+  </div>
+  </div>
+  </button>
+  */
 }
 @mixin clickable {
   //bodyに設定すると便利です。
