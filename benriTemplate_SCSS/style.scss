@@ -1,4 +1,4 @@
-/* uses benri-template v17.1: add title-burger */
+/* uses benri-template v17.2: fixed @content";"" */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -68,35 +68,35 @@ $large-desktop-max-width: 1200px;
   height: $height;
   opacity: 1;
   overflow: visible;
-  @content
-    }
+  @content;
+}
 @mixin hidden-element {
   height: 0; //widthはアニメで型崩れ
   opacity: 0; //display: none;以外ならキーボード操作に対応できる
   overflow: hidden;
-  @content
-    }
+  @content;
+}
 @mixin zero-bezel {
   margin: 0;
   padding: 0;
-  @content
-    }
+  @content;
+}
 @mixin zero-size {
   width: 0;
   height: 0;
-  @content
-    }
+  @content;
+}
 @mixin full-size {
   width: 100%;
   height: 100%;
-  @content
-    }
+  @content;
+}
 @mixin custom-size($height, $width: null) {
   @if $width == null{ $width: $height;}
   height: $height;
   width: $width;
-  @content
-    }
+  @content;
+}
 @mixin position($top: null, $right: null, $bottom: null, $left: null) {
   @if $top { top: $top;}
   @if $right {right: $right;}
@@ -106,18 +106,18 @@ $large-desktop-max-width: 1200px;
 @mixin fixed($top: null, $right: null, $bottom: null, $left: null) {
   position: fixed; //固定位置
   @include position($top, $right, $bottom, $left);
-  @content
-    }
+  @content;
+}
 @mixin relative($top: null, $right: null, $bottom: null, $left: null) {
   position: relative; //相対位置（本来の位置を視点にします。）
   @include position($top, $right, $bottom, $left);
-  @content
-    }
+  @content;
+}
 @mixin absolute($top: null, $right: null, $bottom: null, $left: null) {
   position: absolute; //絶対位置（親の位置を視点にします。擬似要素などで活躍。）
   @include position($top, $right, $bottom, $left);
-  @content
-    }
+  @content;
+}
 @mixin flex-center($direction: row, $gap: 0) {
   display: flex;
   justify-content: center;
@@ -126,8 +126,8 @@ $large-desktop-max-width: 1200px;
   @if $direction == column {
     flex-direction: column;
   }
-  @content
-    }
+  @content;
+}
 @mixin flex-align($align: null) {
   display: flex;
   @if $align == start {
@@ -147,16 +147,16 @@ $large-desktop-max-width: 1200px;
   @if $direction == column {
     flex-direction: column;
   }
-  @content
-    }
+  @content;
+}
 @mixin flex-around($direction: row, $align: null) {
   @include flex-align($align);
   justify-content: space-around; //前後スペースが均等
   @if $direction == column {
     flex-direction: column;
   }
-  @content
-    }
+  @content;
+}
 @mixin ad($width: 300px, $height: null) {
   @include zero-bezel;
   @include custom-size($width, $height);
@@ -169,13 +169,13 @@ $large-desktop-max-width: 1200px;
     padding: 0 auto;
     text-align: center;
   }
-  @content
-    }
+  @content;
+}
 @mixin flat-radius($border-radius: 4px) {
   border: none;
   border-radius: $border-radius;
-  @content
-    }
+  @content;
+}
 @mixin img($height, $width, $image-url, $retina-url: false) {
   height: $height;
   width: $width;
@@ -188,8 +188,8 @@ $large-desktop-max-width: 1200px;
       background-image: url(#{$retina-url});
     }
   }
-  @content
-    }
+  @content;
+}
 @mixin sankaku($direction: up, $color: null) {
   display: inline-block; //横向きに必要
   content: "▲";
@@ -207,15 +207,15 @@ $large-desktop-max-width: 1200px;
   @if $color != null {
     color: $color;
   }
-  @content
-    }
+  @content;
+}
 @mixin font($family, $size, $line: normal, $spacing: normal) {
   font-family: $family;
   font-size: $size;
   line-height: $line;
   letter-spacing: $spacing;
-  @content
-    }
+  @content;
+}
 @mixin standard-text-bg-colors($opt: no_reverse) {
   $bg-color: $standard-bg-color;
   $text-color: $standard-color;
@@ -225,14 +225,14 @@ $large-desktop-max-width: 1200px;
   }
   background-color: $bg-color;
   color: $text-color;
-  @content
-    }
+  @content;
+}
 @mixin custom-text-bg-colors($text-color, $bg-color: null) {
   @if $bg-color == null{ $bg-color: $text-color;}
   background-color: $bg-color;
   color: $text-color;
-  @content
-    }
+  @content;
+}
 @mixin interactive-border($border-weight, $border-color, $original-border-color: null) {
   &:hover, &:active, &:focus{
     border: $border-weight solid $border-color;
