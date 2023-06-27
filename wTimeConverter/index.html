@@ -16,7 +16,6 @@
 <body>
 <!-- partial:index.partial.html -->
 
-
 <div class="container" id="side-menu-clip-container">
 
   <!-- メイン -->
@@ -31,10 +30,11 @@
       </p>
     </div>
     <div class="input-section">
+<!--       ブラウザによって動作が違うので「自動でフォーカス解除」は指定しないでください。 -->
       <div class="input-before-contents">
         <label for="before-power">計算前の出力</label><br>
         <div class="w-m-s">
-        <select id="before-power" aria-label="before W select" onclick="focusAndBlur(this)">
+        <select id="before-power" aria-label="before W select">
           <option value="400">400 W</option>
           <option value="500">500 W</option>
           <option value="600">600 W</option>
@@ -53,7 +53,7 @@
       </div>
       <div class="input-after-contents">
         <label for="after-power">計算後の出力</label>
-        <select id="after-power" aria-label="after W select" onclick="focusAndBlur(this)">
+        <select id="after-power" aria-label="after W select">
           <option value="400">400 W</option>
           <option value="500">500 W</option>
           <option value="600">600 W</option>
