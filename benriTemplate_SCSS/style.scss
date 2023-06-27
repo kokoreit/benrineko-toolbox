@@ -1,4 +1,4 @@
-/* uses benri-template v17.2: fixed @content";"" */
+/* uses benri-template v17.3: change sankaku to used unicode */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -192,15 +192,15 @@ $large-desktop-max-width: 1200px;
 }
 @mixin sankaku($direction: up, $color: null) {
   display: inline-block; //横向きに必要
-  content: "▲";
+  content: "\25B2";//"▲";
   @if $direction == down {
-    content: "▼";
+    content: "\25BC";//"▼";
   } @else if $direction == right {
-    content: "▼"; //特殊文字は使わない
+    content: "\25BC"; //"▼";を回転（特殊文字を避ける）
     transform: rotate(270deg);
     padding-top: 0.08rem;
   } @else if $direction == left {
-    content: "▲"; //特殊文字は使わない
+    content: "\25B2"; //"▲";を回転（特殊文字を避ける）
     transform: rotate(270deg);
     padding-top: 0.08rem;
   }
