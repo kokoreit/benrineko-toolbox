@@ -1,92 +1,9 @@
 @charset "UTF-8";
-/* uses benri-template ver.5.2 */
-/*========= 構成 ===============*/
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  letter-spacing: normal;
-}
-body button,
-body a,
-body [role=button],
-body [role=link],
-body [role=tab],
-body [role=menuitem],
-body [contenteditable=true],
-body [draggable=true] {
-  cursor: pointer;
-}
-
-.container {
-  width: 1200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: px;
-  flex-direction: column;
-}
-@media (min-width: 1200px) {
-  .container {
-    display: grid;
-    grid-template: "main header" 50px "main ad1" auto "main ad2" auto "main footer" 1fr/1fr auto;
-    gap: 10px;
-  }
-}
-.container .header {
-  grid-area: header;
-}
-.container .ad1-space {
-  grid-area: ad1;
-  margin: 0;
-  padding: 0;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-  flex-direction: column;
-}
-.container .ad1-space else {
-  width: 300px;
-}
-.container .ad1-space p {
-  margin: 0 auto;
-  padding: 0 auto;
-  text-align: center;
-}
-.container .main-space {
-  grid-area: main;
-}
-.container .ad2-space {
-  grid-area: ad2;
-  margin: 0;
-  padding: 0;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-  flex-direction: column;
-}
-.container .ad2-space else {
-  width: 300px;
-}
-.container .ad2-space p {
-  margin: 0 auto;
-  padding: 0 auto;
-  text-align: center;
-}
-.container .footer {
-  grid-area: footer;
-}
-
-/*========= main-space ===============*/
-.main-space {
+/* uses benri-template v17.3: change sankaku to used unicode */
+/*=========  ===============*/
+/* uses benri-template 17.3 */
+/*========= main ===============*/
+.main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,7 +11,7 @@ body [draggable=true] {
   flex-direction: column;
   text-align: center;
 }
-.main-space p {
+.main p {
   text-align-last: left;
 }
 
@@ -224,9 +141,6 @@ body [draggable=true] {
 }
 .input-section .calculate-contents #calculate-button {
   display: none;
-}
-.input-section .calculate-contents #calculate-button.loaded {
-  display: block;
   padding: 10px 0;
   width: 100%;
   border: none;
@@ -238,17 +152,20 @@ body [draggable=true] {
   background-color: #444;
   color: #fff;
 }
-.input-section .calculate-contents #calculate-button.loaded:hover, .input-section .calculate-contents #calculate-button.loaded:active, .input-section .calculate-contents #calculate-button.loaded:focus {
+.input-section .calculate-contents #calculate-button:hover, .input-section .calculate-contents #calculate-button:active, .input-section .calculate-contents #calculate-button:focus {
   background-color: #b71c1c;
 }
-.input-section .calculate-contents #calculate-button.loaded::before {
+.input-section .calculate-contents #calculate-button::before {
   display: inline-block;
   content: "▲";
 }
-.input-section .calculate-contents #calculate-button.loaded::after {
+.input-section .calculate-contents #calculate-button::after {
   display: inline-block;
   content: "▲";
   content: "▼";
+}
+.input-section .calculate-contents #calculate-button.loaded {
+  display: block;
 }
 
 /*========= .output-section ===============*/
@@ -278,17 +195,12 @@ body [draggable=true] {
   font-size: 1.8rem;
   line-height: normal;
   letter-spacing: normal;
+  background-color: #fff;
   color: #fff;
 }
-.output-section .output-before-contents else {
-  background-color: #fff;
-}
 .output-section .output-before-contents.calced {
-  color: #0d47a1;
   background-color: #b4cff9;
-}
-.output-section .output-before-contents.calced else {
-  background-color: #0d47a1;
+  color: #0d47a1;
 }
 .output-section .output-after-contents {
   flex: 2;
@@ -304,17 +216,12 @@ body [draggable=true] {
   font-size: 1.8rem;
   line-height: normal;
   letter-spacing: normal;
+  background-color: #fff;
   color: #fff;
 }
-.output-section .output-after-contents else {
-  background-color: #fff;
-}
 .output-section .output-after-contents.calced {
-  color: #b71c1c;
   background-color: #f9d9d9;
-}
-.output-section .output-after-contents.calced else {
-  background-color: #b71c1c;
+  color: #b71c1c;
 }
 
 .note {

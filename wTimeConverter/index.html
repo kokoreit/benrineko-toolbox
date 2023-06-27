@@ -10,31 +10,17 @@
         <link rel="shortcut icon" href="./favicon.ico">
         <link rel="apple-touch-icon" href="./apple-touch-icon.png">
         <link rel="icon" type="image/png" href="./android-chrome-192x192.png">
-      <link rel="stylesheet" href="../headerFooter/style.css">
+      <link rel="stylesheet" href="https://benrineko.com/template_HeaderFooterSide/style.css">
       <link rel="stylesheet" href="./style.css">
     </head>
 <body>
 <!-- partial:index.partial.html -->
 
-<div class="container">
-  <header class="header">
-    <a href="../index.html" class="logo-img"></a>
-    <div class="header-menu">
-      <button id="header-menu-button">他のツール</button>
-      <div id="header-menu-contents">
-        <!--         JSでコンテンツ一覧を追加します。 -->
-      </div>
-      <div class="overlay"></div>
-    </div>
-  </header>
-  <div class="ad1-space">
-    <p><small>ad</small></p>
-    <p>
-      <!--     ここ広告を挿入 -->
-<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=benrineko.com-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4046818174&linkId=2f09fbb3d25395886e0ea924b57213a5"></iframe><iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=benrineko.com-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4040646010&linkId=2b11407cf300936f8c21c526a3e9a347"></iframe>
-    </p>
-  </div>
-  <div class="main-space">
+
+<div class="container" id="side-menu-clip-container">
+
+  <!-- メイン -->
+  <main class="main">
     <div class="title-section">
       <h1>電子レンジの温め時間計算<br>ワットW時間変換ツール</h1>
       <p class="description">
@@ -48,7 +34,7 @@
       <div class="input-before-contents">
         <label for="before-power">計算前の出力</label><br>
         <div class="w-m-s">
-        <select id="before-power">
+        <select id="before-power" aria-label="before W select" onclick="focusAndBlur(this)">
           <option value="400">400 W</option>
           <option value="500">500 W</option>
           <option value="600">600 W</option>
@@ -59,15 +45,15 @@
           <option value="1200">1200 W</option>
           <option value="1500">1500 W</option>
         </select>
-          <input type="number" id="before-time-minutes" min="0" max="59" step="1" value="0">
+          <input type="number" id="before-time-minutes" min="0" max="59" step="1" value="0" aria-label="before M input">
           <label for="before-time-minutes">分</label>
-          <input type="number" id="before-time-seconds" min="0" max="59" step="10" value="0">
+          <input type="number" id="before-time-seconds" min="0" max="59" step="10" value="0" aria-label="before S input" >
           <label for="before-time-seconds">秒</label>
         </div>
       </div>
       <div class="input-after-contents">
         <label for="after-power">計算後の出力</label>
-        <select id="after-power">
+        <select id="after-power" aria-label="after W select" onclick="focusAndBlur(this)">
           <option value="400">400 W</option>
           <option value="500">500 W</option>
           <option value="600">600 W</option>
@@ -80,7 +66,7 @@
         </select>
       </div>
       <div class="calculate-contents">
-        <button id="calculate-button">計算</button>
+        <button id="calculate-button" aria-label="calculate button" onclick="focusAndBlur(this)">計算</button>
       </div>
     </div>
     <div class="output-section">
@@ -104,20 +90,47 @@
     </p>
 
 
-  </div>
-  <div class="ad2-space">
-    <p><small>ad</small></p>
-    <p>
-      <!--     ここ広告を挿入 -->
-<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=benrineko.com-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0BP5STX68&linkId=a3d97141a3d2fa76af6aebc1a8f5ad70"></iframe><iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=benrineko.com-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B09XX6Y35L&linkId=8165f55be99ec275a8db3709e9dad7cd"></iframe>
-    </p>
-  </div>
+  </main>
+
+  <!-- ヘッダー・メニュー・オーバーレイ-・フッター -->
+  <header class="header">
+    <a class="logo" href="../index.html" aria-label="ホームに移動する" onclick="focusAndBlur(this)"></a>
+    <button id="side-menu-button" class="title-burger" aria-label="他のツールをサイドバーに表示する" onclick="focusAndBlur(this)">
+      <p class="title">他ツール</p>
+      <div class="burger">
+        <div class="span-container">
+          <span class="s1"></span>
+          <span class="s2"></span>
+          <span class="s3"></span>
+        </div>
+      </div>
+    </button>
+  </header>
+  <aside id="side-menu-contents"></aside>
+  <aside id="overlay"></aside>
   <footer class="footer">
     <a href="../copyright/index.html">コピーライト・プライバシーポリシー・免責事項</a>
   </footer>
+
+  <!--   広告 -->
+  <aside class="ad1">
+    <p><small>ad</small></p>
+    <p>
+      <!--     ここ広告を挿入 -->
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=gift_certificates&banner=1TJ8XM5YGJR5WC15P202&f=ifr&linkID=6a31d1c20847319217f2402b033016fc&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+    </p>
+  </aside>
+  <aside class="ad2">
+    <p><small>ad</small></p>
+    <p>
+      <!--     ここ広告を挿入 -->
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=primevideo&banner=0N84Z260P2YWJ45V2G82&f=ifr&linkID=b78dafe03b786eb60d615ed708988c81&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+    </p>
+  </aside>
+
 </div>
 
-<script src="../headerFooter/script.js"></script>
+<script src="https://benrineko.com/template_HeaderFooterSide/script.js"></script>
 <!-- partial -->
   <script  src="./script.js"></script>
 
