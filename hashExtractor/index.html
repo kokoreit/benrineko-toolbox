@@ -10,109 +10,118 @@
         <link rel="shortcut icon" href="./favicon.ico">
         <link rel="apple-touch-icon" href="./apple-touch-icon.png">
         <link rel="icon" type="image/png" href="./android-chrome-192x192.png">
-      <link rel="stylesheet" href="../headerFooter/style.css">
+        <link rel="stylesheet" href="../template_HeaderFooterSide/style.css">
       <link rel="stylesheet" href="./style.css">
     </head>
 <body>
 <!-- partial:index.partial.html -->
 
+<div class="container" id="side-menu-clip-container">
 
-<div class="container">
-  <header class="header">
-    <a href="../index.html" class="logo-img"></a>
-    <div class="header-menu">
-      <button id="header-menu-button">他のツール</button>
-      <div id="header-menu-contents">
-        <!--         JSでコンテンツ一覧を追加します。 -->
+  <!-- メイン -->
+  <main class="main">
+    <div class="main-container">
+      <div class="m-title-section">
+        <h1 class="m-title">カラーコード抽出機</h1>
+        <p class="m-description">テキストから20個までのカラーコードを抽出し、<br>コピーボタンとして色を再現します。<br>
+          （コピーボタンで簡単にカラーコードをクリップボードにコピーできます。）
+        </p>
+        <p>
+          活用例：<br>
+          「AIからの配色提案の一覧」を貼り付け・抽出。<br>
+          カラーコードをコピー＆ペーストする。
+        </p>
       </div>
-      <div class="overlay"></div>
-    </div>
-  </header>
-
-  <div class="ad1-space">
-    <p><small>ad</small></p>
-    <p>
-      <!--     ここ広告300を挿入 -->
-      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=monthlydealevent&banner=140Z9CGTRPHE20SMKXR2&f=ifr&linkID=772cdcd8b2e102d5ff6526c2cb13d0ea&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-    </p>
-  </div>
-
-  <div class="main-container">
-    <div class="m-title-section">
-      <h1 class="m-title">カラーコード抽出機</h1>
-      <p class="m-description">テキストから20個までのカラーコードを抽出し、<br>コピーボタンとして色を再現します。<br>
-        （コピーボタンで簡単にカラーコードをクリップボードにコピーできます。）
-      </p>
-      <p>
-        活用例：<br>
-        「AIからの配色提案の一覧」を貼り付け・抽出。<br>
-        カラーコードをコピー＆ペーストする。
-      </p>
-    </div>
-    <div class="m-main-section">
-      <textarea id="input-text" placeholder="入力例：#FF0000は赤色、#FFA500はオレンジ色、#FFFF00は黄色、#008000はダークグリーン、#0000FFは青色、#800080は紫色、#FFC0CBはピンク色、そして#000000は黒色を表します。"></textarea>
-      <button id="generate-btn">カラーコードを抽出</button>
-      <div id="color-buttons">
-<!--         <button class="color-btn">#tst001</button>
+      <div class="m-main-section">
+        <textarea id="input-text" placeholder="入力例：#FF0000は赤色、#FFA500はオレンジ色、#FFFF00は黄色、#008000はダークグリーン、#0000FFは青色、#800080は紫色、#FFC0CBはピンク色、そして#000000は黒色を表します。"></textarea>
+        <button id="generate-btn">カラーコードを抽出</button>
+        <div id="color-buttons">
+          <!--         <button class="color-btn">#tst001</button>
         <button class="color-btn">#tst002</button>  -->
+        </div>
+        <div id="announcement">抽出で生成されたカラーボタンを押すとカラーコードをコピーできます。</div>
       </div>
-      <div id="announcement">抽出で生成されたカラーボタンを押すとカラーコードをコピーできます。</div>
+      <p class="next">次のコーナー「文字色・背景色の確認」も是非ご活用ください。</p>
     </div>
-    <p class="next">次のコーナー「文字色・背景色の確認」も是非ご活用ください。</p>
-  </div>
+    <div class="simulation-container">
 
-  <div class="simulation-container">
+      <div class="s-title-section">
+        <h1 class="simulation-title">文字色・背景色の確認<br>（オマケ）</h1>
+        <p class="simulation-description">
+          テキストに背景色・文字色・文字サイズを当てはめて簡単なシミュレーションができます。</p>
+      </div>
 
-    <div class="s-title-section">
-      <h1 class="simulation-title">文字色・背景色の確認<br>（オマケ）</h1>
-      <p class="simulation-description">
-        テキストに背景色・文字色・文字サイズを当てはめて簡単なシミュレーションができます。</p>
+      <div class="s-inputs-section">
+        <p class="text">テキストの内容：
+          <input type="text" class="text-input"  value="これは確認用のテキストです。" placeholder="テキスト">
+        </p>
+
+        <p class="background-color">背景色：
+          <input type="text" class="background-color-input" value="#ccc" placeholder="#ccc">
+        </p>
+
+        <p class="text-color">テキストの色：
+          <input type="text" class="text-color-input" value="#000" placeholder="#000">
+        </p>
+      </div>
+
+      <div class="s-input-size-section">
+        <p class="text-size">テキストのサイズ（1~200px）：
+          <br>
+          <button class="text-size-button" id="text-size-decrese-btn">小</button>
+          <input type="text" class="text-size-input" value="30px" placeholder="30px">
+          <button class="text-size-button" id="text-size-increase-btn">大</button>
+          <br>
+          <input type="range" class="text-size-slider" min="0" max="200" step="1">
+        </p>
+      </div>
+
+      <div class="s-result-section">
+        <p class="result-text">これは確認用のテキストです。</p>
+      </div>
+
     </div>
+  </main>
 
-    <div class="s-inputs-section">
-      <p class="text">テキストの内容：
-        <input type="text" class="text-input"  value="これは確認用のテキストです。" placeholder="テキスト">
-      </p>
-
-      <p class="background-color">背景色：
-        <input type="text" class="background-color-input" value="#ccc" placeholder="#ccc">
-      </p>
-
-      <p class="text-color">テキストの色：
-        <input type="text" class="text-color-input" value="#000" placeholder="#000">
-      </p>
-    </div>
-
-    <div class="s-input-size-section">
-      <p class="text-size">テキストのサイズ（1~200px）：
-        <br>
-        <button class="text-size-button" id="text-size-decrese-btn">小</button>
-        <input type="text" class="text-size-input" value="30px" placeholder="30px">
-        <button class="text-size-button" id="text-size-increase-btn">大</button>
-        <br>
-        <input type="range" class="text-size-slider" min="0" max="200" step="1">
-      </p>
-    </div>
-
-    <div class="s-result-section">
-      <p class="result-text">これは確認用のテキストです。</p>
-    </div>
-
-  </div>
-
-  <div class="ad2-space">
-    <p><small>ad</small></p>
-    <p>
-      <!--     ここ広告300を挿入 -->
-      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=amazonbusiness&banner=0421ZB0Z601CQ8P3WXR2&f=ifr&linkID=64d9ca7c4836c943d4121af0ef4fe884&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-    </p>
-  </div>
-
+  <!-- ヘッダー・メニュー・オーバーレイ-・フッター -->
+  <header class="header">
+    <a class="logo" href="../index.html" aria-label="ホームに移動する" onclick="focusAndBlur(this)"></a>
+    <button id="side-menu-button" class="title-burger" aria-label="他のツールをサイドバーに表示する" onclick="focusAndBlur(this)">
+      <p class="title">他ツール</p>
+      <div class="burger">
+        <div class="span-container">
+          <span class="s1"></span>
+          <span class="s2"></span>
+          <span class="s3"></span>
+        </div>
+      </div>
+    </button>
+  </header>
+  <aside id="side-menu-contents"></aside>
+  <aside id="overlay"></aside>
   <footer class="footer">
     <a href="../copyright/index.html">コピーライト・プライバシーポリシー・免責事項</a>
   </footer>
- <script src="../headerFooter/script.js"></script>
+
+  <!--   広告 -->
+  <aside class="ad1">
+    <p><small>ad</small></p>
+    <p>
+      <!--     ここ広告を挿入 -->
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=gift_certificates&banner=1TJ8XM5YGJR5WC15P202&f=ifr&linkID=6a31d1c20847319217f2402b033016fc&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+    </p>
+  </aside>
+  <aside class="ad2">
+    <p><small>ad</small></p>
+    <p>
+      <!--     ここ広告を挿入 -->
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=primevideo&banner=0N84Z260P2YWJ45V2G82&f=ifr&linkID=b78dafe03b786eb60d615ed708988c81&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+    </p>
+  </aside>
+
 </div>
+
+<script src="https://benrineko.com/template_HeaderFooterSide/script.js"></script>
 <!-- partial -->
   <script  src="./script.js"></script>
 

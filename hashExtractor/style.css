@@ -1,106 +1,17 @@
 @charset "UTF-8";
-/* used by benri-template ver.5 */
-/*========= 枠組み・枠組みのポジション） ===============*/
-body {
-  box-sizing: border-box;
+/* uses benri-template v17.3: change sankaku to used unicode */
+/*=========  ===============*/
+/* uses benri-template v17.3 */
+/*========= .main ===============*/
+.main {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0;
-  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  letter-spacing: normal;
-}
-body button,
-body a,
-body [role=button],
-body [role=link],
-body [role=tab],
-body [role=menuitem],
-body [contenteditable=true],
-body [draggable=true] {
-  cursor: pointer;
-}
-
-.container {
-  margin: 14px;
-  width: 100%;
-}
-@media (min-width: 1200px) {
-  .container {
-    display: grid;
-    grid-template: "main simulation header" 50px "main simulation ad1" auto "main simulation ad2" auto "main simulation footer" 1fr/1fr 1fr auto;
-    gap: 10px;
-  }
-}
-@media (max-width: 1200px) {
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
-    flex-direction: column;
-  }
-}
-
-.header {
-  grid-area: header;
-}
-
-.ad1-space {
-  grid-area: ad1;
-  margin: 0;
-  padding: 0;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
+  gap: 10px;
   flex-direction: column;
 }
-.ad1-space else {
-  width: 300px;
-}
-.ad1-space p {
-  margin: 0 auto;
-  padding: 0 auto;
-  text-align: center;
-}
 
-.ad2-space {
-  grid-area: ad2;
-  margin: 0;
-  padding: 0;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-  flex-direction: column;
-}
-.ad2-space else {
-  width: 300px;
-}
-.ad2-space p {
-  margin: 0 auto;
-  padding: 0 auto;
-  text-align: center;
-}
-
-.main-container {
-  grid-area: main;
-}
-
-.simulation-container {
-  grid-area: simulation;
-}
-
-.footer {
-  grid-area: footer;
-}
-
-/*========= main ===============*/
+/*========= .main-container ===============*/
 .main-container {
   margin: 0;
   padding: 0;
@@ -138,9 +49,6 @@ body [draggable=true] {
   border-radius: 3px;
   border: 2px solid #337ab7;
 }
-.m-main-section textarea else {
-  width: 200px;
-}
 .m-main-section textarea:hover, .m-main-section textarea:active, .m-main-section textarea:focus {
   border-color: #1f4165;
 }
@@ -154,8 +62,8 @@ body [draggable=true] {
   line-height: 1.6;
   letter-spacing: normal;
   font-weight: bold;
-  color: #fff;
   background-color: #337ab7;
+  color: #fff;
   transition: box-shadow 0.2s ease-in-out;
   position: relative;
 }
@@ -205,11 +113,8 @@ body [draggable=true] {
   justify-content: center;
   text-align: center;
   line-height: 64px;
-  color: #fff;
   background-color: #0d47a1;
-}
-.m-main-section .color-btn else {
-  width: 50px;
+  color: #fff;
 }
 .m-main-section .color-btn:hover, .m-main-section .color-btn:active, .m-main-section .color-btn:focus {
   font-weight: bold;
@@ -246,9 +151,6 @@ body [draggable=true] {
   transition: opacity 0.3s ease-in-out;
   /*ここでは、微調整した「▼copied!!」の背景を表示します。*/
 }
-.m-main-section .color-btn:before else {
-  width: 40%;
-}
 .m-main-section .color-btn:focus:after, .m-main-section .color-btn:focus:before {
   opacity: 1;
 }
@@ -257,7 +159,7 @@ body [draggable=true] {
   color: #007bff;
 }
 
-/*========= simulation ===============*/
+/*========= .simulation-container ===============*/
 .simulation-container {
   padding-bottom: 10px;
   display: flex;
@@ -297,9 +199,6 @@ body [draggable=true] {
   margin: 10px auto 4px auto;
   height: 50px;
   width: 100%;
-}
-.s-input-size-section .text-size-slider else {
-  width: 50px;
 }
 .s-input-size-section .text-size-button {
   padding: 20px 30px;
