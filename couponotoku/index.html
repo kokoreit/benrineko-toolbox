@@ -10,86 +10,98 @@
         <link rel="shortcut icon" href="./favicon.ico">
         <link rel="apple-touch-icon" href="./apple-touch-icon.png">
         <link rel="icon" type="image/png" href="./android-chrome-192x192.png">
-      <link rel="stylesheet" href="../headerFooter/style.css">
+        <link rel="stylesheet" href="../template_HeaderFooterSide/style.css">
       <link rel="stylesheet" href="./style.css">
     </head>
 <body>
 <!-- partial:index.partial.html -->
-<div class="container">
-   <header class="header">
-    <a href="../index.html" class="logo-img"></a>
-    <div class="header-menu">
-      <button id="header-menu-button">他のツール</button>
-      <div id="header-menu-contents">
-<!--         JSでコンテンツ一覧を追加します。 -->
+
+<div class="container" id="side-menu-clip-container">
+
+  <!-- メイン -->
+  <main class="main">
+    <div class="title-space">
+      <h1>クーポンお得計算機</h1>
+      <h2>クーポンで一番お得に買い物ができる購入金額（代金）は何円（いくら）の商品なのかを算出します。</h2>
+    </div>
+    <div class="input-space">
+      <div class="coupon-input-container calc-container"> 
+        <label for="coupon-input">クーポン：</label><br>
+        <input type="number" id="coupon-input" name="coupon" required max="100" min="1" placeholder="（例）40">
+        <select id="select">
+          <option selected value="percent">
+            % OFF
+          </option>
+          <option value="discount">
+            割 引
+          </option>
+        </select>
+        <p>※%OFFは0〜100まで、割引は1~10までの半角英数字を入力してください。</p>
+      </div> 
+      <div class="discount-limit-input-container calc-container"> 
+        <label for="discount-limit-input">値引き上限額：</label><br>
+        <input type="number" id="discount-limit-input" name="discount-limit" required max="999999" placeholder="（例）2000"> <label for="discount-limit-input">円</label>
+        <p>※上限額は1〜999999までの半角数字で入力してください。</p>
       </div>
-      <div class="overlay"></div>
+      <div class="calculate-button-container calc-container"> 
+        <button class="calculate-button" type="button" onclick="calculateDiscount()">計算</button>
+      </div>
     </div>
+    <div class="result-announce-space">
+      <p>結果</p>
+    </div>
+    <div class="result-space">
+      <p class="yen">0 円</p>
+      <p>以上のお会計に</p>
+      <p class="coupon">0%OFF</p>
+      <p>のクーポンを使えば値引き上限額</p>
+      <p class="discount-limit">0 円</p>
+      <p>の値引きを受けることができます。</p>
+
+      <p class="note">※計算結果は小数点以下を切り捨てて表示をします。</p>
+    </div>
+
+  </main>
+
+  <!-- ヘッダー・メニュー・オーバーレイ-・フッター -->
+  <header class="header">
+    <a class="logo" href="../index.html" aria-label="ホームに移動する" onclick="focusAndBlur(this)"></a>
+    <button id="side-menu-button" class="title-burger" aria-label="他のツールをサイドバーに表示する" onclick="focusAndBlur(this)">
+      <p class="title">他ツール</p>
+      <div class="burger">
+        <div class="span-container">
+          <span class="s1"></span>
+          <span class="s2"></span>
+          <span class="s3"></span>
+        </div>
+      </div>
+    </button>
   </header>
-  
-  <div class="ad1-section">
-    <p><small>ad</small></p>
-    <p>
-<!--       ここに300広告を挿入 -->
-      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=consumables&banner=1HN2JZFES4SDCAKV72R2&f=ifr&linkID=942f0c3fa280a0371662a0f6c1aa00c4&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-    </p>
-  </div>
-
-  <div class="title-space">
-    <h1>クーポンお得計算機</h1>
-
-    <h2>クーポンで一番お得に買い物ができる購入金額（代金）は何円（いくら）の商品なのかを算出します。</h2>
-  </div>
-  <div class="input-space">
-    <div class="coupon-input-container calc-container"> 
-      <label for="coupon-input">クーポン：</label>
-      <input type="number" id="coupon-input" name="coupon" required max="100" min="1" placeholder="（例）40">
-      <select id="select">
-        <option selected value="percent">
-          % OFF
-        </option>
-        <option value="discount">
-          割 引
-        </option>
-      </select>
-      <p>※%OFFは0〜100まで、割引は1~10までの半角英数字を入力してください。</p>
-    </div> 
-    <div class="discount-limit-input-container calc-container"> 
-      <label for="discount-limit-input">値引き上限額：</label>
-      <input type="number" id="discount-limit-input" name="discount-limit" required max="999999" placeholder="（例）2000"> <label for="discount-limit-input">円</label>
-      <p>※上限額は1〜999999までの半角数字で入力してください。</p>
-    </div>
-    <div class="calculate-button-container calc-container"> 
-      <button class="calculate-button" type="button" onclick="calculateDiscount()">計算</button>
-    </div>
-  </div>
-  <div class="result-announce-space">
-    <p>結果</p>
-  </div>
-  <div class="result-space">
-    <p class="yen">0 円</p>
-    <p>以上のお会計に</p>
-    <p class="coupon">0%OFF</p>
-    <p>のクーポンを使えば値引き上限額</p>
-    <p class="discount-limit">0 円</p>
-    <p>の値引きを受けることができます。</p>
-
-    <p class="note">※計算結果は小数点以下を切り捨てて表示をします。</p>
-  </div>
-  
- <div class="ad2-section">
-    <p><small>ad</small></p>
-    <p>
-<!--       ここに300広告を挿入 -->
-      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=musicunlimited&banner=0RHX67K5Y1EYTCET8K82&f=ifr&linkID=1ca531af07ae56cede0d999ef250e529&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-    </p>
-  </div>
-
+  <aside id="side-menu-contents"></aside>
+  <aside id="overlay"></aside>
   <footer class="footer">
     <a href="../copyright/index.html">コピーライト・プライバシーポリシー・免責事項</a>
   </footer>
-  <script src="../headerFooter/script.js"></script>
+
+  <!--   広告 -->
+  <aside class="ad1">
+    <p><small>ad</small></p>
+    <p>
+      <!--     ここ広告を挿入 -->
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=gift_certificates&banner=1TJ8XM5YGJR5WC15P202&f=ifr&linkID=6a31d1c20847319217f2402b033016fc&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+    </p>
+  </aside>
+  <aside class="ad2">
+    <p><small>ad</small></p>
+    <p>
+      <!--     ここ広告を挿入 -->
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=primevideo&banner=0N84Z260P2YWJ45V2G82&f=ifr&linkID=b78dafe03b786eb60d615ed708988c81&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+    </p>
+  </aside>
+
 </div>
+
+<script src="https://benrineko.com/template_HeaderFooterSide/script.js"></script>
 <!-- partial -->
   <script  src="./script.js"></script>
 
