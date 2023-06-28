@@ -10,40 +10,23 @@
         <link rel="shortcut icon" href="./favicon.ico">
         <link rel="apple-touch-icon" href="./apple-touch-icon.png">
         <link rel="icon" type="image/png" href="./android-chrome-192x192.png">
-      <link rel="stylesheet" href="../headerFooter/style.css">
+        <link rel="stylesheet" href="../template_HeaderFooterSide/style.css">
       <link rel="stylesheet" href="./style.css">
     </head>
 <body>
 <!-- partial:index.partial.html -->
 
+<div class="container" id="side-menu-clip-container">
 
-<div class="container">
-  <header class="header">
-    <a href="../index.html" class="logo-img"></a>
-    <div class="header-menu">
-      <button id="header-menu-button">他のツール</button>
-      <div id="header-menu-contents">
-        <!--         JSでコンテンツ一覧を追加します。 -->
-      </div>
-      <div class="overlay"></div>
-    </div>
-  </header>
-  <div class="ad1-space">
-    <p><small>ad</small></p>
-    <p>
-      <!--     ここ広告を挿入 -->
-      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=monthlydealevent&banner=140Z9CGTRPHE20SMKXR2&f=ifr&linkID=772cdcd8b2e102d5ff6526c2cb13d0ea&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-
-    </p>
-  </div>
-
-  <div class="main-space">
+  <!-- メイン -->
+<main class="main">
     <div class="title-content">
       <h1>西暦から和暦年号変換</h1>
       <h2>（相互変換：この年は何年？）</h2>
-      <p class="howto">「変換前の年（西暦・令和。平成・昭和）」を選択して「その数値」を入力してください。「計算する」ボタンを押すとそれぞれの年に換算された結果が表示されます。</p>
+      <p class="howto">「変換前の年（西暦・令和。平成・昭和）」を選択して「その数値」を入力してください。<br>「計算する」ボタンを押すとそれぞれの年に換算された結果が表示されます。</p>
     </div>
     <div class="input-contents">
+      <label class="select-label" for="select" aria-label="変換前の暦の選択ボタン">西暦 or 和暦</label><br>
       <select id="select">
         <option selected value="seireki">
           西暦
@@ -58,11 +41,11 @@
           昭和
         </option>
       </select>
-      <input id="input" placeholder="例: 2023" type="text"> 
-      <button id="calculate">計算する</button>
+      <input id="input" placeholder="例: 2023" type="text" aria-label="数字の入力ボックス"> 
+      <button id="calculate" aria-label="計算ボタン" >計算する</button>
     </div>
     <div class="output-contents">
-      <p id="result-announce">年号を入力して「計算する」を押してください。</p>
+      <p id="result-announce">「西暦または和暦」の年号を入力して「計算する」を押してください。</p>
       <p id="result-seireki"></p>
       <p id="result-reiwa"></p>
       <p id="result-heisei"></p>
@@ -75,21 +58,47 @@
 昭和：1926年12月25日〜1989年(S'64)1月7日
   </pre>
     </div>
-  </div>
+  </main>
 
-  <div class="ad2-space">
-    <p><small>ad</small></p>
-    <p>
-      <!--     ここ広告を挿入 -->
-      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=musicunlimited&banner=0RHX67K5Y1EYTCET8K82&f=ifr&linkID=1ca531af07ae56cede0d999ef250e529&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-    </p>
-  </div>
+  <!-- ヘッダー・メニュー・オーバーレイ-・フッター -->
+  <header class="header">
+    <a class="logo" href="../index.html" aria-label="ホームに移動する" onclick="focusAndBlur(this)"></a>
+    <button id="side-menu-button" class="title-burger" aria-label="他のツールをサイドバーに表示する" onclick="focusAndBlur(this)">
+      <p class="title">他ツール</p>
+      <div class="burger">
+        <div class="span-container">
+          <span class="s1"></span>
+          <span class="s2"></span>
+          <span class="s3"></span>
+        </div>
+      </div>
+    </button>
+  </header>
+  <aside id="side-menu-contents"></aside>
+  <aside id="overlay"></aside>
   <footer class="footer">
     <a href="../copyright/index.html">コピーライト・プライバシーポリシー・免責事項</a>
   </footer>
+
+  <!--   広告 -->
+  <aside class="ad1">
+    <p><small>ad</small></p>
+    <p>
+      <!--     ここ広告を挿入 -->
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=gift_certificates&banner=1TJ8XM5YGJR5WC15P202&f=ifr&linkID=6a31d1c20847319217f2402b033016fc&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+    </p>
+  </aside>
+  <aside class="ad2">
+    <p><small>ad</small></p>
+    <p>
+      <!--     ここ広告を挿入 -->
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=primevideo&banner=0N84Z260P2YWJ45V2G82&f=ifr&linkID=b78dafe03b786eb60d615ed708988c81&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+    </p>
+  </aside>
+
 </div>
 
-<script src="../headerFooter/script.js"></script>
+<script src="https://benrineko.com/template_HeaderFooterSide/script.js"></script>
 <!-- partial -->
   <script  src="./script.js"></script>
 
