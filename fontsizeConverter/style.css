@@ -4,8 +4,6 @@
 /* uses benri-template v17.3 */
 /*========= .main ===============*/
 .main {
-  margin: 0 20px;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,7 +84,7 @@
 }
 .menu-space .unit-contents #unit-selector {
   margin-top: 0;
-  padding: 11px;
+  padding: 11px 0;
   width: 100%;
   border: none;
   border-radius: 4px;
@@ -94,6 +92,7 @@
   font-size: 1.3rem;
   line-height: 1.6;
   letter-spacing: normal;
+  text-align: center;
   background-color: #b71c1c;
   color: #fff;
 }
@@ -112,7 +111,7 @@
 }
 .menu-space .precision-contents #precision-selector {
   margin-top: 0;
-  padding: 11px;
+  padding: 11px 0;
   width: 100%;
   border: none;
   border-radius: 4px;
@@ -120,6 +119,7 @@
   font-size: 1.3rem;
   line-height: 1.6;
   letter-spacing: normal;
+  text-align: center;
   background-color: #b7571c;
   color: #fff;
 }
