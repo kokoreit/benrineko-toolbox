@@ -1,29 +1,9 @@
 @charset "UTF-8";
-/*========= 構成 ===============*/
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0px;
-  flex-direction: column;
-}
-
-.container {
-  max-width: 700px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2px;
-  flex-direction: column;
-  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  letter-spacing: normal;
-  background-color: #fff;
-  color: #444;
-}
-
-.main-section {
+/* uses benri-template v17.3: change sankaku to used unicode */
+/*=========  ===============*/
+/* uses benri-template v17.3 */
+/*========= .main ===============*/
+.main {
   margin: 0 20px;
   width: 100%;
   display: flex;
@@ -31,22 +11,6 @@ body {
   align-items: center;
   gap: 5px;
   flex-direction: column;
-}
-
-.ad-section {
-  min-width: 300px;
-  height: 300px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-  flex-direction: column;
-}
-.ad-section p {
-  margin: 0 auto;
-  padding: 0 auto;
-  text-align: center;
 }
 
 /*========= main-section ===============*/
@@ -57,12 +21,18 @@ body {
   align-items: center;
   gap: 0px;
   flex-direction: column;
+  align-items: start;
 }
 .title-space h1 {
+  width: 100%;
   font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 1.6;
   letter-spacing: 0.03em;
+  text-align: center;
+}
+.title-space .description {
+  width: 100%;
   text-align: center;
 }
 
@@ -90,8 +60,8 @@ body {
   border: 2px solid #0d47a1;
 }
 .input-space #input-box.converted {
-  color: #0d47a1;
   background-color: #e3edfd;
+  color: #0d47a1;
 }
 
 .menu-space {
@@ -124,8 +94,8 @@ body {
   font-size: 1.3rem;
   line-height: 1.6;
   letter-spacing: normal;
-  color: #fff;
   background-color: #b71c1c;
+  color: #fff;
 }
 .menu-space .precision-contents {
   display: flex;
@@ -150,8 +120,8 @@ body {
   font-size: 1.3rem;
   line-height: 1.6;
   letter-spacing: normal;
-  color: #fff;
   background-color: #b7571c;
+  color: #fff;
 }
 .menu-space .convert-contents {
   height: 100%;
@@ -169,8 +139,8 @@ body {
   font-size: 1.3rem;
   line-height: 1.6;
   letter-spacing: normal;
-  color: #fff;
   background-color: #0d47a1;
+  color: #fff;
 }
 
 .output-space {
@@ -186,24 +156,24 @@ body {
   font-size: 0.9rem;
   line-height: 1.6;
   letter-spacing: normal;
-  color: #0d47a1;
   background-color: #e3edfd;
+  color: #0d47a1;
 }
 .output-space p.announce::before {
-  content: "▲";
-  color: #0d47a1;
   display: inline-block;
+  content: "▲";
   content: "▼";
+  color: #0d47a1;
 }
 .output-space p.announce::after {
-  content: "▲";
-  color: #0d47a1;
   display: inline-block;
+  content: "▲";
   content: "▼";
+  color: #0d47a1;
 }
 .output-space #output-text {
   font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 1.8;
   letter-spacing: normal;
   text-align: left;
