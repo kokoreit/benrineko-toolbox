@@ -10,25 +10,17 @@
         <link rel="shortcut icon" href="./favicon.ico">
         <link rel="apple-touch-icon" href="./apple-touch-icon.png">
         <link rel="icon" type="image/png" href="./android-chrome-192x192.png">
-      <link rel="stylesheet" href="../headerFooter/style.css">
+        <link rel="stylesheet" href="../template_HeaderFooterSide/style.css">
       <link rel="stylesheet" href="./style.css">
     </head>
 <body>
 <!-- partial:index.partial.html -->
 
-<div class="container">
-  <header class="header">
-    <a href="../index.html" class="logo-img"></a>
-    <div class="header-menu">
-      <button id="header-menu-button">他のツール</button>
-      <div id="header-menu-contents">
-        <!--         JSでコンテンツ一覧を追加します。 -->
-      </div>
-      <div class="overlay"></div>
-    </div>
-  </header>
+<div class="container" id="side-menu-clip-container">
 
-  <div class="title-section">
+  <!-- メイン -->
+  <main class="main">
+     <div class="title-section">
     <h1>＄変数抜き出しツール</h1>
     <p>これは
       <span class="decorated border">変数一覧</span>
@@ -42,16 +34,7 @@
       <span class="decorated extract">作成</span>されます。(コピペボタンを押すとお使いの端末のクリップボードにコピーされます。)
     </h2>
   </div>
-
-  <div class="ad-section">
-    <p><small>-ad-</small></p>
-    <p>
-      <!--     320*100の広告を挿入 -->
-      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=294&l=ur1&category=amazonbusiness&banner=1V3GD88MKRYV6R165SR2&f=ifr&linkID=4be4b7d78ba3a82c2e9c1cbbeb53147e&t=benrineko.com-22&tracking_id=benrineko.com-22" width="320" height="100" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-    </p>
-  </div>
-
-  <div class="main-section">
+    <div class="main-section">
     <div class="input-contents">
       <input type="text" id="inputBox" placeholder="（例）$red: #b71c1c;　$blue: #0d47a1;">
       <button id="extractButton">作成する</button>
@@ -59,13 +42,47 @@
     <div class="output-contents" id="buttonContainer"></div>
     <p id="message">$を含むテキストを入力してから「作成する」を押してください。</p>
   </div>
+  </main>
 
+  <!-- ヘッダー・メニュー・オーバーレイ-・フッター -->
+  <header class="header">
+    <a class="logo" href="../index.html" aria-label="ホームに移動する" onclick="focusAndBlur(this)"></a>
+    <button id="side-menu-button" class="title-burger" aria-label="他のツールをサイドバーに表示する" onclick="focusAndBlur(this)">
+      <p class="title">他ツール</p>
+      <div class="burger">
+        <div class="span-container">
+          <span class="s1"></span>
+          <span class="s2"></span>
+          <span class="s3"></span>
+        </div>
+      </div>
+    </button>
+  </header>
+  <aside id="side-menu-contents"></aside>
+  <aside id="overlay"></aside>
   <footer class="footer">
     <a href="../copyright/index.html">コピーライト・プライバシーポリシー・免責事項</a>
   </footer>
+
+  <!--   広告 -->
+  <aside class="ad1">
+    <p><small>ad</small></p>
+    <p>
+      <!--     ここ広告を挿入 -->
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=gift_certificates&banner=1TJ8XM5YGJR5WC15P202&f=ifr&linkID=6a31d1c20847319217f2402b033016fc&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+    </p>
+  </aside>
+  <aside class="ad2">
+    <p><small>ad</small></p>
+    <p>
+      <!--     ここ広告を挿入 -->
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=primevideo&banner=0N84Z260P2YWJ45V2G82&f=ifr&linkID=b78dafe03b786eb60d615ed708988c81&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+    </p>
+  </aside>
+
 </div>
 
-<script src="../headerFooter/script.js"></script>
+<script src="https://benrineko.com/template_HeaderFooterSide/script.js"></script>
 <!-- partial -->
   <script  src="./script.js"></script>
 

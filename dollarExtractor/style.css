@@ -1,43 +1,14 @@
-@charset "UTF-8";
-/* used by benri-template ver.5 */
-/*========= 構成 ===============*/
-body {
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  letter-spacing: normal;
-}
-body button,
-body a,
-body [role=button],
-body [role=link],
-body [role=tab],
-body [role=menuitem],
-body [contenteditable=true],
-body [draggable=true] {
-  cursor: pointer;
-}
-
-.container {
+/* uses benri-template v17.3: change sankaku to used unicode */
+/*=========  ===============*/
+/* uses benri-template v5->17.3 */
+/*========= .title-section ===============*/
+.title-section {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
   flex-direction: column;
-  align-items: start;
-  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  letter-spacing: normal;
-  background-color: #fff;
-  color: #444;
 }
-
 .title-section h1 {
   margin-bottom: 20px;
 }
@@ -62,25 +33,15 @@ body [draggable=true] {
 }
 .title-section .decorated.extract {
   padding: 0 4px;
-  color: #fff;
   background-color: #0d47a1;
+  color: #fff;
 }
 
-.ad-section p {
-  margin: 0;
-  padding: 0;
-}
-
+/*========= main-section ===============*/
 .main-section {
   min-height: 400px;
 }
 
-.footer {
-  /*このページは左詰なので上書きをします。*/
-  justify-content: start !important;
-}
-
-/*========= main-section ===============*/
 .input-contents {
   height: 30px;
   display: flex;
@@ -103,8 +64,8 @@ body [draggable=true] {
   padding: 10px;
   border: none;
   border-radius: 0px;
-  color: #fff;
   background-color: #b71c1c;
+  color: #fff;
 }
 .input-contents #message {
   color: #b71c1c;
