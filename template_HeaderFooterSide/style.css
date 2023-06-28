@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* uses benri-template v17.1: add title-burger */
+/* uses benri-template v17.3: change sankaku to used unicode */
 /*=========  ===============*/
 /* uses benri-template v17.1 */
 /*========= .header ===============*/
@@ -227,6 +227,7 @@
   letter-spacing: normal;
   bottom: 0;
   content: "×";
+  color: #444;
 }
 
 /*========= 構成 ===============*/
