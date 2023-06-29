@@ -1,4 +1,4 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja" >
     <head>
       <meta charset="UTF-8">
@@ -10,54 +10,52 @@
         <link rel="shortcut icon" href="./favicon.ico">
         <link rel="apple-touch-icon" href="./apple-touch-icon.png">
         <link rel="icon" type="image/png" href="./android-chrome-192x192.png">
-      <link rel="stylesheet" href="./headerFooter/style.css">
+      <link rel="stylesheet" href="./template_HeaderFooterSide/style.css">
       <link rel="stylesheet" href="./style.css">
     </head>
 
 <body>
 <!-- partial:index.partial.html -->
 
-<div class="container">
-  <header class="header">
-    <a href="./index.html" class="logo-img"></a>
-    <div class="header-menu">
-      <nav>
-        <button onclick="scrollToSection('life-content')">生活</button>
-        <button onclick="scrollToSection('develop-content')">開発</button>
-      </nav>
-    </div>
-  </header>
+<div class="container" id="side-menu-clip-container">
 
-
-
-  <div class="main-section">
+  <!-- メイン -->
+  <main class="main">
     <div class="title-content">
-      <div class="logo-1-3-img" alt="logo"></div>
       <h1>ベンリネココムでは便利ツールを公開しています。</h1>
     </div>
 
     <div id="life-content" class="app-content">
-      <h2>生活</h2>
+      <div class="content-title-space">
+        <button onclick="scrollToSection('life-content')" class="current"
+                aria-label="生活カテゴリーにジャンプボタン" onclick="focusAndBlur(this)">生活</button>
+        <button onclick="scrollToSection('develop-content')"
+                aria-label="開発カテゴリーにジャンプボタン" onclick="focusAndBlur(this)">開発</button>
+      </div>
       <!--       電子レンジw時間変換 -->
-      <a href="./wTimeConverter/index.html" class="app-card-link app-card">
+      <a href="./wTimeConverter/index.html" class="app-card-link app-card"
+         aria-label="電子レンジw時間変換" onclick="focusAndBlur(this)">
         <div class="app-img wTimeConverter-img" alt="icon"></div>
         <h3 class="app-title">電子レンジの時間変換</h3>
         <p class="app-description">電子レンジの温め時間を、指定Wの温め時間に再計算するツールです。<br>買ってきた食品の温め時間や、レンチンのレシピの温め時間を家庭の電子レンジのワット時間に変更したい時などに便利です。</p>
       </a>
       <!--       クーポンお得計算機 -->
-      <a href="./couponotoku/index.html" class="app-card-link app-card">
+      <a href="./couponotoku/index.html" class="app-card-link app-card"
+         aria-label="クーポンお得計算機" onclick="focusAndBlur(this)">
         <div class="app-img couponotoku-img" alt="icon"></div>
         <h3 class="app-title">クーポンお得計算機</h3>
         <p class="app-description">割引率と最大割引額を入力すると、最適な購入金額がわかります。<br>例えば【70％のクーポン（割引上限額2000円）】なら2857円の購入で2000円の割引が受けられる事がわかります。</p>
       </a>
       <!--       自然音（環境音） -->
-      <a href="./natureSounds/index.html" class="app-card-link app-card">
+      <a href="./natureSounds/index.html" class="app-card-link app-card"
+         aria-label="自然音（環境音）" onclick="focusAndBlur(this)">
         <div class="app-img natureSounds-img" alt="icon"></div>
         <h3 class="app-title">自然音（環境音）</h3>
         <p class="app-description">自然音や環境音を使ったBGMを再生できます。<br>ゆったりとした空間を目指しましたので、集中やリラックス（リフレッシュ）瞑想や睡眠時などにお役立てください。</p>
       </a>
       <!--       年号変換 -->
-      <a href="./nengouhenkan/index.html" class="app-card-link app-card">
+      <a href="./nengouhenkan/index.html" class="app-card-link app-card"
+         aria-label="年号変換" onclick="focusAndBlur(this)">
         <div class="app-img nengouhenkan-img" alt="icon"></div>
         <h3 class="app-title">年号変換</h3>
         <p class="app-description">和暦と西暦の相互変換ツールです。<br>令和、平成、昭和の年号から西暦、または西暦から和暦の年号が何年なのかを簡単に計算できます。</p>
@@ -65,34 +63,75 @@
     </div>
 
     <div id="develop-content" class="app-content">
-      <h2>開発</h2>
+      <div class="content-title-space">
+        <button onclick="scrollToSection('life-content')"
+                aria-label="生活カテゴリーにジャンプボタン" onclick="focusAndBlur(this)">生活</button>
+        <button onclick="scrollToSection('develop-content')" class="current"
+                aria-label="開発カテゴリーにジャンプボタン" onclick="focusAndBlur(this)">開発</button>
+      </div>
       <!--       カラーコード抽出機 -->
-      <a href="./hashExtractor/index.html" class="app-card-link app-card">
+      <a href="./hashExtractor/index.html" class="app-card-link app-card"
+         aria-label="カラーコード抽出機" onclick="focusAndBlur(this)">
         <div class="app-img hashExtractor-img" alt="icon"></div>
         <h3 class="app-title">カラーコード抽出機</h3>
         <p class="app-description">テキストからカラーコードを抽出・コピーボタンとして色を再現します。<br>配色提案の文章などをそのまま貼り付けて抽出、色を確認しながらコピーして活用するのにピッタリです。</p>
       </a>
       <!--       $変数コピペツール -->
-      <a href="./dollarExtractor/index.html" class="app-card-link app-card">
+      <a href="./dollarExtractor/index.html" class="app-card-link app-card"
+         aria-label="変数コピペツール" onclick="focusAndBlur(this)">
         <div class="app-img dollarExtractor-img" alt="icon"></div>
         <h3 class="app-title"> $変数コピペツール</h3>
         <p class="app-description">Webコーディング補助ツールです。$変数一覧を丸ごと貼り付けると「$」から続く文字列を抽出し、コピーボタンが作成されます。<br>予測変換の機能がない環境でのコーディング作業に最適です。</p>
       </a>
       <!--       フォントサイズ単位一括変換 -->
-      <a href="./fontsizeConverter/index.html" class="app-card-link app-card">
+      <a href="./fontsizeConverter/index.html" class="app-card-link app-card end-odd-app-card"
+         aria-label="フォントサイズ単位一括変換" onclick="focusAndBlur(this)">
         <div class="app-img fontsizeConverter-img" alt="icon"></div>
         <h3 class="app-title">フォント単位変換</h3>
         <p class="app-description">フォントサイズ単位（pt, px, pc, mm, cm, in）を含むテキストを指定の単位に一括変換します。<br>うっかりと単位を間違えて指定してしまった時に便利なツールです。</p>
       </a>
     </div>
-  </div>
+  </main>
 
-
-
+  <!-- ヘッダー・メニュー・オーバーレイ-・フッター -->
+  <header class="header">
+    <a class="logo" href="./index.html" aria-label="ホームに移動する" onclick="focusAndBlur(this)"></a>
+    <button id="side-menu-button" class="title-burger" aria-label="他のツールをサイドバーに表示する" onclick="focusAndBlur(this)">
+      <p class="title">全ツール</p>
+      <div class="burger">
+        <div class="span-container">
+          <span class="s1"></span>
+          <span class="s2"></span>
+          <span class="s3"></span>
+        </div>
+      </div>
+    </button>
+  </header>
+  <aside id="side-menu-contents"></aside>
+  <aside id="overlay"></aside>
   <footer class="footer">
     <a href="./copyright/index.html">コピーライト・プライバシーポリシー・免責事項</a>
   </footer>
+
+  <!--   広告 -->
+  <aside class="ad1">
+    <p><small>ad</small></p>
+    <p>
+      <!--     ここ広告を挿入 -->
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=gift_certificates&banner=1TJ8XM5YGJR5WC15P202&f=ifr&linkID=6a31d1c20847319217f2402b033016fc&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+    </p>
+  </aside>
+  <aside class="ad2">
+    <p><small>ad</small></p>
+    <p>
+      <!--     ここ広告を挿入 -->
+      <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=primevideo&banner=0N84Z260P2YWJ45V2G82&f=ifr&linkID=b78dafe03b786eb60d615ed708988c81&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+    </p>
+  </aside>
+
 </div>
+
+<script src="https://benrineko.com/template_HeaderFooterSide/script.js"></script>
 <!-- partial -->
   <script  src="./script.js"></script>
 

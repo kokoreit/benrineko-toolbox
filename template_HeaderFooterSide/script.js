@@ -13,16 +13,17 @@ id="side-menu-clip-container"
 */
 
 /*========= メニューのテンプレート ===============*/
+/* どこから呼び出されても良い様に、絶対位置リンク形式を採用します。 */
 const sideMenuTemplate = `
         <p>生活</p>
-        <a href="../wTimeConverter/index.html">電子レンジw時間変換</a>
-        <a href="../couponotoku/index.html">クーポンお得計算機</a>
-        <a href="../natureSounds/index.html">自然音（環境音）</a>
-        <a href="../nengouhenkan/index.html">年号変換</a>
+        <a href="https://benrineko.com/wTimeConverter/index.html">電子レンジw時間変換</a>
+        <a href="https://benrineko.com/couponotoku/index.html">クーポンお得計算機</a>
+        <a href="https://benrineko.com/natureSounds/index.html">自然音（環境音）</a>
+        <a href="https://benrineko.com/nengouhenkan/index.html">年号変換</a>
         <p>開発</p>
-        <a href="../dollarExtractor/index.html">$変数コピペツール</a>
-        <a href="../hashExtractor/index.html">カラーコード抽出機</a>
-        <a href="../fontsizeConverter/index.html">フォントサイズ単位変換</a>`;
+        <a href="https://benrineko.com/dollarExtractor/index.html">$変数コピペツール</a>
+        <a href="https://benrineko.com/hashExtractor/index.html">カラーコード抽出機</a>
+        <a href="https://benrineko.com/fontsizeConverter/index.html">フォントサイズ単位変換</a>`;
 
 /*========= DOM ===============*/
 const sideMenuButton = document.querySelector("#side-menu-button");
