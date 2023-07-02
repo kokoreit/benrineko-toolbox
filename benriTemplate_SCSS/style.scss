@@ -1,4 +1,4 @@
-/* uses benri-template v17.3: change sankaku to used unicode */
+/* uses benri-template v18.0: add  button-container-3spans-toClose */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -302,6 +302,21 @@ $large-desktop-max-width: 1200px;
         @include circle(7px * ($size / 50px), $color);
       }
     }
+  }
+  @content;
+}
+@mixin button-container-3spans-toClose($time: 0.5s, $color: null){
+  .span-container{
+    position: relative;
+    @include custom-size(70%);
+    span{
+      @include absolute(45%, null, null, null);
+      @if $color{ background-color: $color;}
+    }
+    > :nth-child(1){transform: rotate(45deg); transition: transform $time;}
+    > :nth-child(2){ display: none;}
+    > :nth-child(3){transform: rotate(-45deg); transition: transform $time;}
+    // 「>」は直接の子孫を指定する時に使います。
   }
   @content;
 }
