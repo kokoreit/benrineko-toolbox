@@ -5,11 +5,7 @@
 
 【HTMLで用意するもの（z-indexの推進の順位）】
 id="overlay"（z-index: 10000; //扱いやすく他でも使えるのでオススメです。）
-id="side-menu-contents"（z-index: 10001;) 
-id="side-menu-button"（z-index: 10002;)
-
-（以下任意：メインコンテナに付与して連動させると便利です。）
-id="side-menu-clip-container"
+id="side-menu-button"（z-index: 10001;)
 */
 
 /*========= メニューのテンプレート ===============*/
