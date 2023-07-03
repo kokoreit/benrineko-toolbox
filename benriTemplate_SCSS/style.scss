@@ -1,4 +1,4 @@
-/* uses benri-template v18.0: add  button-container-3spans-toClose */
+/* uses benri-template v19.0: add button-container-3spans-toClose option */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -305,10 +305,10 @@ $large-desktop-max-width: 1200px;
   }
   @content;
 }
-@mixin button-container-3spans-toClose($time: 0.5s, $color: null){
+@mixin button-container-3spans-toClose($mark-size: 70%, $time: 0.5s, $color: null){
   .span-container{
     position: relative;
-    @include custom-size(70%);
+    @include custom-size($mark-size);
     span{
       @include absolute(45%, null, null, null);
       @if $color{ background-color: $color;}
@@ -343,23 +343,21 @@ $large-desktop-max-width: 1200px;
     //このデザイン比率をキープさせるためにabsoluteを採用します
   }
   @content;
-  /*
-  【.titleの位置調整】
-  ご指定のフォントサイズ等で位置が変わるため、
-  フォントの行間設定を使って文字位置の微調整を行なってください。
+//   【.titleの位置調整】
+//   ご指定のフォントサイズ等で位置が変わるため、
+//   フォントの行間設定を使って文字位置の微調整を行なってください。
 
-  【これらのコードは以下のHTML構造を想定しています】
-  <button>
-  <p class="title">TITLE</p>
-  <div class="burger">
-  <div class="span-container">
-  <span class="s1"></span>
-  <span class="s2"></span>
-  <span class="s3"></span>
-  </div>
-  </div>
-  </button>
-  */
+//   【これらのコードは以下のHTML構造を想定しています】
+//   <button>
+//   <p class="title">TITLE</p>
+//   <div class="burger">
+//   <div class="span-container">
+//   <span class="s1"></span>
+//   <span class="s2"></span>
+//   <span class="s3"></span>
+//   </div>
+//   </div>
+//   </button>
 }
 @mixin clickable {
   //bodyに設定すると便利です。
