@@ -1,4 +1,4 @@
-/* uses benri-template v19.0: add button-container-3spans-toClose option */
+/* uses benri-template v20.0: add size */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -81,17 +81,23 @@ $large-desktop-max-width: 1200px;
   padding: 0;
   @content;
 }
-@mixin zero-size {
+@mixin size($height, $width: null) {
+  @if $width == null{ $width: $height;}
+  height: $height;
+  width: $width;
+  @content;
+}
+@mixin zero-size {//削除予定
   width: 0;
   height: 0;
   @content;
 }
-@mixin full-size {
+@mixin full-size {//削除予定
   width: 100%;
   height: 100%;
   @content;
 }
-@mixin custom-size($height, $width: null) {
+@mixin custom-size($height, $width: null) {//削除予定
   @if $width == null{ $width: $height;}
   height: $height;
   width: $width;
