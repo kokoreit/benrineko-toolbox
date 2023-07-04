@@ -1,4 +1,4 @@
-/* uses benri-template v20.1: replace size */
+/* benri-template v20.2: fix ad */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -163,7 +163,7 @@ $large-desktop-max-width: 1200px;
   }
   @content;
 }
-@mixin ad($width: 300px, $height: null) {
+@mixin ad($height: 300px, $width: null) {
   @include zero-bezel;
   @include size($height, $width);//custom-size
   @include flex-center(column){
