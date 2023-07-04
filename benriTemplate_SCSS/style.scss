@@ -1,4 +1,4 @@
-/* benri-template v20.2: fix ad */
+/* benri-template v20.3: fix button-container-3spans */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -281,7 +281,7 @@ $large-desktop-max-width: 1200px;
       @include flex-center(column, 20%);
       span{
         display: block;
-        @include custom-size($weit, 100%);
+        @include size($weit, 100%);//c
         background-color: $color;
       }
     }
@@ -292,7 +292,7 @@ $large-desktop-max-width: 1200px;
       @include flex-center(row, 20%);
       span{
         display: block;
-        @include custom-size(100%, $weit);
+        @include size(100%, $weit);//c
         background-color: $color;
       }
     }
@@ -302,7 +302,7 @@ $large-desktop-max-width: 1200px;
     .span-container{
       @include size(70%);//custom-size
       span{
-        @include full-size;
+        @include size(100%);//full
         @include circle(7px * ($size / 50px), $color);
       }
     }
