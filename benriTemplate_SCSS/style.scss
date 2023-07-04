@@ -1,4 +1,4 @@
-/* uses benri-template v20.0: add size */
+/* uses benri-template v20.1: replace size */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -87,22 +87,22 @@ $large-desktop-max-width: 1200px;
   width: $width;
   @content;
 }
-@mixin zero-size {//削除予定
-  width: 0;
-  height: 0;
-  @content;
-}
-@mixin full-size {//削除予定
-  width: 100%;
-  height: 100%;
-  @content;
-}
-@mixin custom-size($height, $width: null) {//削除予定
-  @if $width == null{ $width: $height;}
-  height: $height;
-  width: $width;
-  @content;
-}
+// @mixin zero-size {//削除予定
+//   width: 0;
+//   height: 0;
+//   @content;
+// }
+// @mixin full-size {//削除予定
+//   width: 100%;
+//   height: 100%;
+//   @content;
+// }
+// @mixin custom-size($height, $width: null) {//削除予定
+//   @if $width == null{ $width: $height;}
+//   height: $height;
+//   width: $width;
+//   @content;
+// }
 @mixin position($top: null, $right: null, $bottom: null, $left: null) {
   @if $top { top: $top;}
   @if $right {right: $right;}
@@ -165,7 +165,7 @@ $large-desktop-max-width: 1200px;
 }
 @mixin ad($width: 300px, $height: null) {
   @include zero-bezel;
-  @include custom-size($width, $height);
+  @include size($height, $width);//custom-size
   @include flex-center(column){
     justify-content: start;
   }
@@ -183,8 +183,7 @@ $large-desktop-max-width: 1200px;
   @content;
 }
 @mixin img($height, $width, $image-url, $retina-url: false) {
-  height: $height;
-  width: $width;
+  @include size($height, $width);//height: $height; width: $width;
   background-repeat: no-repeat;
   background-position: center;
   background-size: $width $height;
@@ -249,8 +248,7 @@ $large-desktop-max-width: 1200px;
   @content;
 }
 @mixin circle($size, $color) {
-  width: $size;
-  height: $size;
+  @include size($size);//width: $size; height: $size;
   border-radius: 50%;
   background-color: $color;
 }
@@ -258,16 +256,16 @@ $large-desktop-max-width: 1200px;
   display: block;
   content: "";
   @if $option == height{
-    @include custom-size($value, $wait);
+    @include size($value, $wait);//custom-size
   } @else {
-    @include custom-size($wait, $value);
+    @include size($wait, $value);//custom-size
   }
   @content;
 }
 @mixin design-button-setting($size){
   box-sizing: border-box;//指定のサイズの範囲に収まる様にします
   @include flat-radius(0px);//外装をフラットにします
-  @include custom-size($size);
+  @include size($size);                   //custom-size
   position: relative;//内装がabsoliteになることを想定しています
   @include zero-bezel;//内容をフィットさせます
   @include flex-center;//内容を中央表示にします
@@ -279,7 +277,7 @@ $large-desktop-max-width: 1200px;
   @if $alignment == y {
     //y軸並び：横シマ（ハンバーガーボタン）
     .span-container{
-      @include custom-size(60%, 70%);
+      @include size(60%, 70%);//custom-size
       @include flex-center(column, 20%);
       span{
         display: block;
@@ -290,7 +288,7 @@ $large-desktop-max-width: 1200px;
   } @else {
     //x軸並び：縦シマ
     .span-container{
-      @include custom-size(50%, 70%);
+      @include size(50%, 70%);//custom-size
       @include flex-center(row, 20%);
       span{
         display: block;
@@ -302,7 +300,7 @@ $large-desktop-max-width: 1200px;
   //ドットに変更
   @if $shape == dot{
     .span-container{
-      @include custom-size(70%);
+      @include size(70%);//custom-size
       span{
         @include full-size;
         @include circle(7px * ($size / 50px), $color);
@@ -314,7 +312,7 @@ $large-desktop-max-width: 1200px;
 @mixin button-container-3spans-toClose($mark-size: 70%, $time: 0.5s, $color: null){
   .span-container{
     position: relative;
-    @include custom-size($mark-size);
+    @include size($mark-size);//custom-size
     span{
       @include absolute(45%, null, null, null);
       @if $color{ background-color: $color;}

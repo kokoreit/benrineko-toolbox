@@ -66,6 +66,7 @@ body [draggable=true] {
 /*========= .main ===============*/
 .main {
   grid-area: main;
+  box-sizing: border-box;
   width: 100%;
 }
 
