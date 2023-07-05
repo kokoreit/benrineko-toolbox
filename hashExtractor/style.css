@@ -1,7 +1,7 @@
 @charset "UTF-8";
-/* uses benri-template v17.3: change sankaku to used unicode */
+/* benri-template v20.3: fix button-container-3spans */
 /*=========  ===============*/
-/* uses benri-template v17.3 */
+/* uses benri-template v20.3 */
 /*========= .main ===============*/
 .main {
   display: flex;
@@ -13,9 +13,11 @@
 
 /*========= .main-container ===============*/
 .main-container {
+  box-sizing: border-box;
+  width: 100%;
   margin: 0;
   padding: 0;
-  width: 100%;
+  border: 2px solid #0d47a1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +25,6 @@
   flex-direction: column;
   justify-content: start;
   text-align: center;
-  border: 2px solid #0d47a1;
 }
 
 .m-main-section {
