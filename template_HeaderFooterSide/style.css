@@ -25,6 +25,7 @@ body [draggable=true] {
 }
 
 .container {
+  width: 100%;
   max-width: 1520px;
   display: grid;
   /* 標準（最大サイズのデスクトップ） */
