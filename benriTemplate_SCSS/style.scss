@@ -1,4 +1,4 @@
-/* benri-template v20.3: fix button-container-3spans */
+/* benri-template v20.4: fixed greaterThan */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -51,15 +51,28 @@ $large-desktop-max-width: 1200px;
     @error "Invalid device provided. Please use 'phone', 'tablet', 'desktop', or 'ldesktop'.";
   }
 }
+// @mixin greaterThan($device) {
+//   @if $device == phone {
+//     @media (min-width: 0 + 1px) { @content; }
+//   } @else if $device == tablet {
+//     @media (min-width: $phone-max-width + 1px) { @content; }
+//   } @else if $device == desktop {
+//     @media (min-width: $tablet-max-width + 1px) { @content; }
+//   } @else if $device == ldesktop {
+//     @media (min-width: $desktop-max-width + 1px) { @content; }
+//   } @else {
+//     @error "Invalid device provided. Please use 'phone', 'tablet', 'desktop', or 'ldesktop'.";
+//   }
+// }
 @mixin greaterThan($device) {
   @if $device == phone {
-    @media (min-width: 0 + 1px) { @content; }
+    @media (min-width: #{0 + 1px}) { @content; }
   } @else if $device == tablet {
-    @media (min-width: $phone-max-width + 1px) { @content; }
+    @media (min-width: #{$phone-max-width + 1px}) { @content; }
   } @else if $device == desktop {
-    @media (min-width: $tablet-max-width + 1px) { @content; }
+    @media (min-width: #{$tablet-max-width + 1px}) { @content; }
   } @else if $device == ldesktop {
-    @media (min-width: $desktop-max-width + 1px) { @content; }
+    @media (min-width: #{$desktop-max-width + 1px}) { @content; }
   } @else {
     @error "Invalid device provided. Please use 'phone', 'tablet', 'desktop', or 'ldesktop'.";
   }
