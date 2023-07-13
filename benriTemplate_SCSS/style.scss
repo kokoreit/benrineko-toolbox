@@ -1,4 +1,4 @@
-/* benri-template v20.4: fixed greaterThan */
+/* benri-template v21.0: add absolute-switch-side */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -360,21 +360,21 @@ $large-desktop-max-width: 1200px;
     //このデザイン比率をキープさせるためにabsoluteを採用します
   }
   @content;
-//   【.titleの位置調整】
-//   ご指定のフォントサイズ等で位置が変わるため、
-//   フォントの行間設定を使って文字位置の微調整を行なってください。
+  //   【.titleの位置調整】
+  //   ご指定のフォントサイズ等で位置が変わるため、
+  //   フォントの行間設定を使って文字位置の微調整を行なってください。
 
-//   【これらのコードは以下のHTML構造を想定しています】
-//   <button>
-//   <p class="title">TITLE</p>
-//   <div class="burger">
-//   <div class="span-container">
-//   <span class="s1"></span>
-//   <span class="s2"></span>
-//   <span class="s3"></span>
-//   </div>
-//   </div>
-//   </button>
+  //   【これらのコードは以下のHTML構造を想定しています】
+  //   <button>
+  //   <p class="title">TITLE</p>
+  //   <div class="burger">
+  //   <div class="span-container">
+  //   <span class="s1"></span>
+  //   <span class="s2"></span>
+  //   <span class="s3"></span>
+  //   </div>
+  //   </div>
+  //   </button>
 }
 @mixin clickable {
   //bodyに設定すると便利です。
@@ -388,5 +388,40 @@ $large-desktop-max-width: 1200px;
   [draggable="true"] {
     cursor: pointer;
   }
+  @content;
+}
+
+@mixin absolute-switch-side($location, $value, $status, $time: 0) {
+  $animation-direction: left;
+  box-sizing: border-box;
+  @include size(auto);//要素のサイズに広がります
+  @include zero-bezel;//ここで設定すると左右のうち片方しか見えない状況になります
+  @if $status == close {
+    @if $location == left {
+      //ok
+      @include absolute(0, null, null, -$value);// @include fixed(0, null, null, -$value);
+      $animation-direction: left;
+    } @else if $location == right {
+      //ok
+      @include absolute(0, null, null, 0);//rightを主軸にするとスクロール幅でずれます
+      $animation-direction: left;
+    } @else if $location == top {
+      //leftを参考に試作
+      @include absolute(-$value, null, null, 0);
+      $animation-direction: top;
+    } @else if $location == bottom {
+      //rightを参考に試作
+      @include absolute(0, null, null, 0);
+      $animation-direction: top;
+    }
+  } @else {
+    overflow: visible;
+    @if $location == left {         left: 0;
+    } @else if $location == right { left: -$value;
+    } @else if $location == top {   top: 0;
+    } @else if $location == bottom {top: -$value;
+    }
+  }
+  transition: $animation-direction $time ease;
   @content;
 }
