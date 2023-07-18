@@ -1,0 +1,400 @@
+@charset "UTF-8";
+/* benri-template v21.0: add absolute-switch-side */
+/*=========  ===============*/
+/* uses benri-template v21.0 */
+/*========= z-index（10000番台） ===============*/
+/*========= 構成 ===============*/
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+}
+body button,
+body a,
+body [role=button],
+body [role=link],
+body [role=tab],
+body [role=menuitem],
+body [contenteditable=true],
+body [draggable=true] {
+  cursor: pointer;
+}
+@media (max-width: 1088px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 1088px) {
+  .container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    /* 
+    bodyに直接プロパティを当てると、
+    配置やスクロールがおかしくなるので、この要素を設けてあります。
+    */
+  }
+}
+
+.template {
+  height: 100%;
+  width: 100%;
+  max-width: 1520px;
+  display: grid;
+  grid-template: "header main ad1" auto "side main ad1" auto "side main ad2" auto "side share ad2" auto "side footer ad2" 1fr/auto 1fr 320px;
+  gap: 0;
+}
+@media (max-width: 1344px) {
+  .template {
+    grid-template: "header ad1 ad2" auto "side ad1 ad2" auto "side main main" 1fr "side share share" auto "side footer footer" auto/auto 1fr 1fr;
+  }
+}
+@media (max-width: 1088px) {
+  .template {
+    box-sizing: border-box;
+    height: auto;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: left 0.2s ease;
+    grid-template: "header header side" auto "ad1 ad2 side" auto "main main side" 1fr "share share side" auto "footer footer side" auto/50vw 50vw 320px;
+  }
+  body.side-on .template {
+    box-sizing: border-box;
+    height: auto;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    left: -320px;
+    transition: left 0.2s ease;
+  }
+}
+@media (max-width: 630px) {
+  .template {
+    grid-template: "header side" auto "ad1 side" auto "main side" 1fr "share side" auto "ad2 side" auto "footer side" auto/100vw 320px;
+  }
+}
+
+/*========= .container >area ===============*/
+.ad1 {
+  grid-area: ad1;
+  margin: 0;
+  padding: 0;
+  height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-direction: column;
+  justify-content: start;
+  background-color: #fff;
+  color: #444;
+}
+.ad1 p {
+  margin: 0 auto;
+  padding: 0 auto;
+  text-align: center;
+}
+
+.ad2 {
+  grid-area: ad2;
+  margin: 0;
+  padding: 0;
+  height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-direction: column;
+  justify-content: start;
+  background-color: #fff;
+  color: #444;
+}
+.ad2 p {
+  margin: 0 auto;
+  padding: 0 auto;
+  text-align: center;
+}
+
+.main {
+  grid-area: main;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 20px;
+}
+
+#header {
+  grid-area: header;
+  box-sizing: border-box;
+  height: 56px;
+  width: 100%;
+  padding: 2px 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+@media (max-width: 1088px) {
+  #header {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+#header .logo {
+  display: block;
+  height: 52px;
+  width: 156px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 156px 52px;
+  background-image: url(https://benrineko.com/logo_100_300.png);
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  #header .logo {
+    background-image: url(https://benrineko.com/logo_100_300@2x.png);
+  }
+}
+#header .logo:hover, #header .logo:active, #header .logo:focus {
+  border: 1px solid #444;
+}
+#header .title-burger {
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0px;
+  height: 56px;
+  width: 56px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  overflow: hidden;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 0.8rem;
+  line-height: 2.8;
+  letter-spacing: normal;
+  font-weight: bold;
+  background-color: #fff;
+}
+#header .title-burger:hover, #header .title-burger:active, #header .title-burger:focus {
+  border: 1px solid #444;
+}
+#header .title-burger .title {
+  width: 100%;
+  text-align: center;
+  color: #444;
+  position: absolute;
+  top: -36%;
+}
+#header .title-burger .burger {
+  position: absolute;
+  top: 16%;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0px;
+  height: 56px;
+  width: 56px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+#header .title-burger .burger .span-container {
+  height: 60%;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20%;
+  flex-direction: column;
+}
+#header .title-burger .burger .span-container span {
+  display: block;
+  height: 4.48px;
+  width: 100%;
+  background-color: #444;
+}
+@media (max-width: 1088px) {
+  body.side-on #header .title-burger {
+    position: relative;
+    left: -10p;
+  }
+  body.side-on #header .title-burger .title {
+    display: none;
+  }
+  body.side-on #header .title-burger .burger {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+  body.side-on #header .title-burger .burger .span-container {
+    position: relative;
+    height: 50%;
+    width: 50%;
+  }
+  body.side-on #header .title-burger .burger .span-container span {
+    position: absolute;
+    top: 45%;
+  }
+  body.side-on #header .title-burger .burger .span-container > :nth-child(1) {
+    transform: rotate(45deg);
+    transition: transform 0.8s;
+  }
+  body.side-on #header .title-burger .burger .span-container > :nth-child(2) {
+    display: none;
+  }
+  body.side-on #header .title-burger .burger .span-container > :nth-child(3) {
+    transform: rotate(-45deg);
+    transition: transform 0.8s;
+  }
+}
+@media (min-width: 1089px) {
+  #header .title-burger {
+    display: none;
+  }
+}
+
+#side-menu-contents {
+  grid-area: side;
+  z-index: 10001;
+  margin: 0;
+  padding: 0;
+  width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: start;
+  background-color: #fff;
+}
+#side-menu-contents p {
+  width: 90%;
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+}
+#side-menu-contents a {
+  display: block;
+  background-color: #fff;
+  color: #444;
+  text-decoration: none;
+}
+#side-menu-contents a:hover, #side-menu-contents a:active, #side-menu-contents a:focus {
+  text-decoration: underline;
+}
+
+#share-contents {
+  grid-area: share;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  justify-items: start;
+}
+#share-contents .share-icon {
+  color: #ccc;
+}
+#share-contents .share-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+#share-contents .share-buttons .share-button i {
+  background-color: #fff;
+  color: #000;
+}
+#share-contents .share-buttons .share-button:hover.twitter i, #share-contents .share-buttons .share-button:active.twitter i, #share-contents .share-buttons .share-button:focus.twitter i {
+  color: #00aced;
+}
+#share-contents .share-buttons .share-button:hover.facebook i, #share-contents .share-buttons .share-button:active.facebook i, #share-contents .share-buttons .share-button:focus.facebook i {
+  color: #3b5998;
+}
+#share-contents .share-buttons .share-button:hover.instagram i, #share-contents .share-buttons .share-button:active.instagram i, #share-contents .share-buttons .share-button:focus.instagram i {
+  color: #E4405F;
+}
+#share-contents .share-buttons .share-button:hover.linkedin i, #share-contents .share-buttons .share-button:active.linkedin i, #share-contents .share-buttons .share-button:focus.linkedin i {
+  color: #0077b5;
+}
+#share-contents .share-buttons .share-button:hover.pinterest i, #share-contents .share-buttons .share-button:active.pinterest i, #share-contents .share-buttons .share-button:focus.pinterest i {
+  color: #bd0039;
+}
+
+#footer {
+  grid-area: footer;
+  padding: 14px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+}
+#footer a {
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  text-align: center;
+  text-decoration: none;
+  background-color: #fff;
+  color: #444;
+}
+#footer a.copyright {
+  margin: 4px;
+  padding: 2px;
+  width: 80%;
+  background-color: #444;
+  color: #fff;
+}
+#footer a:hover, #footer a:active, #footer a:focus {
+  text-decoration: underline;
+}
+
+/*========= #overlay ===============*/
+#overlay {
+  z-index: 10000;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 0;
+  padding: 0;
+  height: 0;
+  width: 0;
+}
+@media (max-width: 1088px) {
+  body.side-on #overlay {
+    height: 100%;
+    width: 100%;
+    /*
+    これをbodyの下に配置する場合、
+    全領域をカバーできないことがあるので注意してください。
+    */
+  }
+}
