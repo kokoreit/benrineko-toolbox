@@ -1,7 +1,6 @@
 @charset "UTF-8";
-/* uses benri-template v17.3: change sankaku to used unicode */
+/* benri-template v21.0: add absolute-switch-side */
 /*=========  ===============*/
-/* uses benri-template v17.3 */
 /*========= .main ===============*/
 .main {
   display: flex;
