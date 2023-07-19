@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* uses benri-template v17.3: change sankaku to used unicode */
+/* benri-template v21.0: add absolute-switch-side */
 /*=========  ===============*/
 /* uses benri-template v17.3 */
 /*========= .main ===============*/
@@ -11,7 +11,7 @@
   flex-direction: column;
 }
 
-/*========= main-section ===============*/
+/*========= 中身 ===============*/
 .title-space {
   width: 100%;
   display: flex;
