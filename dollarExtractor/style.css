@@ -1,6 +1,6 @@
-/* uses benri-template v17.3: change sankaku to used unicode */
+/* benri-template v21.0: add absolute-switch-side */
 /*=========  ===============*/
-/* uses benri-template v5->17.3 */
+/* uses benri-template v21.0 */
 /*========= .title-section ===============*/
 .title-section {
   display: flex;
