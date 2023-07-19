@@ -36,27 +36,30 @@ const sideMenuTemplate = `
     <a href="${domain}/hashExtractor/index.html">カラーコード抽出機</a>
     <a href="${domain}/fontsizeConverter/index.html">フォントサイズ単位変換</a>
 `;
+// ページのタイトルを取得する
 const currentURL = window.location.href;
+const encodedCurrentURL = encodeURIComponent(currentURL);
+const pageTitle = document.title;
+const encodedPageTitle = encodeURIComponent(pageTitle);
 const shareContentsTemplate = `
  <i class="fa fa-share fa-2x share-icon"></i>
       <div class="share-buttons">
-        <a href="https://twitter.com/share?url=${currentURL}" target="_blank" class="share-button twitter" aria-label="Twitterでシェアする">
+        <a href="https://twitter.com/share?url=${encodedCurrentURL}&text=${encodedPageTitle}" target="_blank" class="share-button twitter" aria-label="Twitterでシェアする">
           <i class="fab fa-twitter fa-2x"></i>
         </a>
-        <a href="https://facebook.com/sharer/sharer.php?u=${currentURL}" target="_blank" class="share-button facebook" aria-label="Facebookでシェアする">
+        <a href="https://facebook.com/sharer/sharer.php?u=${encodedCurrentURL}&quote=${encodedPageTitle}" target="_blank" class="share-button facebook" aria-label="Facebookでシェアする">
           <i class="fab fa-facebook fa-2x"></i>
         </a>
-        <a href="https://www.instagram.com/share?url=${currentURL}" target="_blank" class="share-button instagram" aria-label="Instagramでシェアする">
-          <i class="fab fa-instagram fa-2x"></i>
-        </a>
-        <a href="https://pinterest.com/pin/create/button/?url=${currentURL}" target="_blank" class="share-button pinterest" aria-label="Pinterestでシェアする">
+        <a href="https://pinterest.com/pin/create/button/?url=${encodedCurrentURL}&description=${encodedPageTitle}" target="_blank" class="share-button pinterest" aria-label="Pinterestでシェアする">
           <i class="fab fa-pinterest fa-2x"></i>
         </a>
-        <a href="https://www.linkedin.com/shareArticle?url=${currentURL}" target="_blank" class="share-button linkedin" aria-label="LinkedInでシェアする">
+        <a href="https://www.linkedin.com/shareArticle?url=${encodedCurrentURL}&title=${encodedPageTitle}" target="_blank" class="share-button linkedin" aria-label="LinkedInでシェアする">
           <i class="fab fa-linkedin fa-2x"></i>
         </a>
       </div>
-        `;
+`;
+
+
 const footerTemplate = `
       <a href="https://fontawesome.com/" class="fontawesome">Font Awesome by Dave Gandy</a>
       <a href="${domain}/copyright/index.html" class="copyright">コピーライト・プライバシーポリシー・免責事項</a>
