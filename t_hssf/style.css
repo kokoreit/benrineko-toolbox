@@ -312,17 +312,21 @@ body [draggable=true] {
 
 #share-contents {
   grid-area: share;
-  padding: 10px;
+  margin: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 8px;
   justify-items: start;
 }
 #share-contents .share-icon {
   color: #ccc;
 }
 #share-contents .share-buttons {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  border: 2px solid #ccc;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -330,7 +334,7 @@ body [draggable=true] {
 }
 #share-contents .share-buttons .share-button i {
   background-color: #fff;
-  color: #000;
+  color: #444;
 }
 #share-contents .share-buttons .share-button:hover.twitter i, #share-contents .share-buttons .share-button:active.twitter i, #share-contents .share-buttons .share-button:focus.twitter i {
   color: #00aced;
