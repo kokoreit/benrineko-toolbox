@@ -320,13 +320,13 @@ body [draggable=true] {
   justify-items: start;
 }
 #share-contents .share-icon {
-  color: #ccc;
+  color: #777;
 }
 #share-contents .share-buttons {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  border: 2px solid #ccc;
+  border: 2px solid #777;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -336,20 +336,24 @@ body [draggable=true] {
   background-color: #fff;
   color: #444;
 }
-#share-contents .share-buttons .share-button:hover.twitter i, #share-contents .share-buttons .share-button:active.twitter i, #share-contents .share-buttons .share-button:focus.twitter i {
+#share-contents .share-buttons .share-button.twitter i {
   color: #00aced;
 }
-#share-contents .share-buttons .share-button:hover.facebook i, #share-contents .share-buttons .share-button:active.facebook i, #share-contents .share-buttons .share-button:focus.facebook i {
+#share-contents .share-buttons .share-button.facebook i {
   color: #3b5998;
 }
-#share-contents .share-buttons .share-button:hover.instagram i, #share-contents .share-buttons .share-button:active.instagram i, #share-contents .share-buttons .share-button:focus.instagram i {
+#share-contents .share-buttons .share-button.instagram i {
   color: #E4405F;
 }
-#share-contents .share-buttons .share-button:hover.linkedin i, #share-contents .share-buttons .share-button:active.linkedin i, #share-contents .share-buttons .share-button:focus.linkedin i {
+#share-contents .share-buttons .share-button.linkedin i {
   color: #0077b5;
 }
-#share-contents .share-buttons .share-button:hover.pinterest i, #share-contents .share-buttons .share-button:active.pinterest i, #share-contents .share-buttons .share-button:focus.pinterest i {
+#share-contents .share-buttons .share-button.pinterest i {
   color: #bd0039;
+}
+#share-contents .share-buttons .share-button:hover i, #share-contents .share-buttons .share-button:active i, #share-contents .share-buttons .share-button:focus i {
+  background-color: #fff;
+  color: #444;
 }
 
 #footer {
