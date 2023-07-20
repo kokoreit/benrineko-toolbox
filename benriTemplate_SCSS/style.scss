@@ -1,4 +1,4 @@
-/* benri-template v22.1: absolute-switch-side -> slide-settings-from-element */
+/* benri-template v22.2: change name to absolute-move-step */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -426,15 +426,15 @@ $large-desktop-max-width: 1200px;
 //   @content;
 // }
 
-@mixin absolute-moves($direction, $value, $step, $time, $ease: ease) {
+@mixin absolute-move-step($direction, $value, $step, $time, $ease: ease) {
   position: absolute;
   #{$direction}: $value * $step;//ステップの分だけ移動します
   transition: #{$direction} $time $ease;//プロパティ設定が無かったら初期状態でアニメーションが出てしまいます
 }
 @mixin slide-by-element($element, $direction, $value, $time, $ease: ease) {
   @include size(auto);
-  @include absolute-moves($direction, $value, 0, $time, $ease);//ゼロ配置
+  @include absolute-move-step($direction, $value, 0, $time, $ease);//ゼロ配置
   #{$element} & {
-    @include absolute-moves($direction, $value, 1, $time, $ease);//ずらした配置
+    @include absolute-move-step($direction, $value, 1, $time, $ease);//ずらした配置
   }
 }
