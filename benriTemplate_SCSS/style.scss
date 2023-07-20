@@ -1,4 +1,4 @@
-/* benri-template v22.0: absolute-switch-side -> slide-settings-from-element */
+/* benri-template v22.1: absolute-switch-side -> slide-settings-from-element */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -9,7 +9,7 @@ $container-max-width: 1400px;
 $header-height: 50px;
 $logo-height: $header-height;
 $logo-width: $logo-height * 3;
-//side
+//sied
 $side-width: 300px;
 $side-anime-time: 0.2s;
 //フォント
@@ -431,7 +431,7 @@ $large-desktop-max-width: 1200px;
   #{$direction}: $value * $step;//ステップの分だけ移動します
   transition: #{$direction} $time $ease;//プロパティ設定が無かったら初期状態でアニメーションが出てしまいます
 }
-@mixin slide-settings-from-element($element, $direction, $value, $time, $ease: ease) {
+@mixin slide-by-element($element, $direction, $value, $time, $ease: ease) {
   @include size(auto);
   @include absolute-moves($direction, $value, 0, $time, $ease);//ゼロ配置
   #{$element} & {
