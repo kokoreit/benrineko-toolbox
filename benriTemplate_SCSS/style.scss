@@ -1,4 +1,4 @@
-/* benri-template v22.2: change name to absolute-move-step */
+/* benri-template v23.0: add row-page-gide, remove coment-out */
 
 //ドメインURL
 $domain-url: "https://benrineko.com";
@@ -51,19 +51,6 @@ $large-desktop-max-width: 1200px;
     @error "Invalid device provided. Please use 'phone', 'tablet', 'desktop', or 'ldesktop'.";
   }
 }
-// @mixin greaterThan($device) {
-//   @if $device == phone {
-//     @media (min-width: 0 + 1px) { @content; }
-//   } @else if $device == tablet {
-//     @media (min-width: $phone-max-width + 1px) { @content; }
-//   } @else if $device == desktop {
-//     @media (min-width: $tablet-max-width + 1px) { @content; }
-//   } @else if $device == ldesktop {
-//     @media (min-width: $desktop-max-width + 1px) { @content; }
-//   } @else {
-//     @error "Invalid device provided. Please use 'phone', 'tablet', 'desktop', or 'ldesktop'.";
-//   }
-// }
 @mixin greaterThan($device) {
   @if $device == phone {
     @media (min-width: #{0 + 1px}) { @content; }
@@ -100,22 +87,6 @@ $large-desktop-max-width: 1200px;
   width: $width;
   @content;
 }
-// @mixin zero-size {//削除予定
-//   width: 0;
-//   height: 0;
-//   @content;
-// }
-// @mixin full-size {//削除予定
-//   width: 100%;
-//   height: 100%;
-//   @content;
-// }
-// @mixin custom-size($height, $width: null) {//削除予定
-//   @if $width == null{ $width: $height;}
-//   height: $height;
-//   width: $width;
-//   @content;
-// }
 @mixin position($top: null, $right: null, $bottom: null, $left: null) {
   @if $top { top: $top;}
   @if $right {right: $right;}
@@ -391,45 +362,11 @@ $large-desktop-max-width: 1200px;
   @content;
 }
 
-// @mixin absolute-switch-side($location, $value, $status, $time: 0) {
-//   $animation-direction: left;
-//   box-sizing: border-box;
-//   @include size(auto);//要素のサイズに広がります
-//   @include zero-bezel;//ここで設定すると左右のうち片方しか見えない状況になります
-//   @if $status == close {
-//     @if $location == left {
-//       //ok
-//       @include absolute(0, null, null, -$value);// @include fixed(0, null, null, -$value);
-//       $animation-direction: left;
-//     } @else if $location == right {
-//       //ok
-//       @include absolute(0, null, null, 0);//rightを主軸にするとスクロール幅でずれます
-//       $animation-direction: left;
-//     } @else if $location == top {
-//       //leftを参考に試作
-//       @include absolute(-$value, null, null, 0);
-//       $animation-direction: top;
-//     } @else if $location == bottom {
-//       //rightを参考に試作
-//       @include absolute(0, null, null, 0);
-//       $animation-direction: top;
-//     }
-//   } @else {
-//     overflow: visible;
-//     @if $location == left {         left: 0;
-//     } @else if $location == right { left: -$value;
-//     } @else if $location == top {   top: 0;
-//     } @else if $location == bottom {top: -$value;
-//     }
-//   }
-//   transition: $animation-direction $time ease;
-//   @content;
-// }
-
 @mixin absolute-move-step($direction, $value, $step, $time, $ease: ease) {
   position: absolute;
   #{$direction}: $value * $step;//ステップの分だけ移動します
   transition: #{$direction} $time $ease;//プロパティ設定が無かったら初期状態でアニメーションが出てしまいます
+  @content;
 }
 @mixin slide-by-element($element, $direction, $value, $time, $ease: ease) {
   @include size(auto);
@@ -437,4 +374,14 @@ $large-desktop-max-width: 1200px;
   #{$element} & {
     @include absolute-move-step($direction, $value, 1, $time, $ease);//ずらした配置
   }
+  @content;
+}
+
+@mixin row-page-gide($page-gide-element: ".page-gide", $circle-size: 10px, $color: #ccc, $now-class-color: red){
+  @include flex-center(row, $circle-size - $circle-size/5);//10px ->2px
+  #{$page-gide-element}{
+    @include circle($circle-size, $color);      
+    &.current{ background-color: $now-class-color;}
+  }
+  @content;
 }
