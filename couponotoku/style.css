@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* benri-template v21.0: add absolute-switch-side */
+/* benri-template v23.0: add row-page-gide, remove coment-out */
 /*=========  ===============*/
 /*========= .main ===============*/
 .main {
@@ -52,7 +52,7 @@
 }
 .input-space input {
   margin: 0 auto;
-  height: 30px;
+  height: 34px;
   width: 200px;
   font-size: 1.8rem;
 }
