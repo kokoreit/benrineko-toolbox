@@ -1,6 +1,6 @@
-/* benri-template v21.0: add absolute-switch-side */
+/* benri-template v23.0: add row-page-gide, remove coment-out */
 /*=========  ===============*/
-/* uses benri-template v21.0 */
+/* uses benri-template v23.0 */
 /*========= .title-section ===============*/
 .title-section {
   display: flex;
@@ -43,7 +43,6 @@
 }
 
 .input-contents {
-  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,12 +59,21 @@
   letter-spacing: normal;
   border: 1px solid #b71c1c;
 }
-.input-contents #extractButton {
+.input-contents button {
   padding: 10px;
   border: none;
   border-radius: 0px;
-  background-color: #b71c1c;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: normal;
   color: #fff;
+}
+.input-contents button#extractButton {
+  background-color: #b71c1c;
+}
+.input-contents button#load-and-extractButton {
+  background-color: #0d47a1;
 }
 .input-contents #message {
   color: #b71c1c;
@@ -73,7 +81,7 @@
 }
 
 .output-contents {
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,10 +1,32 @@
+/*========= 定義 ===============*/
 const btnContainer = document.getElementById('buttonContainer');
+const inputBox = document.getElementById('inputBox');
+
+/*========= アクション ===============*/
 // 抽出ボタンがクリックされた時のメソッド
 document.getElementById('extractButton').addEventListener('click', function() {
+  extract();
+});
 
+// 抽出ボタンがクリックされた時のメソッド
+document.getElementById('load-and-extractButton').addEventListener('click', function() {
+  localStrage("load");
+  extract();
+});
+
+/*========= ローカルストレージ ===============*/
+function localStrage(Action) {
+  if (Action === "save") {
+    localStorage.setItem("inputText", inputBox.value);
+  } else if (Action === "load") {
+    inputBox.value = localStorage.getItem("inputText") || "";
+  }
+}
+
+/*========= 抽出 ===============*/
+//抽出
+function extract() {
   clearButtons();
-
-  const inputBox = document.getElementById('inputBox');
   const inputValue = inputBox.value.trim();
   if (inputValue !== '') {
     const constants = extractConstants(inputValue);
@@ -20,10 +42,11 @@ document.getElementById('extractButton').addEventListener('click', function() {
       }
       buttonContainer.appendChild(button);
     });
+    localStrage("save");
     inputBox.value = '';
     showMessage('定数を抜き出しました');
   }
-});
+}
 //ボタン群のクリア
 function clearButtons() {
   /*
@@ -58,6 +81,7 @@ function extractConstants(inputText) {
   return matches ? matches : [];
 }
 
+/*========= 結果に対する動作 ===============*/
 
 //クリップボードにコピー
 function copyToClipboard(text) {
