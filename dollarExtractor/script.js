@@ -40,9 +40,9 @@ function escapeHtml(text) {
 //抽出
 function extract() {
   clearButtons();
-  const inputValue = inputBox.value.trim();
-  if (inputValue !== '') {
-    const constants = extractConstants(inputValue);
+  const text = escapeHtml(inputBox.value.trim());//.trim()：空白無視で取得
+  if (text !== '') {
+    const constants = extractConstants(text);
     btnContainer.innerHTML = '';
     constants.forEach(function(constant) {
       const button = document.createElement('button');
@@ -86,7 +86,7 @@ document.addEventListener('click', function(event) {
   }
 });
 
-// 定数を抽出するメソッド（改造後）
+// 定数を抽出するメソッド
 function extractConstants(inputText) {
   const regex = /\$[^:\s]+|\/\/[^\$]+/g // "$"で始まる文字列または"//"という文字列にマッチ
   const matches = inputText.match(regex); // マッチする部分を配列として取得
