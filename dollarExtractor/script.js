@@ -17,10 +17,23 @@ document.getElementById('load-and-extractButton').addEventListener('click', func
 /*========= ローカルストレージ ===============*/
 function localStrage(Action) {
   if (Action === "save") {
-    localStorage.setItem("inputText", inputBox.value);
+    const escapedText = escapeHtml(inputBox.value);
+    localStorage.setItem("inputText", escapedText);
   } else if (Action === "load") {
     inputBox.value = localStorage.getItem("inputText") || "";
   }
+}
+
+/*========= エスケープ処理 ===============*/
+// XSS対策: ユーザーの入力をエスケープして、安全にHTMLに反映する
+function escapeHtml(text) {
+  /*
+    直接ユーザーからの入力をHTMLに反映する場合、
+    この処理を通してください。
+  */
+  const div = document.createElement('div');
+  div.textContent = text; // textをエスケープしてテキストノードとして反映する
+  return div.innerHTML; // エスケープされたHTMLを文字列として返す
 }
 
 /*========= 抽出 ===============*/
