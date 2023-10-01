@@ -1,0 +1,110 @@
+/* benri-template v23.0: add row-page-gide, remove coment-out */
+/*=========  ===============*/
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  background-color: #fff;
+  color: #444;
+}
+
+/*========= .title-space ===============*/
+.title-space {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  flex-direction: column;
+}
+.title-space h1 {
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1.8rem;
+  line-height: 1.8;
+  letter-spacing: normal;
+}
+.title-space h2 {
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+}
+
+/*========= .input-space ===============*/
+.input-space {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.input-space input {
+  padding: 10px;
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS Mincho", "Meiryo", serif;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  border: 2px solid #b71c1c;
+}
+.input-space input:hover, .input-space input:active, .input-space input:focus {
+  border: 2px solid #e55454;
+}
+.input-space .load-button {
+  border: none;
+  border-radius: 2px;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  background-color: #b71c1c;
+  color: #fff;
+  width: 200px;
+}
+.input-space .load-button:hover, .input-space .load-button:active, .input-space .load-button:focus {
+  background-color: #e13e3e;
+}
+.input-space .clear-button {
+  border: none;
+  border-radius: 2px;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  background-color: #0d47a1;
+  color: #fff;
+  width: 80px;
+}
+.input-space .clear-button:hover, .input-space .clear-button:active, .input-space .clear-button:focus {
+  background-color: #1366e8;
+}
+
+/*========= .go-buttons-space ===============*/
+.go-buttons-space {
+  margin-top: 2px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-direction: column;
+}
+.go-buttons-space button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 14px;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "MS Gothic", "Meiryo UI", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  background-color: #fff;
+  color: #444;
+  border: 2px solid rgba(68, 68, 68, 0.6);
+}
+.go-buttons-space button:hover, .go-buttons-space button:active, .go-buttons-space button:focus {
+  border: 2px solid #444;
+}
+.go-buttons-space button:hover, .go-buttons-space button:active, .go-buttons-space button:focus {
+  background-color: #444;
+  color: #fff;
+}

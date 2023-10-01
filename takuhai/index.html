@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja" >
+    <head>
+  
+  <title>宅配追跡 - 荷物配達の配達番号を追跡する</title>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="宅配追跡,荷物追跡,配達番号,日本郵便,佐川急便,ヤマト運輸">
+  <meta name="description" content="宅配（荷物配達）の配達番号を追跡するページです。追跡番号を入力して追跡ボタンを押すと、配達番号を記載した追跡ページ（配達事業者の公式の追跡ページ）が開かれます。">
+
+      <meta name="author" content="benrineko.com">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="./favicon.ico">
+        <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="./android-chrome-192x192.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link rel="stylesheet" href="https://benrineko.com/t_hssf/style.css">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+<body>
+<!-- partial:index.partial.html -->
+
+
+<div class="container">
+  <div class="template">
+
+    <!-- main -->
+    <main class="main">
+      <div class="title-space">
+        <h1>宅配追跡 - 荷物配達の配達番号を追跡する</h1>
+        <h2>追跡番号を入力して追跡ボタンを押すと、配達番号を記載した追跡ページ（配達事業者の公式の追跡ページ）が開かれます。</h2>
+      </div>
+      <div class="input-space">
+        <input type="text" id="tracking_number" placeholder=" 追跡番号を入力">
+        <button class="clear-button" onclick="clearText()">クリア<br>×</button>
+        <button class="load-button" id="load_previous_input">前回の番号を<br>入力する</button>
+      </div>
+      <div class="go-buttons-space">
+        <button id="japan_post">日本郵便で追跡</button>
+        <button id="sagawa">佐川急便で追跡</button>
+        <button id="yamato">ヤマト運輸で追跡</button>
+      </div>
+    </main>
+
+    <!-- header（JSで内容を追加） -->
+    <header id="header"></header>
+    <!-- side （JSで内容を追加）-->
+    <aside id="side-menu-contents"></aside>
+    <!-- share（JSで内容を追加） -->
+    <div id="share-contents"></div>
+    <!-- footer（JSで内容を追加） -->
+    <footer id="footer"></footer>
+    <!--  ad1 -->
+    <aside class="ad1">
+      <p><small>ad</small></p>
+      <p>
+        <!--     ここ広告を挿入 -->
+        <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=gift_certificates&banner=1TJ8XM5YGJR5WC15P202&f=ifr&linkID=6a31d1c20847319217f2402b033016fc&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+      </p>
+    </aside>
+    <!--  ad2 -->
+    <aside class="ad2">
+      <p><small>ad</small></p>
+      <p>
+        <!--     ここ広告を挿入 -->
+        <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=primevideo&banner=0N84Z260P2YWJ45V2G82&f=ifr&linkID=b78dafe03b786eb60d615ed708988c81&t=benrineko.com-22&tracking_id=benrineko.com-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+      </p>
+    </aside>
+
+    <!-- オーバーレイ（sideがアクティブの時に使用します） -->
+    <aside id="overlay"></aside>
+
+  </div>
+</div>
+
+<script src="https://benrineko.com/t_hssf/script.js"></script>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
