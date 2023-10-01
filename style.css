@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* benri-template v21.0: add absolute-switch-side */
+/* benri-template v23.0: add row-page-gide, remove coment-out */
 /*=========  ===============*/
 /* uses benri-template v17.3 */
 /*========= .main  ===============*/
@@ -248,6 +248,23 @@ a.app-card:hover, a.app-card:active, a.app-card:focus {
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   .nengouhenkan-img {
     background-image: url(https://benrineko.com/nengouhenkan/apple-touch-icon.png);
+  }
+}
+
+.takuhai-img {
+  border-radius: 10px;
+  border: 2px solid #fff;
+  background-color: #fff;
+  height: 42px;
+  width: 42px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 42px 42px;
+  background-image: url(https://benrineko.com/takuhai/favicon.ico);
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  .takuhai-img {
+    background-image: url(https://benrineko.com/takuhai/apple-touch-icon.png);
   }
 }
 

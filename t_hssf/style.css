@@ -1,7 +1,6 @@
 @charset "UTF-8";
-/* benri-template v21.0: add absolute-switch-side */
+/* benri-template v23.0: add row-page-gide, remove coment-out */
 /*=========  ===============*/
-/* uses benri-template v21.0 */
 /*========= z-index（10000番台） ===============*/
 /*========= 構成 ===============*/
 body {
@@ -61,24 +60,15 @@ body [draggable=true] {
 }
 @media (max-width: 1088px) {
   .template {
-    box-sizing: border-box;
     height: auto;
     width: auto;
-    margin: 0;
-    padding: 0;
     position: absolute;
-    top: 0;
-    left: 0;
+    left: 0px;
     transition: left 0.2s ease;
     grid-template: "header header side" auto "ad1 ad2 side" auto "main main side" 1fr "share share side" auto "footer footer side" auto/50vw 50vw 320px;
   }
   body.side-on .template {
-    box-sizing: border-box;
-    height: auto;
-    width: auto;
-    margin: 0;
-    padding: 0;
-    overflow: visible;
+    position: absolute;
     left: -320px;
     transition: left 0.2s ease;
   }
@@ -320,6 +310,7 @@ body [draggable=true] {
   justify-items: start;
 }
 #share-contents .share-icon {
+  transform: scaleY(-1);
   color: #777;
 }
 #share-contents .share-buttons {

@@ -31,12 +31,15 @@ const sideMenuTemplate = `
     <a href="${domain}/couponotoku/index.html">クーポンお得計算機</a>
     <a href="${domain}/natureSounds/index.html">自然音（環境音）</a>
     <a href="${domain}/nengouhenkan/index.html">年号変換</a>
+    <a href="${domain}/takuhai/index.html">宅配配達の追跡</a>
     <p>開発</p>
     <a href="${domain}/dollarExtractor/index.html">$変数コピペツール</a>
     <a href="${domain}/hashExtractor/index.html">カラーコード抽出機</a>
     <a href="${domain}/fontsizeConverter/index.html">フォントサイズ単位変換</a>
 `;
-// ページのタイトルを取得する
+// シェアのための結果テキスト変数を定義
+let shareResultText = "シェアする結果のテキストです。";
+
 const currentURL = window.location.href;
 const encodedCurrentURL = encodeURIComponent(currentURL);
 const pageTitle = document.title;
@@ -105,7 +108,7 @@ window.addEventListener('beforeunload', function() {
 
 /*========= onclic ===============*/
 function focusAndBlur(button) {
-  clearTimeout(button.timerId);//存在しなくてもOKです
+  clearTimeout(button.timerId);//Idが存在しなくてもOKです
   button.focus();
   button.timerId = setTimeout(function() {
     button.blur();
